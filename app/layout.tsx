@@ -4,7 +4,7 @@ import { LanguageProvider } from "@/lib/language-context"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Heroics Capital Partners | Independent Asset Management",
+  title: "Heroics Capital | Independent Asset Management",
   description:
     "Independent asset management with conviction. Bespoke investment solutions for institutional and private clients across Europe.",
   generator: "v0.app",
