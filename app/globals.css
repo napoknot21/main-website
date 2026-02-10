@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  PPMori Custom Font
+  Place your PPMori font files in /public/fonts/
+  Expected files: PPMori-Regular.woff2, PPMori-Bold.woff2, PPMori-ExtraLight.woff2, PPMori-SemiBold.woff2
+  If you have .otf or .ttf files, update the format accordingly.
+*/
+@font-face {
+  font-family: "PPMori";
+  src: url("/fonts/PPMori-Regular.woff2") format("woff2"),
+    url("/fonts/PPMori-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PPMori";
+  src: url("/fonts/PPMori-RegularItalic.woff2") format("woff2"),
+    url("/fonts/PPMori-RegularItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PPMori";
+  src: url("/fonts/PPMori-ExtraLight.woff2") format("woff2"),
+    url("/fonts/PPMori-ExtraLight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PPMori";
+  src: url("/fonts/PPMori-ExtraLightItalic.woff2") format("woff2"),
+    url("/fonts/PPMori-ExtraLightItalic.otf") format("opentype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PPMori";
+  src: url("/fonts/PPMori-SemiBold.woff2") format("woff2"),
+    url("/fonts/PPMori-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PPMori";
+  src: url("/fonts/PPMori-SemiBoldItalic.woff2") format("woff2"),
+    url("/fonts/PPMori-SemiBoldItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PPMori";
+  src: url("/fonts/PPMori-Bold.woff2") format("woff2"),
+    url("/fonts/PPMori-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PPMori";
+  src: url("/fonts/PPMori-BoldItalic.woff2") format("woff2"),
+    url("/fonts/PPMori-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    /* Deep blue: #061237 = hsl(224, 78%, 12%) */
+    --background: 0 0% 100%;
+    --foreground: 224 78% 12%;
+    --card: 220 30% 97%;
+    --card-foreground: 224 78% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 78% 12%;
+    --primary: 224 78% 12%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 30% 96%;
+    --secondary-foreground: 224 78% 12%;
+    --muted: 220 20% 95%;
+    --muted-foreground: 224 20% 46%;
+    --accent: 213 80% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 213 80% 50%;
+    --chart-1: 213 80% 50%;
+    --chart-2: 213 60% 60%;
+    --chart-3: 224 78% 12%;
+    --chart-4: 220 30% 70%;
+    --chart-5: 213 90% 55%;
+    --radius: 0.375rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    --deepblue: 224 78% 12%;
+    --deepblue-light: 220 50% 22%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Counter animation */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-count-up {
+  animation: countUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Custom scrollbar for dropdowns */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 2px;
+}
