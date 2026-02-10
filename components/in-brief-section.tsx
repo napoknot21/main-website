@@ -64,15 +64,15 @@ export default function InBriefSection() {
   const stats: StatItem[] = [
     {
       icon: <Users className="h-6 w-6" />,
-      value: 85,
+      value: 15,
       suffix: "+",
       labelKey: "brief.employees",
     },
     {
       icon: <Briefcase className="h-6 w-6" />,
-      value: 4,
+      value: 3,
       prefix: "",
-      suffix: ".2B",
+      suffix: ".5M",
       labelKey: "brief.aum",
     },
     {
@@ -95,7 +95,7 @@ export default function InBriefSection() {
     },
     {
       icon: <Globe className="h-6 w-6" />,
-      value: 3,
+      value: 2,
       suffix: "",
       labelKey: "brief.offices",
     },

@@ -21,7 +21,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "client.confirm": "Confirm",
 
     // Hero
-    "hero.title": "Heroics Capital Partners",
+    "hero.title": "Heroics Capital",
     "hero.subtitle":
       "Independent asset management with conviction, delivering bespoke investment solutions for institutional and private clients across Europe.",
     "hero.cta": "Discover Our Approach",
@@ -38,7 +38,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     // About Page
     "about.page.title": "About Us",
     "about.page.subtitle":
-      "Discover the vision, mission, and ambition that drive Heroics Capital Partners forward.",
+      "Discover the vision, mission, and ambition that drive Heroics Capital forward.",
     "about.values.title": "Our Values",
     "about.vision.title": "A Vision",
     "about.vision.desc":
@@ -53,20 +53,20 @@ export const translations: Record<Locale, Record<string, string>> = {
     // News Page
     "news.page.title": "News",
     "news.page.subtitle":
-      "Stay informed with the latest news and insights from Heroics Capital Partners.",
+      "Stay informed with the latest news and insights from Heroics Capital.",
     "news.readMore": "Read more",
-    "news.article1.title": "Heroics Capital Partners Expands Luxembourg Operations",
+    "news.article1.title": "Heroics Capital Expands Luxembourg Operations",
     "news.article1.content":
-      "Heroics Capital Partners announces a significant expansion of its Luxembourg office, strengthening its European presence with new hires across portfolio management and advisory services.",
+      "Heroics Capital announces a significant expansion of its Luxembourg office, strengthening its European presence with new hires across portfolio management and advisory services.",
     "news.article2.title": "Annual Performance Report 2025 Published",
     "news.article2.content":
       "Our latest annual performance report highlights strong risk-adjusted returns across all strategies, reinforcing our commitment to delivering value independent of market conditions.",
     "news.article3.title": "New Advisory 3.0 Platform Launch",
     "news.article3.content":
-      "Heroics Capital Partners introduces its next-generation Advisory 3.0 platform, combining cutting-edge technology with deep financial expertise to deliver personalized investment solutions.",
-    "news.article4.title": "Heroics Capital Partners Wins Industry Award",
+      "Heroics Capital introduces its next-generation Advisory 3.0 platform, combining cutting-edge technology with deep financial expertise to deliver personalized investment solutions.",
+    "news.article4.title": "Heroics Capital Wins Industry Award",
     "news.article4.content":
-      "We are proud to announce that Heroics Capital Partners has been recognized with the European Asset Management Innovation Award for our groundbreaking approach to discretionary management.",
+      "We are proud to announce that Heroics Capital has been recognized with the European Asset Management Innovation Award for our groundbreaking approach to discretionary management.",
 
     // Contact CTA
     "contact.title": "Let's Build Your Future Together",
@@ -134,7 +134,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "footer.legal.cookies": "Cookie Policy",
     "footer.legal.disclaimer": "Legal Disclaimer",
     "footer.legal.regulatory": "Regulatory Information",
-    "footer.copyright": "Heroics Capital Partners. All rights reserved.",
+    "footer.copyright": "Heroics Capital. All rights reserved.",
     "footer.follow": "Follow Us",
 
     // Cookie Banner
@@ -165,7 +165,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "client.confirm": "Confirmer",
 
     // Hero
-    "hero.title": "Heroics Capital Partners",
+    "hero.title": "Heroics Capital",
     "hero.subtitle":
       "Gestion d'actifs independante avec conviction, offrant des solutions d'investissement sur mesure pour les clients institutionnels et prives a travers l'Europe.",
     "hero.cta": "Decouvrir Notre Approche",
@@ -182,7 +182,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     // About Page
     "about.page.title": "A Propos",
     "about.page.subtitle":
-      "Decouvrez la vision, la mission et l'ambition qui animent Heroics Capital Partners.",
+      "Decouvrez la vision, la mission et l'ambition qui animent Heroics Capital.",
     "about.values.title": "Nos Valeurs",
     "about.vision.title": "Une Vision",
     "about.vision.desc":
@@ -197,20 +197,20 @@ export const translations: Record<Locale, Record<string, string>> = {
     // News Page
     "news.page.title": "Actualites",
     "news.page.subtitle":
-      "Restez informe des dernieres nouvelles et perspectives de Heroics Capital Partners.",
+      "Restez informe des dernieres nouvelles et perspectives de Heroics Capital.",
     "news.readMore": "Lire la suite",
-    "news.article1.title": "Heroics Capital Partners etend ses operations au Luxembourg",
+    "news.article1.title": "Heroics Capital etend ses operations au Luxembourg",
     "news.article1.content":
-      "Heroics Capital Partners annonce une expansion significative de son bureau au Luxembourg, renfor\u00E7ant sa presence europeenne avec de nouveaux recrutements en gestion de portefeuille et services de conseil.",
+      "Heroics Capital annonce une expansion significative de son bureau au Luxembourg, renfor\u00E7ant sa presence europeenne avec de nouveaux recrutements en gestion de portefeuille et services de conseil.",
     "news.article2.title": "Rapport de performance annuel 2025 publie",
     "news.article2.content":
       "Notre dernier rapport de performance annuel met en evidence de solides rendements ajustes au risque sur toutes les strategies, reaffirmant notre engagement a offrir de la valeur independamment des conditions de marche.",
     "news.article3.title": "Lancement de la nouvelle plateforme Advisory 3.0",
     "news.article3.content":
-      "Heroics Capital Partners presente sa plateforme Advisory 3.0 de nouvelle generation, combinant technologie de pointe et expertise financiere approfondie pour offrir des solutions d'investissement personnalisees.",
-    "news.article4.title": "Heroics Capital Partners remporte un prix du secteur",
+      "Heroics Capital presente sa plateforme Advisory 3.0 de nouvelle generation, combinant technologie de pointe et expertise financiere approfondie pour offrir des solutions d'investissement personnalisees.",
+    "news.article4.title": "Heroics Capital remporte un prix du secteur",
     "news.article4.content":
-      "Nous sommes fiers d'annoncer que Heroics Capital Partners a ete reconnu avec le Prix europeen de l'Innovation en Gestion d'Actifs pour notre approche novatrice de la gestion discretionnaire.",
+      "Nous sommes fiers d'annoncer que Heroics Capital a ete reconnu avec le Prix europeen de l'Innovation en Gestion d'Actifs pour notre approche novatrice de la gestion discretionnaire.",
 
     // Contact CTA
     "contact.title": "Construisons Votre Avenir Ensemble",
@@ -278,7 +278,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "footer.legal.cookies": "Politique de Cookies",
     "footer.legal.disclaimer": "Avertissement Juridique",
     "footer.legal.regulatory": "Informations Reglementaires",
-    "footer.copyright": "Heroics Capital Partners. Tous droits reserves.",
+    "footer.copyright": "Heroics Capital. Tous droits reserves.",
     "footer.follow": "Suivez-Nous",
 
     // Cookie Banner
@@ -309,7 +309,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "client.confirm": "Confirmar",
 
     // Hero
-    "hero.title": "Heroics Capital Partners",
+    "hero.title": "Heroics Capital",
     "hero.subtitle":
       "Gestion de activos independiente con conviccion, ofreciendo soluciones de inversion a medida para clientes institucionales y privados en toda Europa.",
     "hero.cta": "Descubra Nuestro Enfoque",
@@ -326,7 +326,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     // About Page
     "about.page.title": "Acerca de Nosotros",
     "about.page.subtitle":
-      "Descubra la vision, la mision y la ambicion que impulsan a Heroics Capital Partners.",
+      "Descubra la vision, la mision y la ambicion que impulsan a Heroics Capital.",
     "about.values.title": "Nuestros Valores",
     "about.vision.title": "Una Vision",
     "about.vision.desc":
@@ -341,20 +341,20 @@ export const translations: Record<Locale, Record<string, string>> = {
     // News Page
     "news.page.title": "Noticias",
     "news.page.subtitle":
-      "Mantengase informado con las ultimas noticias y perspectivas de Heroics Capital Partners.",
+      "Mantengase informado con las ultimas noticias y perspectivas de Heroics Capital.",
     "news.readMore": "Leer mas",
-    "news.article1.title": "Heroics Capital Partners amplia sus operaciones en Luxemburgo",
+    "news.article1.title": "Heroics Capital amplia sus operaciones en Luxemburgo",
     "news.article1.content":
-      "Heroics Capital Partners anuncia una expansion significativa de su oficina en Luxemburgo, fortaleciendo su presencia europea con nuevas contrataciones en gestion de carteras y servicios de asesoria.",
+      "Heroics Capital anuncia una expansion significativa de su oficina en Luxemburgo, fortaleciendo su presencia europea con nuevas contrataciones en gestion de carteras y servicios de asesoria.",
     "news.article2.title": "Informe de rendimiento anual 2025 publicado",
     "news.article2.content":
       "Nuestro ultimo informe de rendimiento anual destaca solidos rendimientos ajustados al riesgo en todas las estrategias, reafirmando nuestro compromiso de ofrecer valor independientemente de las condiciones del mercado.",
     "news.article3.title": "Lanzamiento de la nueva plataforma Advisory 3.0",
     "news.article3.content":
-      "Heroics Capital Partners presenta su plataforma Advisory 3.0 de nueva generacion, combinando tecnologia de vanguardia con profunda experiencia financiera para ofrecer soluciones de inversion personalizadas.",
-    "news.article4.title": "Heroics Capital Partners gana premio de la industria",
+      "Heroics Capital presenta su plataforma Advisory 3.0 de nueva generacion, combinando tecnologia de vanguardia con profunda experiencia financiera para ofrecer soluciones de inversion personalizadas.",
+    "news.article4.title": "Heroics Capital gana premio de la industria",
     "news.article4.content":
-      "Nos enorgullece anunciar que Heroics Capital Partners ha sido reconocido con el Premio Europeo a la Innovacion en Gestion de Activos por nuestro enfoque pionero en la gestion discrecional.",
+      "Nos enorgullece anunciar que Heroics Capital ha sido reconocido con el Premio Europeo a la Innovacion en Gestion de Activos por nuestro enfoque pionero en la gestion discrecional.",
 
     // Contact CTA
     "contact.title": "Construyamos Su Futuro Juntos",
@@ -425,7 +425,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "footer.legal.disclaimer": "Aviso Legal",
     "footer.legal.regulatory": "Informacion Regulatoria",
     "footer.copyright":
-      "Heroics Capital Partners. Todos los derechos reservados.",
+      "Heroics Capital. Todos los derechos reservados.",
     "footer.follow": "Siguenos",
 
     // Cookie Banner
