@@ -96,7 +96,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="/#services" className="text-sm text-primary-foreground/55 hover:text-primary-foreground transition-colors">
-                  {t("nav.services")}
+                  {t("nav.offering")}
                 </a>
               </li>
               <li>

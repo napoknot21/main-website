@@ -1,11 +1,11 @@
-export type Locale = "en" | "fr" | "es"
+export type Locale = "en" | "fr" | "es" | "it" | "pt"
 
 export const translations: Record<Locale, Record<string, string>> = {
   en: {
     // Nav
     "nav.home": "Home",
-    "nav.about": "About",
-    "nav.services": "Services",
+    "nav.about": "About Us",
+    "nav.offering": "Our Offering",
     "nav.news": "News",
     "nav.contact": "Contact",
 
@@ -19,6 +19,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "client.professional": "Professional",
     "client.non_professional": "Non-Professional",
     "client.confirm": "Confirm",
+    "client.save": "Save",
+    "client.cancel": "Cancel",
 
     // Hero
     "hero.title": "Heroics Capital",
@@ -148,8 +150,8 @@ export const translations: Record<Locale, Record<string, string>> = {
   fr: {
     // Nav
     "nav.home": "Accueil",
-    "nav.about": "A propos",
-    "nav.services": "Services",
+    "nav.about": "A propos de nous",
+    "nav.offering": "Notre offre",
     "nav.news": "Actualites",
     "nav.contact": "Contact",
 
@@ -163,6 +165,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "client.professional": "Professionnel",
     "client.non_professional": "Non-Professionnel",
     "client.confirm": "Confirmer",
+    "client.save": "Enregistrer",
+    "client.cancel": "Annuler",
 
     // Hero
     "hero.title": "Heroics Capital",
@@ -292,8 +296,8 @@ export const translations: Record<Locale, Record<string, string>> = {
   es: {
     // Nav
     "nav.home": "Inicio",
-    "nav.about": "Acerca de",
-    "nav.services": "Servicios",
+    "nav.about": "Acerca de Nosotros",
+    "nav.offering": "Nuestra oferta",
     "nav.news": "Noticias",
     "nav.contact": "Contacto",
 
@@ -307,6 +311,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "client.professional": "Profesional",
     "client.non_professional": "No Profesional",
     "client.confirm": "Confirmar",
+    "client.save": "Guardar",
+    "client.cancel": "Cancelar",
 
     // Hero
     "hero.title": "Heroics Capital",
@@ -434,6 +440,302 @@ export const translations: Record<Locale, Record<string, string>> = {
     "cookie.accept": "Aceptar Todo",
     "cookie.reject": "Rechazar Todo",
     "cookie.settings": "Configuracion de Cookies",
+    "cookie.policy": "Politica de Cookies",
+  },
+  it: {
+    // Nav
+    "nav.home": "Home",
+    "nav.about": "Chi siamo",
+    "nav.offering": "La nostra offerta",
+    "nav.news": "Notizie",
+    "nav.contact": "Contatti",
+
+    // Client selector
+    "client.selector": "Accesso Investitori",
+    "client.country": "Paese",
+    "client.luxembourg": "Lussemburgo",
+    "client.monaco": "Monaco",
+    "client.france": "Francia",
+    "client.profile": "Profilo Investitore",
+    "client.professional": "Professionale",
+    "client.non_professional": "Non Professionale",
+    "client.confirm": "Conferma",
+    "client.save": "Salva",
+    "client.cancel": "Annulla",
+
+    // Hero
+    "hero.title": "Heroics Capital",
+    "hero.subtitle":
+      "Gestione patrimoniale indipendente con convinzione, offrendo soluzioni di investimento su misura per clienti istituzionali e privati in tutta Europa.",
+    "hero.cta": "Scopri il Nostro Approccio",
+
+    // In Brief
+    "brief.title": "In Breve",
+    "brief.employees": "Collaboratori",
+    "brief.aum": "Patrimonio in Gestione",
+    "brief.performance": "Rend. Annuale Medio",
+    "brief.years": "Anni di Esperienza",
+    "brief.clients": "Clienti Istituzionali",
+    "brief.offices": "Uffici in Europa",
+
+    // About Page
+    "about.page.title": "Chi Siamo",
+    "about.page.subtitle":
+      "Scopri la visione, la missione e l'ambizione che guidano Heroics Capital.",
+    "about.values.title": "I Nostri Valori",
+    "about.vision.title": "Una Visione",
+    "about.vision.desc":
+      "La gestione discrezionale e la Consulenza 3.0 rivoluzioneranno il settore, superando le aziende tradizionali.",
+    "about.mission.title": "Una Missione",
+    "about.mission.desc":
+      "Promuoviamo la crescita del capitale dei nostri investitori attraverso metodi di gestione innovativi, offrendo performance indipendenti dalle fluttuazioni di mercato.",
+    "about.ambition.title": "Un'Ambizione",
+    "about.ambition.desc":
+      "Il nostro obiettivo e costruire un club di partner vantaggioso per tutti, un circolo unico di imprenditori appassionati che si ispirano e si sostengono a vicenda per raggiungere il successo collettivo.",
+
+    // News Page
+    "news.page.title": "Notizie",
+    "news.page.subtitle":
+      "Resta aggiornato con le ultime notizie e approfondimenti di Heroics Capital.",
+    "news.readMore": "Leggi di piu",
+    "news.article1.title": "Heroics Capital espande le operazioni in Lussemburgo",
+    "news.article1.content":
+      "Heroics Capital annuncia un'espansione significativa del suo ufficio in Lussemburgo, rafforzando la sua presenza europea con nuove assunzioni nella gestione del portafoglio e nei servizi di consulenza.",
+    "news.article2.title": "Rapporto annuale sulle performance 2025 pubblicato",
+    "news.article2.content":
+      "Il nostro ultimo rapporto annuale sulle performance evidenzia solidi rendimenti aggiustati per il rischio su tutte le strategie, confermando il nostro impegno a generare valore indipendentemente dalle condizioni di mercato.",
+    "news.article3.title": "Lancio della nuova piattaforma Advisory 3.0",
+    "news.article3.content":
+      "Heroics Capital presenta la sua piattaforma Advisory 3.0 di nuova generazione, combinando tecnologia all'avanguardia con profonda competenza finanziaria per offrire soluzioni di investimento personalizzate.",
+    "news.article4.title": "Heroics Capital vince un premio del settore",
+    "news.article4.content":
+      "Siamo orgogliosi di annunciare che Heroics Capital e stato riconosciuto con il Premio Europeo per l'Innovazione nella Gestione Patrimoniale per il nostro approccio pionieristico alla gestione discrezionale.",
+
+    // Contact CTA
+    "contact.title": "Costruiamo Insieme il Vostro Futuro",
+    "contact.description":
+      "Il nostro team di esperti e pronto a discutere i vostri obiettivi di investimento e a elaborare strategie su misura in linea con la vostra visione.",
+    "contact.cta": "Contattaci",
+
+    // Contact Page
+    "contact.page.title": "Contattaci",
+    "contact.page.subtitle":
+      "Saremo lieti di sentirvi. Compilate il modulo sottostante e il nostro team vi rispondera al piu presto.",
+
+    // Contact Form
+    "contact.form.context": "In quale contesto ci contattate?",
+    "contact.form.ctx.customer": "Cliente",
+    "contact.form.ctx.press": "Stampa",
+    "contact.form.ctx.candidacy": "Candidatura",
+    "contact.form.ctx.other": "Altro",
+    "contact.form.details": "I Vostri Dati di Contatto",
+    "contact.form.firstName": "Nome",
+    "contact.form.firstName.placeholder": "Mario",
+    "contact.form.lastName": "Cognome",
+    "contact.form.lastName.placeholder": "Rossi",
+    "contact.form.email": "Email",
+    "contact.form.email.placeholder": "mario.rossi@esempio.com",
+    "contact.form.phone": "Telefono",
+    "contact.form.phone.placeholder": "+352 000 000 000",
+    "contact.form.company": "Azienda",
+    "contact.form.company.placeholder": "Nome della vostra azienda",
+    "contact.form.address": "Indirizzo",
+    "contact.form.address.placeholder": "Via e numero",
+    "contact.form.city": "Citta",
+    "contact.form.city.placeholder": "Citta",
+    "contact.form.postalCode": "Codice Postale",
+    "contact.form.postalCode.placeholder": "L-0000",
+    "contact.form.country": "Paese",
+    "contact.form.country.placeholder": "Paese",
+    "contact.form.message": "Messaggio",
+    "contact.form.message.placeholder": "Come possiamo aiutarvi?",
+    "contact.form.captcha": "Verifica di Sicurezza",
+    "contact.form.submit": "Invia Messaggio",
+    "contact.form.sending": "Invio in corso...",
+    "contact.form.error.required": "Questo campo e obbligatorio",
+    "contact.form.error.email": "Inserire un indirizzo email valido",
+    "contact.form.error.captcha":
+      "Risposta errata, riprovare",
+    "contact.form.success.title": "Messaggio Inviato",
+    "contact.form.success.message":
+      "Grazie per averci contattato. Il nostro team esaminer\u00E0 il vostro messaggio e risponder\u00E0 entro 2 giorni lavorativi.",
+
+    // Footer
+    "footer.lux.title": "Heroics Capital Lussemburgo",
+    "footer.lux.address": "34A Rue Philippe II",
+    "footer.lux.city": "L-2340 Lussemburgo",
+    "footer.lux.tel": "+352 27 30 09 40",
+    "footer.lux.email": "info@heroics-capital.com",
+    "footer.monaco.title": "Heroics Capital Monaco",
+    "footer.monaco.address": "Le Panorama, 57 rue Grimaldi",
+    "footer.monaco.city": "MC-98000 Monaco",
+    "footer.monaco.tel": "+377 92 26 02 10",
+    "footer.monaco.email": "info@heroics-capital.com",
+    "footer.nav": "Navigazione",
+    "footer.legal": "Legale",
+    "footer.legal.privacy": "Informativa sulla Privacy",
+    "footer.legal.terms": "Condizioni d'Uso",
+    "footer.legal.cookies": "Politica sui Cookie",
+    "footer.legal.disclaimer": "Avvertenza Legale",
+    "footer.legal.regulatory": "Informazioni Regolamentari",
+    "footer.copyright": "Heroics Capital. Tutti i diritti riservati.",
+    "footer.follow": "Seguici",
+
+    // Cookie Banner
+    "cookie.message":
+      "Utilizziamo i cookie per migliorare la vostra esperienza di navigazione, offrire contenuti personalizzati e analizzare il nostro traffico. Cliccando su \"Accetta Tutto\", acconsentite al nostro utilizzo dei cookie.",
+    "cookie.accept": "Accetta Tutto",
+    "cookie.reject": "Rifiuta Tutto",
+    "cookie.settings": "Impostazioni Cookie",
+    "cookie.policy": "Politica sui Cookie",
+  },
+  pt: {
+    // Nav
+    "nav.home": "Inicio",
+    "nav.about": "Sobre nos",
+    "nav.offering": "A nossa oferta",
+    "nav.news": "Noticias",
+    "nav.contact": "Contacto",
+
+    // Client selector
+    "client.selector": "Acesso Investidor",
+    "client.country": "Pais",
+    "client.luxembourg": "Luxemburgo",
+    "client.monaco": "Monaco",
+    "client.france": "Franca",
+    "client.profile": "Perfil do Investidor",
+    "client.professional": "Profissional",
+    "client.non_professional": "Nao Profissional",
+    "client.confirm": "Confirmar",
+    "client.save": "Guardar",
+    "client.cancel": "Cancelar",
+
+    // Hero
+    "hero.title": "Heroics Capital",
+    "hero.subtitle":
+      "Gestao de ativos independente com convicao, oferecendo solucoes de investimento a medida para clientes institucionais e privados em toda a Europa.",
+    "hero.cta": "Descubra a Nossa Abordagem",
+
+    // In Brief
+    "brief.title": "Em Resumo",
+    "brief.employees": "Colaboradores",
+    "brief.aum": "Ativos Sob Gestao",
+    "brief.performance": "Rend. Anual Medio",
+    "brief.years": "Anos de Experiencia",
+    "brief.clients": "Clientes Institucionais",
+    "brief.offices": "Escritorios na Europa",
+
+    // About Page
+    "about.page.title": "Sobre Nos",
+    "about.page.subtitle":
+      "Descubra a visao, a missao e a ambicao que impulsionam a Heroics Capital.",
+    "about.values.title": "Os Nossos Valores",
+    "about.vision.title": "Uma Visao",
+    "about.vision.desc":
+      "A gestao discricionaria e a Consultoria 3.0 vao revolucionar o setor, superando as empresas tradicionais.",
+    "about.mission.title": "Uma Missao",
+    "about.mission.desc":
+      "Impulsionamos o crescimento do capital dos nossos investidores atraves de metodos de gestao inovadores, oferecendo um desempenho independente das flutuacoes do mercado.",
+    "about.ambition.title": "Uma Ambicao",
+    "about.ambition.desc":
+      "O nosso objetivo e construir um clube de parceiros vantajoso para todos, um circulo unico de empresarios apaixonados que se inspiram e se apoiam mutuamente para alcancar o sucesso coletivo.",
+
+    // News Page
+    "news.page.title": "Noticias",
+    "news.page.subtitle":
+      "Mantenha-se informado com as ultimas noticias e perspetivas da Heroics Capital.",
+    "news.readMore": "Ler mais",
+    "news.article1.title": "Heroics Capital expande operacoes no Luxemburgo",
+    "news.article1.content":
+      "A Heroics Capital anuncia uma expansao significativa do seu escritorio no Luxemburgo, reforcando a sua presenca europeia com novas contratacoes em gestao de carteiras e servicos de consultoria.",
+    "news.article2.title": "Relatorio de desempenho anual 2025 publicado",
+    "news.article2.content":
+      "O nosso ultimo relatorio de desempenho anual destaca retornos solidos ajustados ao risco em todas as estrategias, reafirmando o nosso compromisso de gerar valor independentemente das condicoes de mercado.",
+    "news.article3.title": "Lancamento da nova plataforma Advisory 3.0",
+    "news.article3.content":
+      "A Heroics Capital apresenta a sua plataforma Advisory 3.0 de nova geracao, combinando tecnologia de ponta com profunda competencia financeira para oferecer solucoes de investimento personalizadas.",
+    "news.article4.title": "Heroics Capital ganha premio do setor",
+    "news.article4.content":
+      "Temos orgulho em anunciar que a Heroics Capital foi reconhecida com o Premio Europeu de Inovacao em Gestao de Ativos pela nossa abordagem pioneira na gestao discricionaria.",
+
+    // Contact CTA
+    "contact.title": "Vamos Construir o Seu Futuro Juntos",
+    "contact.description":
+      "A nossa equipa de especialistas esta pronta para discutir os seus objetivos de investimento e elaborar estrategias personalizadas alinhadas com a sua visao.",
+    "contact.cta": "Contacte-nos",
+
+    // Contact Page
+    "contact.page.title": "Contacte-nos",
+    "contact.page.subtitle":
+      "Gostavamos de saber de si. Preencha o formulario abaixo e a nossa equipa entrara em contacto consigo brevemente.",
+
+    // Contact Form
+    "contact.form.context": "Em que contexto nos contacta?",
+    "contact.form.ctx.customer": "Cliente",
+    "contact.form.ctx.press": "Imprensa",
+    "contact.form.ctx.candidacy": "Candidatura",
+    "contact.form.ctx.other": "Outro",
+    "contact.form.details": "Os Seus Dados de Contacto",
+    "contact.form.firstName": "Nome",
+    "contact.form.firstName.placeholder": "Joao",
+    "contact.form.lastName": "Apelido",
+    "contact.form.lastName.placeholder": "Silva",
+    "contact.form.email": "Email",
+    "contact.form.email.placeholder": "joao.silva@exemplo.com",
+    "contact.form.phone": "Telefone",
+    "contact.form.phone.placeholder": "+352 000 000 000",
+    "contact.form.company": "Empresa",
+    "contact.form.company.placeholder": "Nome da sua empresa",
+    "contact.form.address": "Morada",
+    "contact.form.address.placeholder": "Rua e numero",
+    "contact.form.city": "Cidade",
+    "contact.form.city.placeholder": "Cidade",
+    "contact.form.postalCode": "Codigo Postal",
+    "contact.form.postalCode.placeholder": "L-0000",
+    "contact.form.country": "Pais",
+    "contact.form.country.placeholder": "Pais",
+    "contact.form.message": "Mensagem",
+    "contact.form.message.placeholder": "Como podemos ajuda-lo?",
+    "contact.form.captcha": "Verificacao de Seguranca",
+    "contact.form.submit": "Enviar Mensagem",
+    "contact.form.sending": "A enviar...",
+    "contact.form.error.required": "Este campo e obrigatorio",
+    "contact.form.error.email":
+      "Por favor introduza um endereco de email valido",
+    "contact.form.error.captcha":
+      "Resposta incorreta, por favor tente novamente",
+    "contact.form.success.title": "Mensagem Enviada",
+    "contact.form.success.message":
+      "Obrigado por nos contactar. A nossa equipa analisara a sua mensagem e respondera dentro de 2 dias uteis.",
+
+    // Footer
+    "footer.lux.title": "Heroics Capital Luxemburgo",
+    "footer.lux.address": "34A Rue Philippe II",
+    "footer.lux.city": "L-2340 Luxemburgo",
+    "footer.lux.tel": "+352 27 30 09 40",
+    "footer.lux.email": "info@heroics-capital.com",
+    "footer.monaco.title": "Heroics Capital Monaco",
+    "footer.monaco.address": "Le Panorama, 57 rue Grimaldi",
+    "footer.monaco.city": "MC-98000 Monaco",
+    "footer.monaco.tel": "+377 92 26 02 10",
+    "footer.monaco.email": "info@heroics-capital.com",
+    "footer.nav": "Navegacao",
+    "footer.legal": "Legal",
+    "footer.legal.privacy": "Politica de Privacidade",
+    "footer.legal.terms": "Termos de Utilizacao",
+    "footer.legal.cookies": "Politica de Cookies",
+    "footer.legal.disclaimer": "Aviso Legal",
+    "footer.legal.regulatory": "Informacao Regulamentar",
+    "footer.copyright":
+      "Heroics Capital. Todos os direitos reservados.",
+    "footer.follow": "Siga-nos",
+
+    // Cookie Banner
+    "cookie.message":
+      "Utilizamos cookies para melhorar a sua experiencia de navegacao, oferecer conteudo personalizado e analisar o nosso trafego. Ao clicar em \"Aceitar Tudo\", consente a nossa utilizacao de cookies.",
+    "cookie.accept": "Aceitar Tudo",
+    "cookie.reject": "Rejeitar Tudo",
+    "cookie.settings": "Definicoes de Cookies",
     "cookie.policy": "Politica de Cookies",
   },
 }
