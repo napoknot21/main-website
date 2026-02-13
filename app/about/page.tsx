@@ -4,6 +4,7 @@ import Image from "next/image"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import CookieBanner from "@/components/cookie-banner"
+import ContactCtaSection from "@/components/contact-cta-section"
 import { useLanguage } from "@/lib/language-context"
 import { Eye, Target, Rocket } from "lucide-react"
 
@@ -100,6 +101,7 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+        <ContactCtaSection variant="inline" />
       </main>
       <Footer />
       <CookieBanner />

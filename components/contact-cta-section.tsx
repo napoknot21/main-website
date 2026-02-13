@@ -4,12 +4,38 @@ import Link from "next/link"
 import { useLanguage } from "@/lib/language-context"
 import { ArrowRight } from "lucide-react"
 
-export default function ContactCtaSection() {
+interface ContactCtaSectionProps {
+  /** "banner" = full dark section (existing behaviour, used on home)
+   *  "inline" = lighter strip, suitable for bottom of inner pages */
+  variant?: "banner" | "inline"
+}
+
+export default function ContactCtaSection({ variant = "banner" }: ContactCtaSectionProps) {
   const { t } = useLanguage()
 
+  if (variant === "inline") {
+    return (
+      <aside className="border-t border-border py-10 md:py-12">
+        <div className="mx-auto max-w-6xl px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <p className="text-sm font-semibold text-foreground mb-1">{t("contact.cta.inline.title")}</p>
+            <p className="text-sm text-muted-foreground max-w-md">{t("contact.cta.inline.desc")}</p>
+          </div>
+          <Link
+            href="/contact"
+            className="shrink-0 inline-flex items-center gap-2 bg-primary text-primary-foreground text-sm font-medium px-6 py-3 rounded-md hover:bg-primary/90 transition-all duration-300 group"
+          >
+            {t("contact.cta")}
+            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+      </aside>
+    )
+  }
+
+  // Default: full banner (home page)
   return (
     <section id="contact" className="py-24 md:py-32 bg-primary relative overflow-hidden">
-      {/* Subtle decorative element */}
       <div className="absolute top-0 right-0 w-1/3 h-full opacity-5">
         <div className="w-full h-full bg-gradient-to-l from-primary-foreground to-transparent" />
       </div>

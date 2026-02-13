@@ -16,16 +16,63 @@ const localeLabels: Record<Locale, string> = {
   pt: "PT",
 }
 
-const countries = [
-  { key: "client.luxembourg", value: "luxembourg" },
-  { key: "client.monaco", value: "monaco" },
-  { key: "client.france", value: "france" },
+const countryGroups = [
+  {
+    region: "Europe",
+    countries: [
+      { key: "client.luxembourg", value: "luxembourg" },
+      { key: "client.monaco", value: "monaco" },
+      { key: "client.france", value: "france" },
+      { key: "client.germany", value: "germany" },
+      { key: "client.switzerland", value: "switzerland" },
+      { key: "client.uk", value: "uk" },
+      { key: "client.belgium", value: "belgium" },
+      { key: "client.netherlands", value: "netherlands" },
+      { key: "client.italy", value: "italy" },
+      { key: "client.spain", value: "spain" },
+      { key: "client.portugal", value: "portugal" },
+      { key: "client.austria", value: "austria" },
+      { key: "client.sweden", value: "sweden" },
+      { key: "client.denmark", value: "denmark" },
+      { key: "client.norway", value: "norway" },
+      { key: "client.finland", value: "finland" },
+      { key: "client.ireland", value: "ireland" },
+    ],
+  },
+  {
+    region: "Americas",
+    countries: [
+      { key: "client.usa", value: "usa" },
+      { key: "client.canada", value: "canada" },
+      { key: "client.brazil", value: "brazil" },
+      { key: "client.mexico", value: "mexico" },
+      { key: "client.argentina", value: "argentina" },
+      { key: "client.chile", value: "chile" },
+    ],
+  },
+  {
+    region: "Asia & Pacific",
+    countries: [
+      { key: "client.singapore", value: "singapore" },
+      { key: "client.hongkong", value: "hongkong" },
+      { key: "client.japan", value: "japan" },
+      { key: "client.australia", value: "australia" },
+      { key: "client.uae", value: "uae" },
+      { key: "client.qatar", value: "qatar" },
+    ],
+  },
+  {
+    region: "Other",
+    countries: [{ key: "client.other", value: "other" }],
+  },
 ]
 
 const profiles = [
   { key: "client.professional", value: "professional" },
   { key: "client.non_professional", value: "non_professional" },
 ]
+
+const allCountries = countryGroups.flatMap((g) => g.countries)
 
 function useClickOutside(ref: React.RefObject<HTMLElement | null>, onClose: () => void) {
   useEffect(() => {
@@ -43,16 +90,19 @@ export default function Header() {
   const { locale, setLocale, t } = useLanguage()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
+  const [offeringOpen, setOfferingOpen] = useState(false)
   const [clientModalOpen, setClientModalOpen] = useState(false)
-  const [selectedCountry, setSelectedCountry] = useState(countries[0])
+  const [selectedCountry, setSelectedCountry] = useState(allCountries[0])
   const [selectedProfile, setSelectedProfile] = useState(profiles[0])
-  const [tempCountry, setTempCountry] = useState(countries[0])
+  const [tempCountry, setTempCountry] = useState(allCountries[0])
   const [tempProfile, setTempProfile] = useState(profiles[0])
   const [scrolled, setScrolled] = useState(false)
 
   const langRef = useRef<HTMLDivElement>(null)
+  const offeringRef = useRef<HTMLDivElement>(null)
 
   useClickOutside(langRef, () => setLangOpen(false))
+  useClickOutside(offeringRef, () => setOfferingOpen(false))
 
   const handleScroll = useCallback(() => {
     setScrolled(window.scrollY > 50)
@@ -63,17 +113,14 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [handleScroll])
 
-  // Close modal on ESC
   useEffect(() => {
     if (!clientModalOpen) return
     function handleKeyDown(e: KeyboardEvent) {
-      if (e.key === "Escape") {
-        handleModalCancel()
-      }
+      if (e.key === "Escape") handleModalCancel()
     }
     document.addEventListener("keydown", handleKeyDown)
     return () => document.removeEventListener("keydown", handleKeyDown)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [clientModalOpen])
 
   function openClientModal() {
@@ -93,32 +140,34 @@ export default function Header() {
     setClientModalOpen(false)
   }
 
+  const offeringItems = [
+    { labelKey: "nav.offering.aif", href: "/offering/aif" },
+    { labelKey: "nav.offering.investment", href: "/offering/investment-solutions" },
+    { labelKey: "nav.offering.advisory", href: "/offering/advisory" },
+  ]
+
   const navItems = [
     { key: "nav.about", href: "/about" },
-    { key: "nav.offering", href: "#services" },
     { key: "nav.news", href: "/news" },
     { key: "nav.contact", href: "/contact" },
   ]
+
+  const textColorClass = scrolled
+    ? "text-foreground/65 hover:text-foreground"
+    : "text-primary-foreground/75 hover:text-primary-foreground"
 
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-background shadow-lg"
-            : "bg-primary"
+          scrolled ? "bg-background shadow-lg" : "bg-primary"
         }`}
       >
-        {/* Top bar */}
-        <div className="relative mx-auto max-w-7xl flex items-center justify-end px-6 py-1.5 gap-5">
-          {/* Client Selector - opens modal */}
+        {/* Top bar — right-aligned utility links */}
+        <div className="relative mx-auto max-w-[1440px] flex items-center justify-end px-8 py-1.5 gap-5">
           <button
             onClick={openClientModal}
-            className={`flex items-center gap-1.5 text-xs transition-colors ${
-              scrolled
-                ? "text-foreground/60 hover:text-foreground"
-                : "text-primary-foreground/70 hover:text-primary-foreground"
-            }`}
+            className={`flex items-center gap-1.5 text-xs transition-colors ${textColorClass}`}
             aria-label={t("client.selector")}
           >
             <Users className="h-3 w-3" />
@@ -128,20 +177,12 @@ export default function Header() {
             <ChevronDown className="h-3 w-3" />
           </button>
 
-          {/* Separator */}
           <div className={`h-3 w-px transition-colors duration-500 ${scrolled ? "bg-border" : "bg-primary-foreground/15"}`} />
 
-          {/* Language Selector */}
           <div className="relative" ref={langRef}>
             <button
-              onClick={() => {
-                setLangOpen(!langOpen)
-              }}
-              className={`flex items-center gap-1.5 text-xs transition-colors ${
-                scrolled
-                  ? "text-foreground/60 hover:text-foreground"
-                  : "text-primary-foreground/70 hover:text-primary-foreground"
-              }`}
+              onClick={() => setLangOpen(!langOpen)}
+              className={`flex items-center gap-1.5 text-xs transition-colors ${textColorClass}`}
               aria-label="Language"
             >
               <Globe className="h-3 w-3" />
@@ -153,14 +194,9 @@ export default function Header() {
                 {(Object.keys(localeLabels) as Locale[]).map((l) => (
                   <button
                     key={l}
-                    onClick={() => {
-                      setLocale(l)
-                      setLangOpen(false)
-                    }}
+                    onClick={() => { setLocale(l); setLangOpen(false) }}
                     className={`w-full text-left px-3 py-1.5 text-xs transition-colors ${
-                      locale === l
-                        ? "bg-accent/10 text-accent font-medium"
-                        : "text-foreground hover:bg-muted"
+                      locale === l ? "bg-accent/10 text-accent font-medium" : "text-foreground hover:bg-muted"
                     }`}
                   >
                     {localeLabels[l]}
@@ -170,19 +206,13 @@ export default function Header() {
             )}
           </div>
 
-          {/* Separator */}
           <div className={`h-3 w-px transition-colors duration-500 ${scrolled ? "bg-border" : "bg-primary-foreground/15"}`} />
 
-          {/* Login */}
           <a
             href="https://investors.heroics-capital.com"
             target="_blank"
             rel="noopener noreferrer"
-            className={`flex items-center gap-1.5 text-xs transition-colors ${
-              scrolled
-                ? "text-foreground/60 hover:text-foreground"
-                : "text-primary-foreground/70 hover:text-primary-foreground"
-            }`}
+            className={`flex items-center gap-1.5 text-xs transition-colors ${textColorClass}`}
             aria-label="Login"
           >
             <Image
@@ -191,15 +221,16 @@ export default function Header() {
               width={18}
               height={18}
               className="rounded-full"
+              loading="eager"
             />
             <span className="hidden sm:inline">Login</span>
           </a>
         </div>
 
-        {/* Main nav */}
-        <div className="relative mx-auto max-w-7xl flex items-center justify-between px-6 py-3.5">
-          {/* Logo - spans full header height using negative margin to overlap into top bar */}
-          <Link href="/" className="relative flex items-center group z-10" aria-label="Heroics Capital home">
+        {/* Main nav — logo FAR LEFT, navigation FAR RIGHT */}
+        <div className="relative mx-auto max-w-[1440px] flex items-center justify-between px-8 py-3.5">
+          {/* Logo pinned far-left, spans both rows via negative-top margin */}
+          <Link href="/" className="relative flex items-center group z-10 shrink-0" aria-label="Heroics Capital home">
             <div className="relative -mt-8">
               <Image
                 src={scrolled ? "/images/heroics-logo-rgb.png" : "/images/heroics-logo-rgb blanc.png"}
@@ -212,40 +243,55 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop nav pinned far-right */}
           <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
-            {navItems.map((item) =>
-              item.href.startsWith("/") ? (
-                <Link
-                  key={item.key}
-                  href={item.href}
-                  className={`text-sm transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] hover:after:w-full after:transition-all duration-500 ${
-                    scrolled
-                      ? "text-foreground/65 hover:text-foreground after:bg-foreground"
-                      : "text-primary-foreground/75 hover:text-primary-foreground after:bg-primary-foreground"
-                  }`}
-                >
-                  {t(item.key)}
-                </Link>
-              ) : (
-                <a
-                  key={item.key}
-                  href={item.href}
-                  className={`text-sm transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] hover:after:w-full after:transition-all duration-500 ${
-                    scrolled
-                      ? "text-foreground/65 hover:text-foreground after:bg-foreground"
-                      : "text-primary-foreground/75 hover:text-primary-foreground after:bg-primary-foreground"
-                  }`}
-                >
-                  {t(item.key)}
-                </a>
-              )
-            )}
+            {/* Offering dropdown */}
+            <div className="relative" ref={offeringRef}>
+              <button
+                onClick={() => setOfferingOpen(!offeringOpen)}
+                className={`flex items-center gap-1 text-sm transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[1px] after:transition-all duration-500 ${
+                  offeringOpen
+                    ? scrolled ? "text-foreground after:w-full after:bg-foreground" : "text-primary-foreground after:w-full after:bg-primary-foreground"
+                    : `${textColorClass} after:w-0 ${scrolled ? "hover:after:w-full after:bg-foreground" : "hover:after:w-full after:bg-primary-foreground"}`
+                }`}
+                aria-expanded={offeringOpen}
+              >
+                {t("nav.offering")}
+                <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${offeringOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              {offeringOpen && (
+                <div className="absolute right-0 top-full mt-2 bg-background rounded-md shadow-xl border border-border py-1 min-w-[220px] z-50">
+                  {offeringItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setOfferingOpen(false)}
+                      className="block px-4 py-2.5 text-sm text-foreground hover:bg-muted hover:text-accent transition-colors"
+                    >
+                      {t(item.labelKey)}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {navItems.map((item) => (
+              <Link
+                key={item.key}
+                href={item.href}
+                className={`text-sm transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] hover:after:w-full after:transition-all duration-500 ${textColorClass} ${
+                  scrolled ? "after:bg-foreground" : "after:bg-primary-foreground"
+                }`}
+              >
+                {t(item.key)}
+              </Link>
+            ))}
           </nav>
 
           {/* Mobile menu button */}
           <button
-            className={`md:hidden transition-colors duration-500 ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
+            className={`md:hidden ml-auto transition-colors duration-500 ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
@@ -255,59 +301,47 @@ export default function Header() {
 
         {/* Mobile Nav */}
         {mobileMenuOpen && (
-          <div className={`md:hidden transition-colors duration-500 ${
-            scrolled ? "bg-background" : "bg-primary"
-          }`}>
-            <nav className="flex flex-col px-6 py-4 gap-3" aria-label="Mobile navigation">
-              {navItems.map((item) =>
-                item.href.startsWith("/") ? (
-                  <Link
-                    key={item.key}
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`text-sm transition-colors py-2 ${
-                      scrolled ? "text-foreground/65 hover:text-foreground" : "text-primary-foreground/75 hover:text-primary-foreground"
-                    }`}
-                  >
-                    {t(item.key)}
-                  </Link>
-                ) : (
-                  <a
-                    key={item.key}
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`text-sm transition-colors py-2 ${
-                      scrolled ? "text-foreground/65 hover:text-foreground" : "text-primary-foreground/75 hover:text-primary-foreground"
-                    }`}
-                  >
-                    {t(item.key)}
-                  </a>
-                )
-              )}
+          <div className={`md:hidden transition-colors duration-500 ${scrolled ? "bg-background" : "bg-primary"}`}>
+            <nav className="flex flex-col px-6 py-4 gap-1" aria-label="Mobile navigation">
+              <p className={`text-[10px] font-semibold tracking-widest uppercase px-2 pt-1 pb-0.5 ${scrolled ? "text-foreground/40" : "text-primary-foreground/40"}`}>
+                {t("nav.offering")}
+              </p>
+              {offeringItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`text-sm transition-colors py-2 pl-4 ${textColorClass}`}
+                >
+                  {t(item.labelKey)}
+                </Link>
+              ))}
 
-              {/* Mobile client selector - opens modal */}
-              <div className={`border-t pt-3 mt-2 ${
-                scrolled ? "border-border" : "border-primary-foreground/8"
-              }`}>
+              <div className={`h-px my-2 ${scrolled ? "bg-border" : "bg-primary-foreground/10"}`} />
+
+              {navItems.map((item) => (
+                <Link
+                  key={item.key}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`text-sm transition-colors py-2 ${textColorClass}`}
+                >
+                  {t(item.key)}
+                </Link>
+              ))}
+
+              <div className={`border-t pt-3 mt-2 ${scrolled ? "border-border" : "border-primary-foreground/10"}`}>
                 <button
-                  onClick={() => {
-                    setMobileMenuOpen(false)
-                    openClientModal()
-                  }}
-                  className={`flex items-center gap-2 text-xs py-2 transition-colors ${
-                    scrolled ? "text-foreground/60 hover:text-foreground" : "text-primary-foreground/60 hover:text-primary-foreground"
-                  }`}
+                  onClick={() => { setMobileMenuOpen(false); openClientModal() }}
+                  className={`flex items-center gap-2 text-xs py-2 transition-colors ${scrolled ? "text-foreground/60 hover:text-foreground" : "text-primary-foreground/60 hover:text-primary-foreground"}`}
                 >
                   <Users className="h-3.5 w-3.5" />
                   <span>{t(selectedCountry.key)} &middot; {t(selectedProfile.key)}</span>
                 </button>
               </div>
 
-              {/* Mobile language */}
-              <div className={`border-t pt-3 mt-2 ${scrolled ? "border-border" : "border-primary-foreground/8"}`}>
-                <p className={`text-[10px] font-semibold tracking-widest uppercase mb-2 ${
-                  scrolled ? "text-foreground/40" : "text-primary-foreground/40"
-                }`}>
+              <div className={`border-t pt-3 mt-2 ${scrolled ? "border-border" : "border-primary-foreground/10"}`}>
+                <p className={`text-[10px] font-semibold tracking-widest uppercase mb-2 ${scrolled ? "text-foreground/40" : "text-primary-foreground/40"}`}>
                   Language
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -334,56 +368,65 @@ export default function Header() {
       {/* Client Profile Modal */}
       {clientModalOpen && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center"
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4"
           role="dialog"
           aria-modal="true"
           aria-label={t("client.selector")}
         >
-          {/* Overlay */}
           <div
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={handleModalCancel}
           />
 
-          {/* Modal card */}
-          <div className="relative bg-background rounded-xl shadow-2xl border border-border w-full max-w-md mx-4 p-6 md:p-8">
-            {/* Header */}
-            <div className="flex items-center gap-3 mb-6">
-              <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10">
+          <div className="relative bg-background rounded-xl shadow-2xl border border-border w-full max-w-2xl mx-auto flex flex-col max-h-[90vh]">
+            {/* Sticky header */}
+            <div className="flex items-center gap-3 px-6 pt-6 pb-4 border-b border-border shrink-0">
+              <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/10 shrink-0">
                 <Users className="h-5 w-5 text-primary" />
               </div>
-              <div>
-                <h2 className="text-base font-semibold text-foreground">{t("client.selector")}</h2>
-              </div>
+              <h2 className="text-base font-semibold text-foreground">{t("client.selector")}</h2>
+              <button
+                onClick={handleModalCancel}
+                className="ml-auto text-muted-foreground hover:text-foreground transition-colors"
+                aria-label="Close"
+              >
+                <X className="h-4 w-4" />
+              </button>
             </div>
 
-            {/* Country selection */}
-            <div className="mb-5">
-              <p className="text-[10px] font-semibold tracking-widest uppercase text-muted-foreground mb-2.5">
+            {/* Scrollable body */}
+            <div className="overflow-y-auto px-6 py-5 flex-1">
+              <p className="text-[10px] font-semibold tracking-widest uppercase text-muted-foreground mb-4">
                 {t("client.country")}
               </p>
-              <div className="flex flex-col gap-1">
-                {countries.map((c) => (
-                  <button
-                    key={c.value}
-                    onClick={() => setTempCountry(c)}
-                    className={`text-left px-4 py-2.5 text-sm rounded-lg transition-colors ${
-                      tempCountry.value === c.value
-                        ? "bg-accent/10 text-accent font-medium"
-                        : "text-foreground hover:bg-muted"
-                    }`}
-                  >
-                    {t(c.key)}
-                  </button>
+
+              <div className="space-y-5">
+                {countryGroups.map((group) => (
+                  <div key={group.region}>
+                    <p className="text-[11px] font-semibold tracking-wider uppercase text-muted-foreground/60 mb-2 px-1">
+                      {group.region}
+                    </p>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-1">
+                      {group.countries.map((c) => (
+                        <button
+                          key={c.value}
+                          onClick={() => setTempCountry(c)}
+                          className={`text-left px-3 py-2 text-sm rounded-lg transition-colors truncate ${
+                            tempCountry.value === c.value
+                              ? "bg-accent/10 text-accent font-medium"
+                              : "text-foreground hover:bg-muted"
+                          }`}
+                        >
+                          {t(c.key)}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
-            </div>
 
-            {/* Divider */}
-            <div className="h-px bg-border mb-5" />
+              <div className="h-px bg-border my-5" />
 
-            {/* Profile selection */}
-            <div className="mb-6">
               <p className="text-[10px] font-semibold tracking-widest uppercase text-muted-foreground mb-2.5">
                 {t("client.profile")}
               </p>
@@ -404,8 +447,8 @@ export default function Header() {
               </div>
             </div>
 
-            {/* Actions */}
-            <div className="flex gap-3 pt-3 border-t border-border">
+            {/* Sticky footer */}
+            <div className="flex gap-3 px-6 py-4 border-t border-border shrink-0">
               <button
                 onClick={handleModalCancel}
                 className="flex-1 text-center text-sm font-medium text-foreground/70 py-2.5 rounded-lg border border-border hover:bg-muted transition-colors"

@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import { useLanguage } from "@/lib/language-context"
 import { ArrowDown } from "lucide-react"
 
@@ -9,15 +8,22 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Background video (replaces static image) */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/hero.jpg"
-          alt="Heroics Capital Partners"
-          fill
-          className="object-cover"
-          priority
-        />
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/images/hero.jpg"
+          aria-hidden="true"
+        >
+          {/* Primary source — replace src with actual video path when available */}
+          <source src="/videos/hero-bg.mp4" type="video/mp4" />
+          {/* Fallback: show poster image if video not found */}
+        </video>
         <div className="absolute inset-0 bg-primary/70" />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-transparent to-primary/80" />
       </div>
