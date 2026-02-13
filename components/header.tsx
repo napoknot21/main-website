@@ -143,7 +143,7 @@ export default function Header() {
   const offeringItems = [
     { labelKey: "nav.offering.aif", href: "/offering/aif" },
     { labelKey: "nav.offering.investment", href: "/offering/investment-solutions" },
-    { labelKey: "nav.offering.advisory", href: "/offering/advisory" },
+    { labelKey: "nav.offering.manco", href: "/offering/manco" },
   ]
 
   const navItems = [
