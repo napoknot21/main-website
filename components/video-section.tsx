@@ -17,7 +17,7 @@ export default function VideoSection() {
           aria-label="Heroics Capital presentation"
         >
           {/* Replace with your real video source */}
-          <source src="/videos/heroicspitch.mp4" type="video/mp4" />
+          <source src="/videos/heroicspitch_HD.gif" type="video/mp4" />
           {/* Fallback for older browsers */}
           <p className="text-primary-foreground/60 text-sm p-6">
             Your browser does not support HTML5 video.
