@@ -1,39 +1,77 @@
 "use client"
 
+import { useRef, useEffect, useState } from "react"
 import Image from "next/image"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import CookieBanner from "@/components/cookie-banner"
 import ContactCtaSection from "@/components/contact-cta-section"
 import { useLanguage } from "@/lib/language-context"
-import { Eye, Target, Rocket } from "lucide-react"
+import {
+  Eye,
+  Target,
+  Rocket,
+  Sparkles,
+  TrendingUp,
+  FlaskConical,
+  Search,
+  ShieldCheck,
+  Zap,
+  Code,
+  Calendar,
+} from "lucide-react"
+
+function useInView(threshold = 0.1) {
+  const ref = useRef<HTMLElement>(null)
+  const [inView, setInView] = useState(false)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setInView(true); observer.disconnect() } },
+      { threshold }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [threshold])
+  return { ref, inView }
+}
 
 const values = [
-  {
-    icon: Eye,
-    titleKey: "about.vision.title",
-    descKey: "about.vision.desc",
-  },
-  {
-    icon: Target,
-    titleKey: "about.mission.title",
-    descKey: "about.mission.desc",
-  },
-  {
-    icon: Rocket,
-    titleKey: "about.ambition.title",
-    descKey: "about.ambition.desc",
-  },
+  { icon: Eye, titleKey: "about.vision.title", descKey: "about.vision.desc" },
+  { icon: Target, titleKey: "about.mission.title", descKey: "about.mission.desc" },
+  { icon: Rocket, titleKey: "about.ambition.title", descKey: "about.ambition.desc" },
+  { icon: Sparkles, titleKey: "about.culture.title", descKey: "about.culture.desc" },
 ]
+
+const skills = [
+  { key: "trading", icon: TrendingUp },
+  { key: "quant", icon: FlaskConical },
+  { key: "research", icon: Search },
+  { key: "risk", icon: ShieldCheck },
+  { key: "execution", icon: Zap },
+  { key: "it", icon: Code },
+] as const
+
+const milestones = [
+  { key: "2023", year: "2023" },
+  { key: "2024a", year: "2024" },
+  { key: "2024b", year: "2024" },
+  { key: "2024c", year: "2024" },
+  { key: "2024d", year: "2024" },
+] as const
 
 export default function AboutPage() {
   const { t } = useLanguage()
+  const valuesSection = useInView()
+  const skillsSection = useInView()
+  const milestonesSection = useInView()
 
   return (
     <>
       <Header />
       <main>
-        {/* About Hero - Smaller banner */}
+        {/* Hero */}
         <section className="relative h-[40vh] min-h-[280px] max-h-[400px] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
@@ -51,49 +89,42 @@ export default function AboutPage() {
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-primary-foreground tracking-tight text-balance">
                 {t("about.page.title")}
               </h1>
-              <p className="text-sm sm:text-base text-primary-foreground/60 mt-4 max-w-lg mx-auto leading-relaxed">
+              <p className="text-sm sm:text-base text-primary-foreground/60 mt-4 max-w-lg mx-auto leading-relaxed text-pretty">
                 {t("about.page.subtitle")}
               </p>
             </div>
           </div>
         </section>
 
-        {/* Values Section */}
-        <section className="py-20 md:py-28 bg-background">
+        {/* Values */}
+        <section ref={valuesSection.ref as React.RefObject<HTMLElement>} className="py-20 md:py-28 bg-background">
           <div className="mx-auto max-w-6xl px-6">
-            {/* Section heading */}
             <div className="text-center mb-16 md:mb-20">
               <div className="inline-block h-px w-12 bg-accent mb-6" />
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground text-balance">
                 {t("about.values.title")}
               </h2>
             </div>
-
-            {/* Values cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-              {values.map((item) => {
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {values.map((item, idx) => {
                 const Icon = item.icon
                 return (
                   <div
                     key={item.titleKey}
-                    className="flex flex-col items-center text-center group"
+                    className={`flex flex-col items-center text-center group transition-all duration-700 ${
+                      valuesSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                    }`}
+                    style={{ transitionDelay: `${idx * 120}ms` }}
                   >
-                    {/* Icon */}
                     <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary text-primary-foreground mb-6 group-hover:scale-110 transition-transform duration-300">
                       <Icon className="h-7 w-7" />
                     </div>
-
-                    {/* Title */}
                     <h3 className="text-xl font-semibold text-foreground mb-4">
                       {t(item.titleKey)}
                     </h3>
-
-                    {/* Description */}
-                    <p className="text-muted-foreground leading-relaxed text-pretty">
+                    <p className="text-muted-foreground leading-relaxed text-pretty text-sm">
                       {t(item.descKey)}
                     </p>
-
-                    {/* Accent line */}
                     <div className="h-px w-12 bg-accent/30 mt-8 group-hover:w-20 transition-all duration-300" />
                   </div>
                 )
@@ -101,6 +132,97 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        {/* Team Major Skills */}
+        <section ref={skillsSection.ref as React.RefObject<HTMLElement>} className="py-20 md:py-28 bg-muted/30 border-y border-border">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="text-center mb-16">
+              <div className="inline-block h-px w-12 bg-accent mb-6" />
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground text-balance">
+                {t("about.skills.title")}
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {skills.map(({ key, icon: Icon }, idx) => (
+                <div
+                  key={key}
+                  className={`flex items-start gap-4 p-6 rounded-xl border border-border bg-background hover:border-accent/30 hover:shadow-sm transition-all duration-700 ${
+                    skillsSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
+                  style={{ transitionDelay: `${idx * 100}ms` }}
+                >
+                  <div className="flex items-center justify-center h-11 w-11 rounded-full bg-accent/10 text-accent shrink-0 mt-0.5">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-semibold text-foreground mb-1.5">
+                      {t(`about.skills.${key}`)}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {t(`about.skills.${key}.desc`)}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Milestones Timeline */}
+        <section ref={milestonesSection.ref as React.RefObject<HTMLElement>} className="py-20 md:py-28 bg-background">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="text-center mb-16">
+              <div className="inline-block h-px w-12 bg-accent mb-6" />
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground text-balance">
+                {t("about.milestones.title")}
+              </h2>
+            </div>
+
+            {/* Timeline */}
+            <div className="relative">
+              {/* Vertical line */}
+              <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
+
+              <div className="flex flex-col gap-12">
+                {milestones.map(({ key, year }, idx) => {
+                  const isLeft = idx % 2 === 0
+                  return (
+                    <div
+                      key={key}
+                      className={`relative flex items-start gap-6 md:gap-0 transition-all duration-700 ${
+                        milestonesSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                      }`}
+                      style={{ transitionDelay: `${idx * 150}ms` }}
+                    >
+                      {/* Dot */}
+                      <div className="absolute left-6 md:left-1/2 -translate-x-1/2 z-10 flex items-center justify-center h-12 w-12 rounded-full bg-primary text-primary-foreground border-4 border-background">
+                        <Calendar className="h-5 w-5" />
+                      </div>
+
+                      {/* Content card */}
+                      <div
+                        className={`ml-16 md:ml-0 md:w-[calc(50%-2rem)] ${
+                          isLeft ? "md:pr-8 md:text-right" : "md:pl-8 md:ml-auto"
+                        }`}
+                      >
+                        <span className="text-[10px] font-bold tracking-widest uppercase text-accent">
+                          {year}
+                        </span>
+                        <h3 className="text-base font-semibold text-foreground mt-1 mb-2">
+                          {t(`about.milestones.${key}.title`)}
+                        </h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {t(`about.milestones.${key}.desc`)}
+                        </p>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+
         <ContactCtaSection variant="inline" />
       </main>
       <Footer />
