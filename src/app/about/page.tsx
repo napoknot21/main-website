@@ -224,7 +224,11 @@ export default function AboutPage() {
         <TeamSection />
         <PartnersSection />
 
-        <ContactCtaSection variant="inline" />
+        <ContactCtaSection
+          variant="banner"
+          titleKey="contact.about.title"
+          descKey="contact.about.desc"
+        />
       </main>
       <Footer />
       <CookieBanner />

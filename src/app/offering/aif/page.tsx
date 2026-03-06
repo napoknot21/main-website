@@ -5,6 +5,7 @@ import Link from "next/link"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import CookieBanner from "@/components/cookie-banner"
+import ContactCtaSection from "@/components/contact-cta-section"
 import { useLanguage } from "@/lib/language-context"
 import {
   ArrowRight,
@@ -106,9 +107,8 @@ export default function AifPage() {
               {approachItems.map(({ key, icon: Icon }, idx) => (
                 <div
                   key={key}
-                  className={`flex flex-col items-center text-center p-8 rounded-xl border border-border bg-background transition-all duration-700 ${
-                    approach.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                  }`}
+                  className={`flex flex-col items-center text-center p-8 rounded-xl border border-border bg-background transition-all duration-700 ${approach.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                    }`}
                   style={{ transitionDelay: `${idx * 150}ms` }}
                 >
                   <div className="flex items-center justify-center h-14 w-14 rounded-full bg-primary text-primary-foreground mb-5">
@@ -139,9 +139,8 @@ export default function AifPage() {
               {assetClasses.map(({ key, icon: Icon }, idx) => (
                 <div
                   key={key}
-                  className={`flex items-center gap-3 px-6 py-4 rounded-lg border border-border bg-muted/20 transition-all duration-600 hover:border-accent/40 hover:bg-accent/5 ${
-                    assets.inView ? "opacity-100 scale-100" : "opacity-0 scale-95"
-                  }`}
+                  className={`flex items-center gap-3 px-6 py-4 rounded-lg border border-border bg-muted/20 transition-all duration-600 hover:border-accent/40 hover:bg-accent/5 ${assets.inView ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                    }`}
                   style={{ transitionDelay: `${idx * 100}ms` }}
                 >
                   <Icon className="h-5 w-5 text-accent shrink-0" />
@@ -154,9 +153,8 @@ export default function AifPage() {
 
         {/* Continuous Monitoring */}
         <section ref={monitoring.ref as React.RefObject<HTMLElement>} className="py-20 bg-primary">
-          <div className={`mx-auto max-w-6xl px-8 flex flex-col md:flex-row items-center gap-10 transition-all duration-700 ${
-            monitoring.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}>
+          <div className={`mx-auto max-w-6xl px-8 flex flex-col md:flex-row items-center gap-10 transition-all duration-700 ${monitoring.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}>
             <div className="flex items-center justify-center h-20 w-20 rounded-full bg-primary-foreground/10 shrink-0">
               <Activity className="h-10 w-10 text-primary-foreground" />
             </div>
@@ -184,9 +182,8 @@ export default function AifPage() {
               {benefits.map(({ key, icon: Icon }, idx) => (
                 <div
                   key={key}
-                  className={`group flex flex-col items-center text-center transition-all duration-700 ${
-                    benefitsSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                  }`}
+                  className={`group flex flex-col items-center text-center transition-all duration-700 ${benefitsSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                    }`}
                   style={{ transitionDelay: `${idx * 150}ms` }}
                 >
                   <div className="flex items-center justify-center h-14 w-14 rounded-full bg-accent/10 text-accent mb-5 group-hover:scale-110 transition-transform duration-300">
@@ -206,21 +203,11 @@ export default function AifPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-12 border-t border-border">
-          <div className="mx-auto max-w-6xl px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div>
-              <p className="text-sm font-semibold text-foreground">{t("contact.cta.inline.title")}</p>
-              <p className="text-sm text-muted-foreground mt-0.5 max-w-md">{t("contact.cta.inline.desc")}</p>
-            </div>
-            <Link
-              href="/contact"
-              className="shrink-0 inline-flex items-center gap-2 bg-primary text-primary-foreground text-sm font-medium px-6 py-3 rounded-md hover:bg-primary/90 transition-all group"
-            >
-              {t("offering.aif.cta.label")}
-              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-        </section>
+        <ContactCtaSection
+          variant="banner"
+          titleKey="contact.offering.aif.title"
+          descKey="contact.offering.aif.desc"
+        />
       </main>
       <Footer />
       <CookieBanner />

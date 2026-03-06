@@ -8,9 +8,17 @@ interface ContactCtaSectionProps {
   /** "banner" = full dark section (existing behaviour, used on home)
    *  "inline" = lighter strip, suitable for bottom of inner pages */
   variant?: "banner" | "inline"
+  titleKey?: string
+  descKey?: string
+  btnKey?: string
 }
 
-export default function ContactCtaSection({ variant = "banner" }: ContactCtaSectionProps) {
+export default function ContactCtaSection({
+  variant = "banner",
+  titleKey = "contact.title",
+  descKey = "contact.description",
+  btnKey = "contact.cta"
+}: ContactCtaSectionProps) {
   const { t } = useLanguage()
 
   if (variant === "inline") {
@@ -45,16 +53,16 @@ export default function ContactCtaSection({ variant = "banner" }: ContactCtaSect
           <div className="inline-block h-px w-12 bg-primary-foreground/30 mb-8" />
         </div>
         <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-primary-foreground font-semibold mb-6">
-          {t("contact.title")}
+          {t(titleKey)}
         </h2>
         <p className="text-base md:text-lg text-primary-foreground/65 leading-relaxed mb-10 max-w-3xl mx-auto">
-          {t("contact.description")}
+          {t(descKey)}
         </p>
         <Link
           href="/contact"
           className="inline-flex items-center gap-2 bg-primary-foreground text-primary text-sm font-medium px-8 py-3.5 rounded-md hover:bg-primary-foreground/90 transition-all duration-300 group"
         >
-          {t("contact.cta")}
+          {t(btnKey)}
           <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>

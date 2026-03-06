@@ -48,7 +48,11 @@ export default function AdvisoryPage() {
           </div>
         </section>
 
-        <ContactCtaSection variant="inline" />
+        <ContactCtaSection
+          variant="banner"
+          titleKey="contact.offering.advisory.title"
+          descKey="contact.offering.advisory.desc"
+        />
       </main>
       <Footer />
       <CookieBanner />

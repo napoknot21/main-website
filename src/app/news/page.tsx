@@ -161,7 +161,11 @@ export default function NewsPage() {
             </div>
           </div>
         </section>
-        <ContactCtaSection variant="inline" />
+        <ContactCtaSection
+          variant="banner"
+          titleKey="contact.news.title"
+          descKey="contact.news.desc"
+        />
       </main>
       <Footer />
       <CookieBanner />
