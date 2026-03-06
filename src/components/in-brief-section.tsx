@@ -107,7 +107,7 @@ export default function InBriefSection() {
       id="brief"
       className="py-24 md:py-32 bg-background"
     >
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-screen-2xl px-6">
         {/* Title */}
         <div className="text-center mb-16 md:mb-20">
           <div className="inline-block h-px w-12 bg-accent mb-6" />
@@ -121,9 +121,8 @@ export default function InBriefSection() {
           {stats.map((stat) => (
             <div
               key={stat.labelKey}
-              className={`flex flex-col items-center text-center gap-3 transition-all duration-700 ${
-                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
+              className={`flex flex-col items-center text-center gap-3 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
             >
               <div className="flex items-center justify-center h-12 w-12 rounded-full bg-accent/10 text-accent mb-2">
                 {stat.icon}

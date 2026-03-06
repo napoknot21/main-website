@@ -40,14 +40,14 @@ export default function ContactCtaSection({ variant = "banner" }: ContactCtaSect
         <div className="w-full h-full bg-gradient-to-l from-primary-foreground to-transparent" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
+      <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
         <div className="mb-6">
           <div className="inline-block h-px w-12 bg-primary-foreground/30 mb-8" />
         </div>
-        <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-primary-foreground font-semibold text-balance mb-6">
+        <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-primary-foreground font-semibold mb-6">
           {t("contact.title")}
         </h2>
-        <p className="text-base md:text-lg text-primary-foreground/65 leading-relaxed mb-10 max-w-xl mx-auto text-pretty">
+        <p className="text-base md:text-lg text-primary-foreground/65 leading-relaxed mb-10 max-w-3xl mx-auto">
           {t("contact.description")}
         </p>
         <Link

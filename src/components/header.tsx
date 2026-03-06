@@ -159,12 +159,11 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "bg-background shadow-lg" : "bg-primary"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-background shadow-lg" : "bg-primary"
+          }`}
       >
         {/* Top bar — right-aligned utility links */}
-        <div className="relative mx-auto max-w-[1440px] flex items-center justify-end px-8 py-1.5 gap-5">
+        <div className="relative mx-auto max-w-screen-2xl flex items-center justify-end px-8 py-1.5 gap-5">
           <button
             onClick={openClientModal}
             className={`flex items-center gap-1.5 text-xs transition-colors ${textColorClass}`}
@@ -195,9 +194,8 @@ export default function Header() {
                   <button
                     key={l}
                     onClick={() => { setLocale(l); setLangOpen(false) }}
-                    className={`w-full text-left px-3 py-1.5 text-xs transition-colors ${
-                      locale === l ? "bg-accent/10 text-accent font-medium" : "text-foreground hover:bg-muted"
-                    }`}
+                    className={`w-full text-left px-3 py-1.5 text-xs transition-colors ${locale === l ? "bg-accent/10 text-accent font-medium" : "text-foreground hover:bg-muted"
+                      }`}
                   >
                     {localeLabels[l]}
                   </button>
@@ -228,7 +226,7 @@ export default function Header() {
         </div>
 
         {/* Main nav — logo FAR LEFT, navigation FAR RIGHT */}
-        <div className="relative mx-auto max-w-[1440px] flex items-center justify-between px-8 py-3.5">
+        <div className="relative mx-auto max-w-screen-2xl flex items-center justify-between px-8 py-3.5">
           {/* Logo pinned far-left, spans both rows via negative-top margin */}
           <Link href="/" className="relative flex items-center group z-10 shrink-0" aria-label="Heroics Capital home">
             <div className="relative -mt-8">
@@ -249,11 +247,10 @@ export default function Header() {
             <div className="relative" ref={offeringRef}>
               <button
                 onClick={() => setOfferingOpen(!offeringOpen)}
-                className={`flex items-center gap-1 text-sm transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[1px] after:transition-all duration-500 ${
-                  offeringOpen
+                className={`flex items-center gap-1 text-sm transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[1px] after:transition-all duration-500 ${offeringOpen
                     ? scrolled ? "text-foreground after:w-full after:bg-foreground" : "text-primary-foreground after:w-full after:bg-primary-foreground"
                     : `${textColorClass} after:w-0 ${scrolled ? "hover:after:w-full after:bg-foreground" : "hover:after:w-full after:bg-primary-foreground"}`
-                }`}
+                  }`}
                 aria-expanded={offeringOpen}
               >
                 {t("nav.offering")}
@@ -280,9 +277,8 @@ export default function Header() {
               <Link
                 key={item.key}
                 href={item.href}
-                className={`text-sm transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] hover:after:w-full after:transition-all duration-500 ${textColorClass} ${
-                  scrolled ? "after:bg-foreground" : "after:bg-primary-foreground"
-                }`}
+                className={`text-sm transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] hover:after:w-full after:transition-all duration-500 ${textColorClass} ${scrolled ? "after:bg-foreground" : "after:bg-primary-foreground"
+                  }`}
               >
                 {t(item.key)}
               </Link>
@@ -349,11 +345,10 @@ export default function Header() {
                     <button
                       key={l}
                       onClick={() => setLocale(l)}
-                      className={`text-xs px-3 py-1.5 rounded transition-colors ${
-                        locale === l
+                      className={`text-xs px-3 py-1.5 rounded transition-colors ${locale === l
                           ? scrolled ? "bg-accent/10 text-foreground font-medium" : "bg-primary-foreground/15 text-primary-foreground font-medium"
                           : scrolled ? "text-foreground/50 hover:text-foreground" : "text-primary-foreground/50 hover:text-primary-foreground"
-                      }`}
+                        }`}
                     >
                       {localeLabels[l]}
                     </button>
@@ -411,11 +406,10 @@ export default function Header() {
                         <button
                           key={c.value}
                           onClick={() => setTempCountry(c)}
-                          className={`text-left px-3 py-2 text-sm rounded-lg transition-colors truncate ${
-                            tempCountry.value === c.value
+                          className={`text-left px-3 py-2 text-sm rounded-lg transition-colors truncate ${tempCountry.value === c.value
                               ? "bg-accent/10 text-accent font-medium"
                               : "text-foreground hover:bg-muted"
-                          }`}
+                            }`}
                         >
                           {t(c.key)}
                         </button>
@@ -435,11 +429,10 @@ export default function Header() {
                   <button
                     key={p.value}
                     onClick={() => setTempProfile(p)}
-                    className={`text-left px-4 py-2.5 text-sm rounded-lg transition-colors ${
-                      tempProfile.value === p.value
+                    className={`text-left px-4 py-2.5 text-sm rounded-lg transition-colors ${tempProfile.value === p.value
                         ? "bg-accent/10 text-accent font-medium"
                         : "text-foreground hover:bg-muted"
-                    }`}
+                      }`}
                   >
                     {t(p.key)}
                   </button>

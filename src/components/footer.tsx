@@ -12,20 +12,28 @@ export default function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
       {/* Main Footer */}
-      <div className="mx-auto max-w-7xl px-6 py-16 md:py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
-          {/* Column 1 - Logo Reminder */}
-          <div className="flex flex-col gap-4">
+      <div className="mx-auto max-w-screen-2xl px-6 py-16 md:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 justify-items-center sm:justify-items-start">
+          {/* Column 1 - Logo & Social */}
+          <div className="flex flex-col gap-6">
             <Image
               src="/images/heroics-logo-rgb blanc.png"
               alt="Heroics Capital Partners"
-              width={140}
-              height={56}
+              width={160}
+              height={64}
               className="w-auto h-auto opacity-90"
             />
-            <p className="text-sm text-primary-foreground/55 mt-2">
-              Independent asset management with conviction. Bespoke investment solutions.
-            </p>
+            <div className="flex items-center gap-4">
+              <a
+                href="https://www.linkedin.com/company/heroics-capital"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center h-10 w-10 rounded-full border border-primary-foreground/20 text-primary-foreground/70 hover:text-primary-foreground hover:border-primary-foreground/60 transition-all group"
+                aria-label="Follow us on LinkedIn"
+              >
+                <Linkedin className="h-4 w-4" />
+              </a>
+            </div>
           </div>
 
           {/* Column 2 - Navigation */}
@@ -106,38 +114,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 5 - Social Networks */}
-          <div>
-            <h3 className="text-base font-semibold mb-6 text-primary-foreground">
-              {t("footer.follow")}
-            </h3>
-            <div className="flex flex-col gap-4">
-              <a
-                href="https://www.linkedin.com/company/heroics-capital"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-sm text-primary-foreground/55 hover:text-primary-foreground transition-colors group"
-              >
-                <span className="flex items-center justify-center h-9 w-9 rounded-full border border-primary-foreground/15 group-hover:border-primary-foreground/40 transition-colors">
-                  <Linkedin className="h-4 w-4" />
-                </span>
-                <span>LinkedIn</span>
-              </a>
 
-              {/* Linked website */}
-              <div className="pt-2 mt-2 border-t border-primary-foreground/10">
-                <a
-                  href="https://www.heroicscapital.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-primary-foreground/55 hover:text-primary-foreground transition-colors"
-                >
-                  <ExternalLink className="h-4 w-4 shrink-0" />
-                  <span>heroicscapital.com</span>
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
