@@ -15,7 +15,6 @@ const partners = [
     "goldman-sachs.png",
     "ice.png",
     "jp-morgan.png",
-    "kepler.png",
     "kepler.svg",
     "morgan-stanley.png",
     "quintet-private-bank.png",
