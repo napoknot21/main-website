@@ -228,27 +228,27 @@ html {
 
 /* ── Leaflet Office Map Overrides ───────────────────────── */
 .leaflet-container {
-  background: #061237 !important;
+  background: #f8f9fb !important;
   font-family: "PPMori", "DM Sans", sans-serif;
 }
 
 .office-map-tooltip {
-  background: #061237 !important;
-  border: 1px solid rgba(57, 114, 229, 0.4) !important;
+  background: #fff !important;
+  border: 1px solid rgba(57, 114, 229, 0.35) !important;
   border-radius: 6px !important;
-  color: #fff !important;
+  color: #061237 !important;
   font-family: "PPMori", "DM Sans", sans-serif !important;
-  font-size: 11px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.08em;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 4px 10px !important;
-  box-shadow: 0 0 12px rgba(57, 114, 229, 0.2) !important;
+  padding: 3px 9px !important;
+  box-shadow: 0 2px 8px rgba(57, 114, 229, 0.12) !important;
   white-space: nowrap;
 }
 
 .office-map-tooltip::before {
-  border-top-color: rgba(57, 114, 229, 0.4) !important;
+  border-top-color: rgba(57, 114, 229, 0.35) !important;
 }
 
 .leaflet-control-attribution {

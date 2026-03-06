@@ -19,7 +19,8 @@ import {
 import { useLanguage } from "@/lib/language-context"
 import { AnimatedSection } from "@/components/ui/animated-section"
 
-type OfficeId = "luxembourg" | "monaco"
+
+type OfficeId = "luxembourg" | "monaco" | "geneva"
 
 const offices = {
     luxembourg: {
@@ -50,6 +51,18 @@ const offices = {
         services: [
             { icon: MessageSquare, titleKey: "offices.monaco.service.advisory", tagKey: "offices.monaco.service.advisory.tag", href: "/offering/investment-solutions" },
             { icon: BarChart2, titleKey: "offices.monaco.service.amc", tagKey: "offices.monaco.service.amc.tag", href: "/offering/investment-solutions" },
+        ],
+    },
+    geneva: {
+        id: "geneva" as OfficeId,
+        name: "Geneva",
+        tagline: "offices.geneva.tagline",
+        descKey: "offices.geneva.desc",
+        // Geneva, Switzerland — 46.2044, 6.1432
+        lat: 46.2044,
+        lng: 6.1432,
+        services: [
+            { icon: Building2, titleKey: "offices.geneva.service.clients", tagKey: "offices.geneva.service.clients.tag", href: "/offering/investment-solutions" },
         ],
     },
 }
@@ -171,7 +184,11 @@ export default function OfficesSection() {
                             {/* CTA */}
                             <div className="mt-8">
                                 <Link
-                                    href={activeOffice === "monaco" ? "/offering/investment-solutions" : "/offering"}
+                                    href={
+                                        activeOffice === "monaco" || activeOffice === "geneva"
+                                            ? "/offering/investment-solutions"
+                                            : "/offering"
+                                    }
                                     className="inline-flex items-center gap-2 text-sm font-medium text-blue-hour hover:text-white transition-colors duration-200 group"
                                 >
                                     {t("offices.cta")}

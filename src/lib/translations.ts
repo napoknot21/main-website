@@ -91,6 +91,10 @@ export const translations: Record<Locale, Record<string, string>> = {
     "offices.monaco.service.advisory.tag": "Advisory",
     "offices.monaco.service.amc": "AMC Dynamique",
     "offices.monaco.service.amc.tag": "Certificate",
+    "offices.geneva.tagline": "Private Clients & European Access",
+    "offices.geneva.desc": "Our Geneva presence serves as a bridge for international private clients and family offices, offering access to our full range of Luxembourg and Monaco solutions from continental Europe's leading financial hub.",
+    "offices.geneva.service.clients": "International Client Coverage",
+    "offices.geneva.service.clients.tag": "Private Clients",
 
     // ── About ───────────────────────────────────────────────
     "about.page.title": "About Us",
@@ -424,6 +428,10 @@ export const translations: Record<Locale, Record<string, string>> = {
     "offices.monaco.service.advisory.tag": "Conseil",
     "offices.monaco.service.amc": "AMC Dynamique",
     "offices.monaco.service.amc.tag": "Certificat",
+    "offices.geneva.tagline": "Clients privés & accès européen",
+    "offices.geneva.desc": "Notre présence à Genève sert de pont pour les clients privés internationaux et les family offices, offrant un accès à nos solutions luxembourgeoises et monégasques depuis le principal hub financier d’Europe continentale.",
+    "offices.geneva.service.clients": "Couverture clients internationaux",
+    "offices.geneva.service.clients.tag": "Clients privés",
 
     "about.page.title": "\u00C0 propos",
     "about.page.subtitle": "Fond\u00E9e en 2023, Heroics Capital est une soci\u00E9t\u00E9 de gestion d\u2019actifs agile offrant une performance ind\u00E9pendante des fluctuations de march\u00E9 gr\u00E2ce \u00E0 des m\u00E9thodes de gestion innovantes.",
@@ -743,6 +751,10 @@ export const translations: Record<Locale, Record<string, string>> = {
     "offices.monaco.service.advisory.tag": "Asesoramiento",
     "offices.monaco.service.amc": "AMC Dynamique",
     "offices.monaco.service.amc.tag": "Certificado",
+    "offices.geneva.tagline": "Clientes privados y acceso europeo",
+    "offices.geneva.desc": "Nuestra presencia en Ginebra sirve como puente para clientes privados internacionales y family offices, ofreciendo acceso a nuestras soluciones desde el principal hub financiero de Europa continental.",
+    "offices.geneva.service.clients": "Cobertura de clientes internacionales",
+    "offices.geneva.service.clients.tag": "Clientes privados",
 
     "about.page.title": "Acerca de nosotros",
     "about.page.subtitle": "Fundada en 2023, Heroics Capital es una firma \u00E1gil de gesti\u00F3n de activos que ofrece rendimiento independiente de las fluctuaciones del mercado mediante m\u00E9todos de gesti\u00F3n innovadores.",
@@ -1053,6 +1065,10 @@ export const translations: Record<Locale, Record<string, string>> = {
     "offices.monaco.service.advisory.tag": "Consulenza",
     "offices.monaco.service.amc": "AMC Dynamique",
     "offices.monaco.service.amc.tag": "Certificato",
+    "offices.geneva.tagline": "Clienti privati e accesso europeo",
+    "offices.geneva.desc": "La nostra presenza a Ginevra funge da ponte per i clienti privati internazionali e i family office, offrendo accesso alle nostre soluzioni dal principale hub finanziario dell’Europa continentale.",
+    "offices.geneva.service.clients": "Copertura clienti internazionali",
+    "offices.geneva.service.clients.tag": "Clienti privati",
 
     "about.page.title": "Chi siamo",
     "about.page.subtitle": "Fondata nel 2023, Heroics Capital \u00E8 una societ\u00E0 di gestione patrimoniale agile che offre performance indipendente dalle fluttuazioni di mercato attraverso metodi di gestione innovativi.",
@@ -1329,6 +1345,10 @@ export const translations: Record<Locale, Record<string, string>> = {
     "offices.monaco.service.advisory.tag": "Consultoria",
     "offices.monaco.service.amc": "AMC Dynamique",
     "offices.monaco.service.amc.tag": "Certificado",
+    "offices.geneva.tagline": "Clientes privados e acesso europeu",
+    "offices.geneva.desc": "A nossa presença em Genebra serve de ponte para clientes privados internacionais e family offices, oferecendo acesso às nossas soluções a partir do principal hub financeiro da Europa continental.",
+    "offices.geneva.service.clients": "Cobertura de clientes internacionais",
+    "offices.geneva.service.clients.tag": "Clientes privados",
 
     "about.page.title": "Sobre n\u00F3s",
     "about.page.subtitle": "Fundada em 2023, a Heroics Capital \u00E9 uma empresa \u00E1gil de gest\u00E3o de ativos que oferece desempenho independente das flutua\u00E7\u00F5es de mercado atrav\u00E9s de m\u00E9todos de gest\u00E3o inovadores.",
