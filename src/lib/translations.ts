@@ -99,6 +99,26 @@ export const translations: Record<Locale, Record<string, string>> = {
     "about.skills.it": "IT Research & Programming",
     "about.skills.it.desc": "In-house technology development powering proprietary platforms, data analytics, and automated trading systems.",
 
+    // ── About: Team Members ─────────────────────────────────
+    "about.team.title": "Our Team",
+    "about.team.subtitle": "A collective of passionate experts driving innovation and performance.",
+    "about.team.alexandre.role": "Founder & CEO",
+    "about.team.alexandre.bio": "Alexandre brings over two decades of robust experience in asset management and quantitative strategy, spearheading Heroics Capital's innovative vision.",
+    "about.team.bak.role": "Managing Director",
+    "about.team.bak.bio": "With an unparalleled macro perspective, Bak oversees the strategic direction and operational excellence of our multi-asset portfolios.",
+    "about.team.cyrille.role": "Head of Quantitative Engineering",
+    "about.team.cyrille.bio": "Cyrille leads the development of sophisticated algorithmic solutions and systematic execution frameworks that power our trading engine.",
+    "about.team.ilyasse.role": "Head of Risk Management",
+    "about.team.ilyasse.bio": "Ilyasse ensures absolute portfolio integrity through rigorous, proprietary risk surveillance and dynamic hedging methodologies.",
+    "about.team.jonathan.role": "Senior Portfolio Manager",
+    "about.team.jonathan.bio": "Jonathan possesses profound expertise in fixed income and credit derivatives, actively driving alpha generation across cycles.",
+    "about.team.pierre.role": "Head of IT & Infrastructure",
+    "about.team.pierre.bio": "Pierre architects resilient and scalable technology platforms, ensuring our trading infrastructure remains cutting-edge and secure.",
+
+    // ── About: Partners ─────────────────────────────────────
+    "about.partners.title": "Our Trusted Partners",
+    "about.partners.subtitle": "Collaborating for Excellence",
+
     // ── About: Milestones ───────────────────────────────────
     "about.milestones.title": "Key Milestones",
     "about.milestones.2023.title": "Volatility Hedge Fund",
@@ -373,6 +393,24 @@ export const translations: Record<Locale, Record<string, string>> = {
     "about.skills.it": "Recherche IT & Programmation",
     "about.skills.it.desc": "D\u00E9veloppement technologique interne alimentant plateformes propri\u00E9taires, analyse de donn\u00E9es et syst\u00E8mes de trading automatis\u00E9s.",
 
+    "about.team.title": "Notre \u00C9quipe",
+    "about.team.subtitle": "Un collectif d'experts passionn\u00E9s moteur d'innovation et de performance.",
+    "about.team.alexandre.role": "Fondateur & CEO",
+    "about.team.alexandre.bio": "Alexandre apporte plus de vingt ans d'exp\u00E9rience solide en gestion d'actifs et strat\u00E9gie quantitative, menant la vision innovante de Heroics Capital.",
+    "about.team.bak.role": "Directeur G\u00E9n\u00E9ral",
+    "about.team.bak.bio": "Avec une perspective macro in\u00E9gal\u00E9e, Bak supervise la direction strat\u00E9gique et l'excellence op\u00E9rationnelle de nos portefeuilles multi-actifs.",
+    "about.team.cyrille.role": "Directeur de l'Ing\u00E9nierie Quantitative",
+    "about.team.cyrille.bio": "Cyrille dirige le d\u00E9veloppement de solutions algorithmiques sophistiqu\u00E9es et de cadres d'ex\u00E9cution syst\u00E9matique qui alimentent notre moteur de trading.",
+    "about.team.ilyasse.role": "Directeur de la Gestion des Risques",
+    "about.team.ilyasse.bio": "Ilyasse assure l'int\u00E9grit\u00E9 absolue des portefeuilles gr\u00E2ce \u00E0 des m\u00E9thodologies rigoureuses de surveillance des risques propri\u00E9taires et de couverture dynamique.",
+    "about.team.jonathan.role": "G\u00E9rant de Portefeuille Senior",
+    "about.team.jonathan.bio": "Jonathan poss\u00E8de une expertise profonde en revenu fixe et d\u00E9riv\u00E9s de cr\u00E9dit, g\u00E9n\u00E9rant activement de l'alpha \u00E0 travers les cycles.",
+    "about.team.pierre.role": "Directeur Informatique & Infrastructure",
+    "about.team.pierre.bio": "Pierre con\u00E7oit des plateformes technologiques r\u00E9silientes et \u00E9volutives, garantissant que notre infrastructure de trading reste \u00E0 la pointe et s\u00E9curis\u00E9e.",
+
+    "about.partners.title": "Nos Partenaires de Confiance",
+    "about.partners.subtitle": "Collaborer pour l'Excellence",
+
     "about.milestones.title": "Jalons cl\u00E9s",
     "about.milestones.2023.title": "Hedge Fund Volatilit\u00E9",
     "about.milestones.2023.desc": "Lancement de notre strat\u00E9gie phare d\u2019arbitrage de volatilit\u00E9, \u00E9tablissant Heroics Capital comme un g\u00E9rant alternatif cr\u00E9dible.",
@@ -636,6 +674,24 @@ export const translations: Record<Locale, Record<string, string>> = {
     "about.skills.execution.desc": "Capacidades de ejecuci\u00F3n de calidad institucional con enrutamiento optimizado de \u00F3rdenes en plazas globales.",
     "about.skills.it": "Investigaci\u00F3n IT & Programaci\u00F3n",
     "about.skills.it.desc": "Desarrollo tecnol\u00F3gico interno que impulsa plataformas propietarias, an\u00E1lisis de datos y sistemas de trading automatizados.",
+
+    "about.team.title": "Nuestro Equipo",
+    "about.team.subtitle": "Un colectivo de expertos apasionados que impulsa la innovaci\u00F3n y el rendimiento.",
+    "about.team.alexandre.role": "Fundador & CEO",
+    "about.team.alexandre.bio": "Alexandre aporta m\u00E1s de dos d\u00E9cadas de s\u00F3lida experiencia en gesti\u00F3n de activos y estrategia cuantitativa, liderando la visi\u00F3n de Heroics Capital.",
+    "about.team.bak.role": "Director General",
+    "about.team.bak.bio": "Con una perspectiva macro inigualable, Bak supervisa la direcci\u00F3n estrat\u00E9gica y la excelencia operativa de nuestras carteras multi-activos.",
+    "about.team.cyrille.role": "Director de Ingenier\u00EDa Cuantitativa",
+    "about.team.cyrille.bio": "Cyrille lidera el desarrollo de sofisticadas soluciones algor\u00EDtmicas y marcos de ejecuci\u00F3n sistem\u00E1tica.",
+    "about.team.ilyasse.role": "Director de Gesti\u00F3n de Riesgos",
+    "about.team.ilyasse.bio": "Ilyasse asegura la integridad absoluta de la cartera mediante metodolog\u00EDas rigurosas de vigilancia y cobertura din\u00E1mica.",
+    "about.team.jonathan.role": "Gestor de Carteras Senior",
+    "about.team.jonathan.bio": "Jonathan posee una profunda experiencia en renta fija y derivados de cr\u00E9dito, impulsando activamente la generaci\u00F3n de alfa.",
+    "about.team.pierre.role": "Jefe de TI e Infraestructura",
+    "about.team.pierre.bio": "Pierre dise\u00F1a plataformas tecnol\u00F3gicas resilientes, asegurando que nuestra infraestructura de trading siga siendo de vanguardia.",
+
+    "about.partners.title": "Nuestros Socios de Confianza",
+    "about.partners.subtitle": "Colaborando para la Excelencia",
 
     "about.milestones.title": "Hitos clave",
     "about.milestones.2023.title": "Hedge Fund de Volatilidad",

@@ -6,6 +6,8 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import CookieBanner from "@/components/cookie-banner"
 import ContactCtaSection from "@/components/contact-cta-section"
+import TeamSection from "@/components/team-section"
+import PartnersSection from "@/components/partners-section"
 import { useLanguage } from "@/lib/language-context"
 import {
   Eye,
@@ -111,9 +113,8 @@ export default function AboutPage() {
                 return (
                   <div
                     key={item.titleKey}
-                    className={`flex flex-col items-center text-center group transition-all duration-700 ${
-                      valuesSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                    }`}
+                    className={`flex flex-col items-center text-center group transition-all duration-700 ${valuesSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                      }`}
                     style={{ transitionDelay: `${idx * 120}ms` }}
                   >
                     <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary text-primary-foreground mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -146,9 +147,8 @@ export default function AboutPage() {
               {skills.map(({ key, icon: Icon }, idx) => (
                 <div
                   key={key}
-                  className={`flex items-start gap-4 p-6 rounded-xl border border-border bg-background hover:border-accent/30 hover:shadow-sm transition-all duration-700 ${
-                    skillsSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                  }`}
+                  className={`flex items-start gap-4 p-6 rounded-xl border border-border bg-background hover:border-accent/30 hover:shadow-sm transition-all duration-700 ${skillsSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                    }`}
                   style={{ transitionDelay: `${idx * 100}ms` }}
                 >
                   <div className="flex items-center justify-center h-11 w-11 rounded-full bg-accent/10 text-accent shrink-0 mt-0.5">
@@ -189,9 +189,8 @@ export default function AboutPage() {
                   return (
                     <div
                       key={key}
-                      className={`relative flex items-start gap-6 md:gap-0 transition-all duration-700 ${
-                        milestonesSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                      }`}
+                      className={`relative flex items-start gap-6 md:gap-0 transition-all duration-700 ${milestonesSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                        }`}
                       style={{ transitionDelay: `${idx * 150}ms` }}
                     >
                       {/* Dot */}
@@ -201,9 +200,8 @@ export default function AboutPage() {
 
                       {/* Content card */}
                       <div
-                        className={`ml-16 md:ml-0 md:w-[calc(50%-2rem)] ${
-                          isLeft ? "md:pr-8 md:text-right" : "md:pl-8 md:ml-auto"
-                        }`}
+                        className={`ml-16 md:ml-0 md:w-[calc(50%-2rem)] ${isLeft ? "md:pr-8 md:text-right" : "md:pl-8 md:ml-auto"
+                          }`}
                       >
                         <span className="text-[10px] font-bold tracking-widest uppercase text-accent">
                           {year}
@@ -222,6 +220,9 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        <TeamSection />
+        <PartnersSection />
 
         <ContactCtaSection variant="inline" />
       </main>

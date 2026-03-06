@@ -1,5 +1,7 @@
 "use client"
 
+import Image from "next/image"
+
 export default function VideoSection() {
   return (
     <section id="services" className="relative w-full overflow-hidden bg-primary">
@@ -9,20 +11,13 @@ export default function VideoSection() {
         If using YouTube: swap <video> for <iframe> with the embed URL.
       */}
       <div className="relative w-full aspect-video max-h-[80vh]">
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          controls
-          preload="none"
-          poster="/images/hero.jpg"
-          aria-label="Heroics Capital presentation"
-        >
-          {/* Replace with your real video source */}
-          <source src="/videos/heroicspitch_HD.gif" type="video/mp4" />
-          {/* Fallback for older browsers */}
-          <p className="text-primary-foreground/60 text-sm p-6">
-            Your browser does not support HTML5 video.
-          </p>
-        </video>
+        <Image
+          src="/videos/heroicspitch_HD.gif"
+          alt="Heroics Capital presentation"
+          fill
+          unoptimized
+          className="object-cover"
+        />
       </div>
 
       {/*
