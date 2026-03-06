@@ -30,10 +30,10 @@ export default function PartnersSection() {
         <section className="py-20 bg-muted/30 border-t border-border overflow-hidden">
             <div className="mx-auto max-w-screen-2xl px-6">
                 <div className="text-center mb-12">
-                    <p className="text-sm font-semibold tracking-widest uppercase text-muted-foreground/60 mb-2">
+                    <p className="text-sm font-medium tracking-widest uppercase text-blue-hour mb-2">
                         {t("about.partners.subtitle")}
                     </p>
-                    <h2 className="font-serif text-2xl font-semibold text-foreground">
+                    <h2 className="font-serif text-2xl font-semibold text-deepblue">
                         {t("about.partners.title")}
                     </h2>
                 </div>

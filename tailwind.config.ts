@@ -65,6 +65,11 @@ const config: Config = {
           DEFAULT: "hsl(var(--deepblue))",
           light: "hsl(var(--deepblue-light))",
         },
+        mist: "hsl(var(--muted))",
+        "blue-hour": "hsl(var(--blue-hour))",
+        turquoise: "hsl(var(--turquoise))",
+        lime: "hsl(var(--lime))",
+        orange: "hsl(var(--orange))",
       },
       borderRadius: {
         lg: "var(--radius)",

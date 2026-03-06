@@ -55,12 +55,12 @@ export default function ManCoPage() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="relative pt-36 pb-24 bg-primary overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary/80" />
-          <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle_at_60%_40%,white,transparent_60%)]" />
+        <section className="relative pt-36 pb-24 bg-deepblue overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-deepblue via-deepblue/90 to-blue-hour/30" />
+          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_60%_40%,rgba(57,114,229,0.4),transparent_60%)]" />
           <div className="relative z-10 mx-auto max-w-6xl px-8 text-center">
-            <div className="inline-block h-px w-12 bg-primary-foreground/30 mb-6" />
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-primary-foreground tracking-tight text-balance mb-5">
+            <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6 shadow-[0_0_10px_rgba(57,114,229,0.5)]" />
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-white tracking-tight text-balance mb-5">
               {t("offering.manco.hero.title")}
             </h1>
             <p className="text-sm sm:text-base text-primary-foreground/60 max-w-xl mx-auto leading-relaxed text-pretty">
@@ -85,16 +85,16 @@ export default function ManCoPage() {
               {services.map(({ key, icon: Icon }, idx) => (
                 <div
                   key={key}
-                  className={`flex flex-col p-7 rounded-xl border border-border bg-background hover:border-accent/30 hover:shadow-sm transition-all duration-700 ${servicesSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  className={`group flex flex-col p-7 rounded-xl border border-border bg-background hover:border-blue-hour/40 hover:shadow-md transition-all duration-700 ${servicesSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                     }`}
                   style={{ transitionDelay: `${idx * 120}ms` }}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="flex items-center justify-center h-11 w-11 rounded-full bg-primary text-primary-foreground shrink-0">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-full bg-deepblue text-white shrink-0 group-hover:bg-blue-hour transition-colors duration-300">
                       <Icon className="h-5 w-5" />
                     </div>
                     <div>
-                      <span className="text-[10px] font-bold tracking-widest uppercase text-accent">
+                      <span className="text-[10px] font-bold tracking-widest uppercase text-blue-hour">
                         {t(`offering.manco.${key}.tag`)}
                       </span>
                       <h3 className="text-base font-semibold text-foreground leading-snug">
@@ -115,8 +115,8 @@ export default function ManCoPage() {
         <section ref={platformsSection.ref as React.RefObject<HTMLElement>} className="py-20 bg-muted/30 border-y border-border">
           <div className="mx-auto max-w-6xl px-8">
             <div className="text-center mb-14">
-              <div className="inline-block h-px w-12 bg-accent mb-6" />
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground text-balance">
+              <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6" />
+              <h2 className="text-3xl md:text-4xl font-serif font-semibold text-deepblue text-balance">
                 {"Proprietary Platforms"}
               </h2>
             </div>
@@ -129,14 +129,14 @@ export default function ManCoPage() {
                   style={{ transitionDelay: `${idx * 150}ms` }}
                 >
                   {/* Accent bar */}
-                  <div className="absolute top-0 left-0 w-full h-1 bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute top-0 left-0 w-full h-1 bg-blue-hour opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_4px_10px_rgba(57,114,229,0.5)]" />
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full bg-accent/10 text-accent">
+                    <span className="text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full bg-blue-hour/10 text-blue-hour">
                       {t(`offering.manco.${key}.tag`)}
                     </span>
                   </div>
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary text-primary-foreground">
+                    <div className="flex items-center justify-center h-14 w-14 rounded-full bg-deepblue text-white group-hover:bg-blue-hour transition-colors duration-300">
                       <Icon className="h-6 w-6" />
                     </div>
                     <h3 className="text-lg font-semibold text-foreground">

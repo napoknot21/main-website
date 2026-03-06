@@ -153,8 +153,8 @@ export default function Header() {
   ]
 
   const textColorClass = scrolled
-    ? "text-foreground/65 hover:text-foreground"
-    : "text-primary-foreground/75 hover:text-primary-foreground"
+    ? "text-foreground/75 hover:text-blue-hour"
+    : "text-primary-foreground/85 hover:text-blue-hour"
 
   return (
     <>
@@ -247,9 +247,9 @@ export default function Header() {
             <div className="relative" ref={offeringRef}>
               <button
                 onClick={() => setOfferingOpen(!offeringOpen)}
-                className={`flex items-center gap-1 text-sm transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[1px] after:transition-all duration-500 ${offeringOpen
-                    ? scrolled ? "text-foreground after:w-full after:bg-foreground" : "text-primary-foreground after:w-full after:bg-primary-foreground"
-                    : `${textColorClass} after:w-0 ${scrolled ? "hover:after:w-full after:bg-foreground" : "hover:after:w-full after:bg-primary-foreground"}`
+                className={`flex items-center gap-1 text-sm font-medium transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:transition-all duration-500 ${offeringOpen
+                  ? scrolled ? "text-blue-hour after:w-full after:bg-blue-hour" : "text-blue-hour after:w-full after:bg-blue-hour"
+                  : `${textColorClass} after:w-0 ${scrolled ? "hover:after:w-full after:bg-blue-hour" : "hover:after:w-full after:bg-blue-hour"}`
                   }`}
                 aria-expanded={offeringOpen}
               >
@@ -277,8 +277,7 @@ export default function Header() {
               <Link
                 key={item.key}
                 href={item.href}
-                className={`text-sm transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] hover:after:w-full after:transition-all duration-500 ${textColorClass} ${scrolled ? "after:bg-foreground" : "after:bg-primary-foreground"
-                  }`}
+                className={`text-sm font-medium transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] hover:after:w-full after:transition-all duration-500 ${textColorClass} after:bg-blue-hour`}
               >
                 {t(item.key)}
               </Link>
@@ -346,8 +345,8 @@ export default function Header() {
                       key={l}
                       onClick={() => setLocale(l)}
                       className={`text-xs px-3 py-1.5 rounded transition-colors ${locale === l
-                          ? scrolled ? "bg-accent/10 text-foreground font-medium" : "bg-primary-foreground/15 text-primary-foreground font-medium"
-                          : scrolled ? "text-foreground/50 hover:text-foreground" : "text-primary-foreground/50 hover:text-primary-foreground"
+                        ? scrolled ? "bg-accent/10 text-foreground font-medium" : "bg-primary-foreground/15 text-primary-foreground font-medium"
+                        : scrolled ? "text-foreground/50 hover:text-foreground" : "text-primary-foreground/50 hover:text-primary-foreground"
                         }`}
                     >
                       {localeLabels[l]}
@@ -407,8 +406,8 @@ export default function Header() {
                           key={c.value}
                           onClick={() => setTempCountry(c)}
                           className={`text-left px-3 py-2 text-sm rounded-lg transition-colors truncate ${tempCountry.value === c.value
-                              ? "bg-accent/10 text-accent font-medium"
-                              : "text-foreground hover:bg-muted"
+                            ? "bg-accent/10 text-accent font-medium"
+                            : "text-foreground hover:bg-muted"
                             }`}
                         >
                           {t(c.key)}
@@ -430,8 +429,8 @@ export default function Header() {
                     key={p.value}
                     onClick={() => setTempProfile(p)}
                     className={`text-left px-4 py-2.5 text-sm rounded-lg transition-colors ${tempProfile.value === p.value
-                        ? "bg-accent/10 text-accent font-medium"
-                        : "text-foreground hover:bg-muted"
+                      ? "bg-accent/10 text-accent font-medium"
+                      : "text-foreground hover:bg-muted"
                       }`}
                   >
                     {t(p.key)}
