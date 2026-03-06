@@ -5,15 +5,15 @@ import { useLanguage } from "@/lib/language-context"
 import { AnimatedSection } from "@/components/ui/animated-section"
 
 const teamMembers = [
-    { id: "cyrille", image: "/images/team/cyrille.jpg", name: "Cyrille Nahabedian" },
     { id: "alexandre", image: "/images/team/alexandre.jpg", name: "Alexandre Tramini" },
+    { id: "cyrille", image: "/images/team/cyrille.jpg", name: "Cyrille Nahabedian" },
     { id: "jonathan", image: "/images/team/jonathan.jpg", name: "Jonathan Niddam" },
     { id: "julien", image: "/images/team/julien_baptiste.jpg", name: "Julien Baptiste" },
     { id: "ilyasse", image: "/images/team/ilyasse.jpg", name: "Ilyasse Tariq" },
-    //{ id: "filippo", image: "/images/team/filippo.jpg", name: "Filippo Perolo" },
+    { id: "filippo", image: "/images/team/filippo.jpg", name: "Filippo Perolo" },
     { id: "bak", image: "/images/team/bak.jpg", name: "Bak" },
     { id: "jj", image: "/images/team/jean_jacques_martinenghi.jpg", name: "Jean-Jacques Martinenghi" },
-    { id: "tom", image: "/images/team/tom_chebeaux.jpg", name: "Tom Chebeaux" },
+    { id: "tom", image: "/images/team/tom_chebeaux.jpeg", name: "Tom Chebeaux" },
     { id: "pierre", image: "/images/team/pierre.jpg", name: "Pierre Leonard" },
 ]
 
