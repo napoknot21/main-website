@@ -40,12 +40,12 @@ export default function PartnersSection() {
                 </div>
 
                 <AnimatedSection>
-                    <div className="relative flex overflow-x-hidden group">
+                    <div className="relative flex overflow-hidden group">
                         {/* 
               Continuous Marquee animation. We duplicate the list to ensure 
               seamless infinite scrolling. 
             */}
-                        <div className="animate-marquee py-6 flex gap-12 sm:gap-16 items-center whitespace-nowrap min-w-full">
+                        <div className="animate-marquee py-6 flex flex-nowrap shrink-0 gap-12 sm:gap-16 pr-12 sm:pr-16 items-center min-w-full">
                             {partners.map((partner, idx) => (
                                 <div key={idx} className="relative h-12 w-32 sm:h-16 sm:w-40 opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 filter shrink-0">
                                     <Image
@@ -59,7 +59,7 @@ export default function PartnersSection() {
                         </div>
 
                         {/* Duplicate for seamless loop */}
-                        <div className="animate-marquee py-6 flex gap-12 sm:gap-16 items-center whitespace-nowrap min-w-full absolute top-0">
+                        <div className="animate-marquee py-6 flex flex-nowrap shrink-0 gap-12 sm:gap-16 pr-12 sm:pr-16 items-center min-w-full" aria-hidden="true">
                             {partners.map((partner, idx) => (
                                 <div key={`dup-${idx}`} className="relative h-12 w-32 sm:h-16 sm:w-40 opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 filter shrink-0">
                                     <Image
