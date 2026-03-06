@@ -33,7 +33,7 @@ export default function TeamSection() {
                     {teamMembers.map((member, index) => (
                         <AnimatedSection key={member.id} delay={index * 0.1}>
                             <div className="group flex flex-col bg-background border border-border rounded-xl overflow-hidden hover:border-blue-hour/40 hover:shadow-lg transition-all duration-500">
-                                <div className="relative aspect-square w-full overflow-hidden bg-muted">
+                                <div className="relative aspect-[3/4] w-full overflow-hidden bg-muted">
                                     <Image
                                         src={member.image}
                                         alt={member.name}

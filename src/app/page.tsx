@@ -4,6 +4,7 @@ import Header from "@/components/header"
 import HeroSection from "@/components/hero-section"
 import InBriefSection from "@/components/in-brief-section"
 import VideoSection from "@/components/video-section"
+import OfficesSection from "@/components/offices-section"
 import ContactCtaSection from "@/components/contact-cta-section"
 import Footer from "@/components/footer"
 import CookieBanner from "@/components/cookie-banner"
@@ -23,6 +24,7 @@ export default function HomePage() {
         <AnimatedSection delay={0.2}>
           <VideoSection />
         </AnimatedSection>
+        <OfficesSection />
         <AnimatedSection>
           <ContactCtaSection />
         </AnimatedSection>
