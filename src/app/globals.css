@@ -82,42 +82,79 @@
 
 @layer base {
   :root {
-    /* Deep blue: #061237 = hsl(225, 80%, 12%) */
+    /* Neutrals */
     --background: 0 0% 100%;
+    /* White */
     --foreground: 225 80% 12%;
-    --card: 220 30% 97%;
+    /* Deep Blue */
+    --muted: 225 10% 91%;
+    /* Mist: #E6E7EB */
+    --muted-foreground: 225 30% 40%;
+
+    /* Brand Primary (Deep Blue: #061237) */
+    --primary: 225 80% 12%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Surface / Cards */
+    --card: 0 0% 100%;
     --card-foreground: 225 80% 12%;
     --popover: 0 0% 100%;
     --popover-foreground: 225 80% 12%;
-    --primary: 225 80% 12%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 220 30% 96%;
+
+    /* Secondary / Accents */
+    --secondary: 225 10% 91%;
+    /* Mist */
     --secondary-foreground: 225 80% 12%;
-    --muted: 220 20% 95%;
-    --muted-foreground: 224 20% 46%;
-    --accent: 213 80% 50%;
+
+    /* Brand Accents */
+    --blue-hour: 220 78% 56%;
+    /* #3972E5 */
+    --turquoise: 176 76% 50%;
+    /* #20E0D5 */
+    --lime: 68 100% 50%;
+    /* #DBFF00 */
+    --orange: 32 100% 64%;
+    /* #FFAB48 */
+
+    /* Reassign accent to Blue Hour for default component usage */
+    --accent: 220 78% 56%;
     --accent-foreground: 0 0% 100%;
+
+    /* Utilities */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 15% 88%;
-    --input: 220 15% 88%;
-    --ring: 213 80% 50%;
-    --chart-1: 213 80% 50%;
-    --chart-2: 213 60% 60%;
-    --chart-3: 225 80% 12%;
-    --chart-4: 220 30% 70%;
-    --chart-5: 213 90% 55%;
+    --border: 225 10% 91%;
+    /* Mist */
+    --input: 225 10% 91%;
+    /* Mist */
+    --ring: 220 78% 56%;
+    /* Blue Hour */
+
+    /* Charts */
+    --chart-1: 220 78% 56%;
+    /* Blue Hour */
+    --chart-2: 176 76% 50%;
+    /* Turquoise */
+    --chart-3: 68 100% 50%;
+    /* Lime */
+    --chart-4: 32 100% 64%;
+    /* Orange */
+    --chart-5: 225 80% 12%;
+    /* Deep Blue */
+
     --radius: 0.375rem;
+    /* Sidebar */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-primary: 225 80% 12%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 225 10% 91%;
+    --sidebar-accent-foreground: 225 80% 12%;
+    --sidebar-border: 225 10% 91%;
+    --sidebar-ring: 220 78% 56%;
+
     --deepblue: 225 80% 12%;
-    --deepblue-light: 220 50% 22%;
+    --deepblue-light: 225 60% 20%;
   }
 }
 
@@ -125,6 +162,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -147,6 +185,7 @@ html {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -162,6 +201,7 @@ html {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -176,10 +216,41 @@ html {
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-track {
   background: transparent;
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background: hsl(var(--muted-foreground) / 0.3);
   border-radius: 2px;
+}
+
+/* ── Leaflet Office Map Overrides ───────────────────────── */
+.leaflet-container {
+  background: #f8f9fb !important;
+  font-family: "PPMori", "DM Sans", sans-serif;
+}
+
+.office-map-tooltip {
+  background: #fff !important;
+  border: 1px solid rgba(57, 114, 229, 0.35) !important;
+  border-radius: 6px !important;
+  color: #061237 !important;
+  font-family: "PPMori", "DM Sans", sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 9px !important;
+  box-shadow: 0 2px 8px rgba(57, 114, 229, 0.12) !important;
+  white-space: nowrap;
+}
+
+.office-map-tooltip::before {
+  border-top-color: rgba(57, 114, 229, 0.35) !important;
+}
+
+.leaflet-control-attribution {
+  display: none !important;
 }

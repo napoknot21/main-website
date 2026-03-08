@@ -31,10 +31,10 @@ export default function ContactCtaSection({
           </div>
           <Link
             href="/contact"
-            className="shrink-0 inline-flex items-center gap-2 bg-primary text-primary-foreground text-sm font-medium px-6 py-3 rounded-md hover:bg-primary/90 transition-all duration-300 group"
+            className="shrink-0 inline-flex items-center gap-2 bg-primary text-primary-foreground text-sm font-medium px-6 py-3 rounded-md hover:bg-blue-hour transition-all duration-300 group shadow-sm"
           >
             {t("contact.cta")}
-            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 group-hover:text-primary-foreground transition-transform" />
           </Link>
         </div>
       </aside>
@@ -60,7 +60,7 @@ export default function ContactCtaSection({
         </p>
         <Link
           href="/contact"
-          className="inline-flex items-center gap-2 bg-primary-foreground text-primary text-sm font-medium px-8 py-3.5 rounded-md hover:bg-primary-foreground/90 transition-all duration-300 group"
+          className="inline-flex items-center gap-2 bg-primary-foreground text-primary text-sm font-medium px-8 py-3.5 rounded-md hover:bg-blue-hour hover:text-primary-foreground transition-colors duration-300 group shadow-md"
         >
           {t(btnKey)}
           <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />

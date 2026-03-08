@@ -51,12 +51,24 @@ export default function InvestmentSolutionsPage() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="relative pt-36 pb-24 bg-primary overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary/80" />
-          <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle_at_30%_50%,white,transparent_60%)]" />
+        <section className="relative pt-36 pb-24 flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <video
+              className="absolute inset-0 w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+            >
+              <source src="/videos/skyscrapers-in-the-city-of-london-england-uk-2024-07-02-16-45-39-utc.mp4" type="video/mp4" />
+            </video>
+            {/* Uniform dark overlay */}
+            <div className="absolute inset-0 bg-deepblue/80" />
+          </div>
           <div className="relative z-10 mx-auto max-w-6xl px-8 text-center">
-            <div className="inline-block h-px w-12 bg-primary-foreground/30 mb-6" />
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-primary-foreground tracking-tight text-balance mb-5">
+            <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6 shadow-[0_0_10px_rgba(57,114,229,0.5)]" />
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-white tracking-tight text-balance mb-5">
               {t("offering.is.hero.title")}
             </h1>
             <p className="text-sm sm:text-base text-primary-foreground/60 max-w-xl mx-auto leading-relaxed text-pretty">
@@ -81,16 +93,16 @@ export default function InvestmentSolutionsPage() {
               {solutions.map(({ key, icon: Icon, tagKey, titleKey, descKey }, idx) => (
                 <div
                   key={key}
-                  className={`flex flex-col p-7 rounded-xl border border-border bg-background hover:border-accent/30 hover:shadow-sm transition-all duration-700 ${solutionsSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  className={`flex flex-col p-7 rounded-lg border border-border bg-background hover:border-blue-hour/40 hover:shadow-md transition-all duration-700 ${solutionsSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                     }`}
                   style={{ transitionDelay: `${idx * 100}ms` }}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="flex items-center justify-center h-11 w-11 rounded-full bg-primary text-primary-foreground shrink-0">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-full bg-deepblue text-white shrink-0 group-hover:bg-blue-hour transition-colors duration-300">
                       <Icon className="h-5 w-5" />
                     </div>
                     <div>
-                      <span className="text-[10px] font-bold tracking-widest uppercase text-accent">
+                      <span className="text-[10px] font-bold tracking-widest uppercase text-blue-hour">
                         {t(tagKey)}
                       </span>
                       <h3 className="text-base font-semibold text-foreground leading-snug">

@@ -36,7 +36,7 @@ function AnimatedNumber({ value, prefix = "", suffix, inView }: { value: number;
   }, [inView, value])
 
   return (
-    <span className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-primary tabular-nums">
+    <span className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-deepblue tabular-nums tracking-tight">
       {prefix}{display.toLocaleString()}{suffix}
     </span>
   )
@@ -110,8 +110,8 @@ export default function InBriefSection() {
       <div className="mx-auto max-w-screen-2xl px-6">
         {/* Title */}
         <div className="text-center mb-16 md:mb-20">
-          <div className="inline-block h-px w-12 bg-accent mb-6" />
-          <h2 className="font-serif text-3xl md:text-4xl font-semibold text-primary text-balance">
+          <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6" />
+          <h2 className="font-serif text-3xl md:text-4xl font-semibold text-deepblue text-balance">
             {t("brief.title")}
           </h2>
         </div>
@@ -124,7 +124,7 @@ export default function InBriefSection() {
               className={`flex flex-col items-center text-center gap-3 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
             >
-              <div className="flex items-center justify-center h-12 w-12 rounded-full bg-accent/10 text-accent mb-2">
+              <div className="flex items-center justify-center h-12 w-12 rounded-full bg-blue-hour/10 text-blue-hour mb-2">
                 {stat.icon}
               </div>
               <AnimatedNumber

@@ -28,7 +28,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/heroics-capital"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center h-10 w-10 rounded-full border border-primary-foreground/20 text-primary-foreground/70 hover:text-primary-foreground hover:border-primary-foreground/60 transition-all group"
+                className="flex items-center justify-center h-10 w-10 rounded-full border border-primary-foreground/15 text-primary-foreground/70 hover:text-blue-hour hover:border-blue-hour hover:bg-blue-hour/10 transition-all duration-300 group"
                 aria-label="Follow us on LinkedIn"
               >
                 <Linkedin className="h-4 w-4" />
@@ -43,22 +43,22 @@ export default function Footer() {
             </h3>
             <ul className="flex flex-col gap-3">
               <li>
-                <Link href="/" className="text-sm text-primary-foreground/55 hover:text-primary-foreground transition-colors">
+                <Link href="/" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
                   {t("nav.home")}
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-sm text-primary-foreground/55 hover:text-primary-foreground transition-colors">
+                <Link href="/about" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
                   {t("nav.about")}
                 </Link>
               </li>
               <li>
-                <Link href="/news" className="text-sm text-primary-foreground/55 hover:text-primary-foreground transition-colors">
+                <Link href="/news" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
                   {t("nav.news")}
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-sm text-primary-foreground/55 hover:text-primary-foreground transition-colors">
+                <Link href="/contact" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
                   {t("nav.contact")}
                 </Link>
               </li>
@@ -72,17 +72,17 @@ export default function Footer() {
             </h3>
             <ul className="flex flex-col gap-3">
               <li>
-                <Link href="/offering/aif" className="text-sm text-primary-foreground/55 hover:text-primary-foreground transition-colors">
+                <Link href="/offering/aif" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
                   {t("nav.offering.aif")}
                 </Link>
               </li>
               <li>
-                <Link href="/offering/investment-solutions" className="text-sm text-primary-foreground/55 hover:text-primary-foreground transition-colors">
+                <Link href="/offering/investment-solutions" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
                   {t("nav.offering.investment")}
                 </Link>
               </li>
               <li>
-                <Link href="/offering/manco" className="text-sm text-primary-foreground/55 hover:text-primary-foreground transition-colors">
+                <Link href="/offering/manco" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
                   {t("nav.offering.manco")}
                 </Link>
               </li>
@@ -105,7 +105,7 @@ export default function Footer() {
                 <li key={key}>
                   <Link
                     href="#"
-                    className="text-sm text-primary-foreground/55 hover:text-primary-foreground transition-colors"
+                    className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors"
                   >
                     {t(key)}
                   </Link>

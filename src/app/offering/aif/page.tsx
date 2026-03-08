@@ -71,12 +71,24 @@ export default function AifPage() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="relative pt-36 pb-24 bg-primary overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary/80" />
-          <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle_at_70%_50%,white,transparent_60%)]" />
+        <section className="relative pt-36 pb-24 flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <video
+              className="absolute inset-0 w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+            >
+              <source src="/videos/luxembourg-panoramic.mp4" type="video/mp4" />
+            </video>
+            {/* Uniform dark overlay */}
+            <div className="absolute inset-0 bg-deepblue/80" />
+          </div>
           <div className="relative z-10 mx-auto max-w-6xl px-8 text-center">
-            <div className="inline-block h-px w-12 bg-primary-foreground/30 mb-6" />
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-primary-foreground tracking-tight text-balance mb-5">
+            <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6 shadow-[0_0_10px_rgba(57,114,229,0.5)]" />
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-white tracking-tight text-balance mb-5">
               {t("offering.aif.hero.title")}
             </h1>
             <p className="text-sm sm:text-base text-primary-foreground/60 max-w-xl mx-auto leading-relaxed text-pretty">
@@ -98,8 +110,8 @@ export default function AifPage() {
         <section ref={approach.ref as React.RefObject<HTMLElement>} className="py-20 bg-muted/30 border-y border-border">
           <div className="mx-auto max-w-6xl px-8">
             <div className="text-center mb-14">
-              <div className="inline-block h-px w-12 bg-accent mb-6" />
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground text-balance">
+              <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6" />
+              <h2 className="text-3xl md:text-4xl font-serif font-semibold text-deepblue text-balance">
                 {t("offering.aif.approach.title")}
               </h2>
             </div>
@@ -111,7 +123,7 @@ export default function AifPage() {
                     }`}
                   style={{ transitionDelay: `${idx * 150}ms` }}
                 >
-                  <div className="flex items-center justify-center h-14 w-14 rounded-full bg-primary text-primary-foreground mb-5">
+                  <div className="flex items-center justify-center h-14 w-14 rounded-full bg-deepblue text-white mb-5">
                     <Icon className="h-6 w-6" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground mb-3">
@@ -130,8 +142,8 @@ export default function AifPage() {
         <section ref={assets.ref as React.RefObject<HTMLElement>} className="py-20 bg-background">
           <div className="mx-auto max-w-6xl px-8">
             <div className="text-center mb-14">
-              <div className="inline-block h-px w-12 bg-accent mb-6" />
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground text-balance">
+              <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6" />
+              <h2 className="text-3xl md:text-4xl font-serif font-semibold text-deepblue text-balance">
                 {t("offering.aif.assets.title")}
               </h2>
             </div>
@@ -139,11 +151,11 @@ export default function AifPage() {
               {assetClasses.map(({ key, icon: Icon }, idx) => (
                 <div
                   key={key}
-                  className={`flex items-center gap-3 px-6 py-4 rounded-lg border border-border bg-muted/20 transition-all duration-600 hover:border-accent/40 hover:bg-accent/5 ${assets.inView ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                  className={`flex items-center gap-3 px-6 py-4 rounded-lg border border-border bg-background transition-all duration-600 hover:border-blue-hour/40 hover:bg-blue-hour/5 hover:shadow-sm ${assets.inView ? "opacity-100 scale-100" : "opacity-0 scale-95"
                     }`}
                   style={{ transitionDelay: `${idx * 100}ms` }}
                 >
-                  <Icon className="h-5 w-5 text-accent shrink-0" />
+                  <Icon className="h-5 w-5 text-blue-hour shrink-0" />
                   <span className="text-sm font-medium text-foreground">{t(`offering.aif.assets.${key}`)}</span>
                 </div>
               ))}
@@ -152,17 +164,17 @@ export default function AifPage() {
         </section>
 
         {/* Continuous Monitoring */}
-        <section ref={monitoring.ref as React.RefObject<HTMLElement>} className="py-20 bg-primary">
+        <section ref={monitoring.ref as React.RefObject<HTMLElement>} className="py-20 bg-deepblue">
           <div className={`mx-auto max-w-6xl px-8 flex flex-col md:flex-row items-center gap-10 transition-all duration-700 ${monitoring.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}>
             <div className="flex items-center justify-center h-20 w-20 rounded-full bg-primary-foreground/10 shrink-0">
-              <Activity className="h-10 w-10 text-primary-foreground" />
+              <Activity className="h-10 w-10 text-white" />
             </div>
             <div>
-              <h2 className="text-xl md:text-2xl font-semibold text-primary-foreground mb-3">
+              <h2 className="text-2xl md:text-3xl font-serif font-semibold text-white mb-3">
                 {t("offering.aif.monitoring.title")}
               </h2>
-              <p className="text-primary-foreground/60 leading-relaxed text-pretty">
+              <p className="text-white/60 leading-relaxed text-pretty font-light">
                 {t("offering.aif.monitoring.desc")}
               </p>
             </div>
@@ -173,8 +185,8 @@ export default function AifPage() {
         <section ref={benefitsSection.ref as React.RefObject<HTMLElement>} className="py-20 bg-background">
           <div className="mx-auto max-w-6xl px-8">
             <div className="text-center mb-14">
-              <div className="inline-block h-px w-12 bg-accent mb-6" />
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground text-balance">
+              <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6" />
+              <h2 className="text-3xl md:text-4xl font-serif font-semibold text-deepblue text-balance">
                 {t("offering.aif.benefits.title")}
               </h2>
             </div>
@@ -186,7 +198,7 @@ export default function AifPage() {
                     }`}
                   style={{ transitionDelay: `${idx * 150}ms` }}
                 >
-                  <div className="flex items-center justify-center h-14 w-14 rounded-full bg-accent/10 text-accent mb-5 group-hover:scale-110 transition-transform duration-300">
+                  <div className="flex items-center justify-center h-14 w-14 rounded-full bg-blue-hour/10 text-blue-hour mb-5 group-hover:scale-110 group-hover:bg-blue-hour group-hover:text-white transition-all duration-300">
                     <Icon className="h-6 w-6" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground mb-3">
@@ -195,7 +207,7 @@ export default function AifPage() {
                   <p className="text-muted-foreground text-sm leading-relaxed text-pretty">
                     {t(`offering.aif.benefits.${key}.desc`)}
                   </p>
-                  <div className="h-px w-12 bg-accent/30 mt-6 group-hover:w-20 transition-all duration-300" />
+                  <div className="h-1 w-12 bg-blue-hour/30 rounded-full mt-6 group-hover:w-20 transition-all duration-300" />
                 </div>
               ))}
             </div>

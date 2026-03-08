@@ -4,7 +4,7 @@ import Image from "next/image"
 
 export default function VideoSection() {
   return (
-    <section id="services" className="relative w-full overflow-hidden bg-primary">
+    <section id="services" className="relative w-full overflow-hidden bg-deepblue">
       {/*
         Responsive 16:9 video embed (replaces heroicspitch_HD.gif).
         Replace the src below with your actual video path or YouTube/Vimeo embed URL.
