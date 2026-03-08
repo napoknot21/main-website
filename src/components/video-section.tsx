@@ -16,7 +16,7 @@ export default function VideoSection() {
           alt="Heroics Capital presentation"
           fill
           unoptimized
-          className="object-cover opacity-90 mix-blend-screen"
+          className="object-cover"
         />
       </div>
 
