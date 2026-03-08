@@ -8,7 +8,7 @@ type OfficeId = "luxembourg" | "monaco" | "geneva"
 
 interface OfficePin {
     id: OfficeId
-    name: string
+    nameKey: string
     lat: number
     lng: number
 }
@@ -35,7 +35,10 @@ function FlyTo({ lat, lng }: { lat: number; lng: number }) {
     return null
 }
 
+import { useLanguage } from "@/lib/language-context"
+
 export default function OfficeMapInner({ activeOffice, onSelect, offices }: Props) {
+    const { t } = useLanguage()
     const active = offices.find((o) => o.id === activeOffice)!
 
     // Centre view so all pins are visible
@@ -92,7 +95,7 @@ export default function OfficeMapInner({ activeOffice, onSelect, offices }: Prop
                             offset={[0, -16]}
                             className="office-map-tooltip"
                         >
-                            {office.name}
+                            {t(office.nameKey)}
                         </Tooltip>
                     </CircleMarker>
                 )

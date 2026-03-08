@@ -25,7 +25,7 @@ type OfficeId = "luxembourg" | "monaco" | "geneva"
 const offices = {
     luxembourg: {
         id: "luxembourg" as OfficeId,
-        name: "Luxembourg",
+        nameKey: "offices.luxembourg.name",
         tagline: "offices.luxembourg.tagline",
         descKey: "offices.luxembourg.desc",
         // Luxembourg City — 49.6116, 6.1319
@@ -42,7 +42,7 @@ const offices = {
     },
     monaco: {
         id: "monaco" as OfficeId,
-        name: "Monaco",
+        nameKey: "offices.monaco.name",
         tagline: "offices.monaco.tagline",
         descKey: "offices.monaco.desc",
         // Monaco — 43.7384, 7.4246
@@ -55,7 +55,7 @@ const offices = {
     },
     geneva: {
         id: "geneva" as OfficeId,
-        name: "Geneva",
+        nameKey: "offices.geneva.name",
         tagline: "offices.geneva.tagline",
         descKey: "offices.geneva.desc",
         // Geneva, Switzerland — 46.2044, 6.1432
@@ -67,13 +67,13 @@ const offices = {
     },
 }
 
-interface OfficePin { id: OfficeId; name: string; lat: number; lng: number }
+interface OfficePin { id: OfficeId; nameKey: string; lat: number; lng: number }
 interface MapProps { activeOffice: OfficeId; onSelect: (id: OfficeId) => void; offices: OfficePin[] }
 
 // Dynamically import the Leaflet map (no SSR — Leaflet requires window)
 const OfficeMap = dynamic<MapProps>(
     () => import("./office-map-inner") as Promise<{ default: ComponentType<MapProps> }>,
-    { ssr: false, loading: () => <div className="w-full h-full bg-deepblue/60 rounded-2xl animate-pulse" /> }
+    { ssr: false, loading: () => <div className="w-full h-full bg-deepblue/10 rounded-2xl animate-pulse" /> }
 )
 
 export default function OfficesSection() {
@@ -82,7 +82,7 @@ export default function OfficesSection() {
     const office = offices[activeOffice]
 
     return (
-        <section className="py-24 md:py-32 bg-deepblue overflow-hidden relative">
+        <section className="py-24 md:py-32 bg-background overflow-hidden relative z-0">
             {/* Subtle background geometry */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-hour/5 via-transparent to-transparent" />
@@ -94,10 +94,10 @@ export default function OfficesSection() {
                 <AnimatedSection>
                     <div className="mb-16 md:mb-20">
                         <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6" />
-                        <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-white text-balance mb-4">
+                        <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-deepblue text-balance mb-4">
                             {t("offices.title")}
                         </h2>
-                        <p className="text-white/50 max-w-xl text-base font-light leading-relaxed">
+                        <p className="text-muted-foreground max-w-xl text-base font-light leading-relaxed">
                             {t("offices.subtitle")}
                         </p>
                     </div>
@@ -108,34 +108,34 @@ export default function OfficesSection() {
                     <AnimatedSection>
                         <div className="flex flex-col gap-6">
                             {/* Location Tabs */}
-                            <div className="flex gap-3">
+                            <div className="flex gap-3 overflow-x-auto pb-2 -mx-6 px-6 md:overflow-visible md:pb-0 md:mx-0 md:px-0">
                                 {(Object.values(offices) as typeof offices[OfficeId][]).map((o) => (
                                     <button
                                         key={o.id}
                                         onClick={() => setActiveOffice(o.id)}
-                                        className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium border transition-all duration-300 ${activeOffice === o.id
+                                        className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium border transition-all duration-300 whitespace-nowrap ${activeOffice === o.id
                                             ? "bg-blue-hour text-white border-blue-hour shadow-lg shadow-blue-hour/20"
-                                            : "bg-transparent text-white/50 border-white/10 hover:border-blue-hour/40 hover:text-white/80"
+                                            : "bg-transparent text-foreground/60 border-border hover:border-blue-hour/40 hover:text-foreground"
                                             }`}
                                     >
                                         <MapPin className="h-3.5 w-3.5" />
-                                        {o.name}
+                                        {t(o.nameKey)}
                                     </button>
                                 ))}
                             </div>
 
                             {/* Real Map */}
-                            <div className="rounded-2xl overflow-hidden border border-white/8 h-[360px] md:h-[420px]">
+                            <div className="rounded-2xl overflow-hidden border border-border h-[360px] md:h-[420px] relative z-0 shadow-sm">
                                 <OfficeMap
                                     activeOffice={activeOffice}
                                     onSelect={setActiveOffice}
-                                    offices={Object.values(offices).map(({ id, name, lat, lng }) => ({ id, name, lat, lng }))}
+                                    offices={Object.values(offices).map(({ id, nameKey, lat, lng }) => ({ id, nameKey, lat, lng }))}
                                 />
                             </div>
 
                             {/* Caption */}
                             <div key={activeOffice} className="animate-fade-in-up">
-                                <p className="text-white/60 text-sm font-light leading-relaxed max-w-sm">
+                                <p className="text-muted-foreground text-sm font-light leading-relaxed max-w-sm">
                                     {t(office.descKey)}
                                 </p>
                             </div>
@@ -147,9 +147,9 @@ export default function OfficesSection() {
                         <div key={activeOffice} className="animate-fade-in-up">
                             <div className="mb-6">
                                 <span className="text-blue-hour text-xs font-bold tracking-widest uppercase">
-                                    {office.name}
+                                    {t(office.nameKey)}
                                 </span>
-                                <h3 className="text-white text-2xl md:text-3xl font-serif font-semibold mt-1">
+                                <h3 className="text-deepblue text-2xl md:text-3xl font-serif font-semibold mt-1">
                                     {t(office.tagline)}
                                 </h3>
                             </div>
@@ -161,7 +161,7 @@ export default function OfficesSection() {
                                         <Link
                                             key={svc.titleKey}
                                             href={svc.href}
-                                            className="group flex items-center gap-4 p-4 rounded-xl border border-white/8 bg-white/[0.03] hover:bg-blue-hour/10 hover:border-blue-hour/30 transition-all duration-300"
+                                            className="group flex items-center gap-4 p-4 rounded-xl border border-border bg-card hover:bg-blue-hour/5 hover:border-blue-hour/30 transition-all duration-300 shadow-sm hover:shadow-md"
                                             style={{ transitionDelay: `${i * 50}ms` }}
                                         >
                                             <div className="flex items-center justify-center h-10 w-10 rounded-full bg-blue-hour/10 text-blue-hour group-hover:bg-blue-hour group-hover:text-white transition-all duration-300 shrink-0">
@@ -171,11 +171,11 @@ export default function OfficesSection() {
                                                 <span className="block text-[10px] font-bold tracking-widest uppercase text-blue-hour/70 mb-0.5">
                                                     {t(svc.tagKey)}
                                                 </span>
-                                                <span className="block text-sm font-medium text-white/90 truncate">
+                                                <span className="block text-sm font-medium text-foreground truncate">
                                                     {t(svc.titleKey)}
                                                 </span>
                                             </div>
-                                            <ArrowRight className="h-4 w-4 text-white/20 group-hover:text-blue-hour group-hover:translate-x-1 transition-all duration-300 shrink-0" />
+                                            <ArrowRight className="h-4 w-4 text-muted-foreground/30 group-hover:text-blue-hour group-hover:translate-x-1 transition-all duration-300 shrink-0" />
                                         </Link>
                                     )
                                 })}
@@ -189,7 +189,7 @@ export default function OfficesSection() {
                                             ? "/offering/investment-solutions"
                                             : "/offering"
                                     }
-                                    className="inline-flex items-center gap-2 text-sm font-medium text-blue-hour hover:text-white transition-colors duration-200 group"
+                                    className="inline-flex items-center gap-2 text-sm font-medium text-blue-hour hover:text-blue-hour/80 transition-colors duration-200 group"
                                 >
                                     {t("offices.cta")}
                                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
