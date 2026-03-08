@@ -21,7 +21,7 @@ export default function HeroSection() {
           aria-hidden="true"
         >
           {/* Primary source — replace src with actual video path when available */}
-          <source src="/videos/hero-bg.mp4" type="video/mp4" />
+          <source src="/videos/city-skyscrapers-at-night-2023-11-27-05-12-41-utc.mp4" type="video/mp4" />
           {/* Fallback: show poster image if video not found */}
         </video>
         {/* Overlays reflecting the 'Blue Hour' and 'Deep Blue' premium aesthetic */}

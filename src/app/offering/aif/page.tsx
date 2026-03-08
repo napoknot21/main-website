@@ -71,9 +71,21 @@ export default function AifPage() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="relative pt-36 pb-24 bg-deepblue overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-deepblue via-deepblue/90 to-blue-hour/30" />
-          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_70%_50%,rgba(57,114,229,0.4),transparent_60%)]" />
+        <section className="relative pt-36 pb-24 flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <video
+              className="absolute inset-0 w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+            >
+              <source src="/videos/luxembourg-panoramic.mp4" type="video/mp4" />
+            </video>
+            {/* Uniform dark overlay */}
+            <div className="absolute inset-0 bg-deepblue/80" />
+          </div>
           <div className="relative z-10 mx-auto max-w-6xl px-8 text-center">
             <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6 shadow-[0_0_10px_rgba(57,114,229,0.5)]" />
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-white tracking-tight text-balance mb-5">

@@ -159,7 +159,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-background shadow-lg" : "bg-primary"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-background shadow-lg" : "bg-transparent"
           }`}
       >
         {/* Top bar — right-aligned utility links */}

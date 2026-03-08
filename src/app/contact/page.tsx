@@ -15,7 +15,7 @@ export default function ContactPage() {
       <Header />
       <main>
         {/* Contact Hero - Smaller banner */}
-        <section className="relative h-[40vh] min-h-[280px] max-h-[400px] flex items-center justify-center overflow-hidden">
+        <section className="relative pt-36 pb-24 flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
               src="/images/contact-hero.jpg"
@@ -24,15 +24,16 @@ export default function ContactPage() {
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-primary/75" />
+            {/* Uniform dark overlay */}
+            <div className="absolute inset-0 bg-deepblue/80" />
           </div>
-          <div className="relative z-10 text-center px-6">
+          <div className="relative z-10 mx-auto max-w-6xl px-8 text-center">
             <div className="animate-fade-in-up">
-              <div className="inline-block h-px w-12 bg-primary-foreground/30 mb-6" />
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-primary-foreground tracking-tight text-balance">
+              <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6 shadow-[0_0_10px_rgba(57,114,229,0.5)]" />
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-white tracking-tight text-balance mb-5">
                 {t("contact.page.title")}
               </h1>
-              <p className="text-sm sm:text-base text-primary-foreground/60 mt-4 max-w-lg mx-auto">
+              <p className="text-sm sm:text-base text-primary-foreground/60 max-w-xl mx-auto leading-relaxed text-pretty">
                 {t("contact.page.subtitle")}
               </p>
             </div>
