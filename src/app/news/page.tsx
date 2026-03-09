@@ -73,7 +73,7 @@ export default function NewsPage() {
         <section className="relative pt-36 pb-24 flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/news-hero.jpg"
+              src="/images/pawel.png"
               alt="News"
               fill
               className="object-cover"

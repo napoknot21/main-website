@@ -18,7 +18,7 @@ export default function ContactPage() {
         <section className="relative pt-36 pb-24 flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/contact-hero.jpg"
+              src="/images/paris.png"
               alt="Contact Heroics Capital Partners"
               fill
               className="object-cover"
