@@ -51,8 +51,6 @@ const skills = [
   { key: "quant", icon: FlaskConical },
   { key: "research", icon: Search },
   { key: "risk", icon: ShieldCheck },
-  { key: "execution", icon: Zap },
-  { key: "it", icon: Code },
 ] as const
 
 const milestones = [
@@ -144,7 +142,7 @@ export default function AboutPage() {
                 {t("about.skills.title")}
               </h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
               {skills.map(({ key, icon: Icon }, idx) => (
                 <div
                   key={key}

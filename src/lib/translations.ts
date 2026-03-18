@@ -55,7 +55,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     // ── Hero ────────────────────────────────────────────────
     "hero.title": "Heroics Capital",
     "hero.subtitle":
-      "Agile asset management built on conviction. Delivering bespoke investment solutions and performance independent of market fluctuations for professional and institutional investors.",
+      "Scaling capital with innovative, low-correlation strategies.",
     "hero.cta": "Discover Our Approach",
 
     // ── In Brief ────────────────────────────────────────────
@@ -102,7 +102,7 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     // ── About ───────────────────────────────────────────────
     "about.page.title": "About Us",
-    "about.page.subtitle": "Founded in 2023, Heroics Capital is an agile asset management firm delivering performance independent of market fluctuations through innovative management methods.",
+    "about.page.subtitle": "Heroics Capital is focused on seeding innovative solutions to grow capital over the long term. Launched in Luxembourg (2024) and Monaco (2024), Heroics is built by market professionals blending financial precision with operational velocity. Our founding team brings 50+ years cumulative experience in financial markets, united by a shared mindset: entrepreneurial drive, performance culture, and product innovation. We partner with leading allocators, build in-house technology, and operate with a lean, data-driven structure to deliver tailored, high-efficiency investment stacks.",
     "about.values.title": "Our Values",
     "about.vision.title": "A Vision",
     "about.vision.desc":
@@ -117,16 +117,16 @@ export const translations: Record<Locale, Record<string, string>> = {
     "about.culture.desc":
       "Curiosity and innovation are at the heart of everything we do. We constantly challenge conventional thinking and explore new frontiers in investment management.",
 
-    // ── About: Team Major Skills ────────────────────────────
-    "about.skills.title": "Team Major Skills",
-    "about.skills.trading": "Multi Asset Trading",
-    "about.skills.trading.desc": "Cross-asset expertise spanning equities, FX, commodities, precious metals, rates, and credit derivatives across listed and OTC markets.",
-    "about.skills.quant": "Financial & Quant Engineering",
-    "about.skills.quant.desc": "Advanced quantitative modelling, systematic strategy development, and structured product engineering.",
-    "about.skills.research": "Fundamental & Macro Research",
-    "about.skills.research.desc": "Rigorous macroeconomic analysis and fundamental research driving conviction-based investment decisions.",
-    "about.skills.risk": "Advanced Risk Management",
-    "about.skills.risk.desc": "Comprehensive portfolio monitoring with proprietary risk frameworks ensuring continuous oversight and protection.",
+    // ── About: Core Capabilities ────────────────────────────
+    "about.skills.title": "Core Capabilities",
+    "about.skills.trading": "Cross-asset architecture",
+    "about.skills.trading.desc": "Proven experience in strategy design across liquid and complex markets.",
+    "about.skills.quant": "Quant & data layer",
+    "about.skills.quant.desc": "Signal optimization and risk engineering, powered by custom research.",
+    "about.skills.research": "Macro + Market intelligence",
+    "about.skills.research.desc": "Live, data synthesis to extract high conviction directional or hedging plays.",
+    "about.skills.risk": "Risk Engineering",
+    "about.skills.risk.desc": "Portfolio math and scenario modeling embedded into every product.",
     "about.skills.execution": "Execution",
     "about.skills.execution.desc": "Institutional-grade best-execution capabilities with optimized order routing across global venues.",
     "about.skills.it": "IT Research & Programming",
