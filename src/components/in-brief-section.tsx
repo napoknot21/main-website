@@ -4,7 +4,7 @@ import React from "react"
 
 import { useLanguage } from "@/lib/language-context"
 import { useEffect, useRef, useState } from "react"
-import { Users, TrendingUp, Calendar, Building2, Briefcase, Globe } from "lucide-react"
+import { Users, TrendingUp, Calendar, Building2, Briefcase, Globe, Award, Shield } from "lucide-react"
 
 interface StatItem {
   icon: React.ReactNode
@@ -65,39 +65,44 @@ export default function InBriefSection() {
     {
       icon: <Users className="h-6 w-6" />,
       value: 15,
-      suffix: "+",
+      suffix: "",
       labelKey: "brief.employees",
     },
     {
-      icon: <Briefcase className="h-6 w-6" />,
-      value: 3,
-      prefix: "",
-      suffix: ".5M",
-      labelKey: "brief.aum",
+      icon: <TrendingUp className="h-6 w-6" />,
+      value: 1,
+      suffix: "",
+      labelKey: "brief.hedge_fund",
     },
     {
-      icon: <TrendingUp className="h-6 w-6" />,
-      value: 12,
-      suffix: ".8%",
-      labelKey: "brief.performance",
+      icon: <Briefcase className="h-6 w-6" />,
+      value: 1,
+      suffix: "",
+      labelKey: "brief.dedicated_fund",
+    },
+    {
+      icon: <Award className="h-6 w-6" />,
+      value: 7,
+      suffix: "",
+      labelKey: "brief.certificates",
     },
     {
       icon: <Calendar className="h-6 w-6" />,
-      value: 18,
+      value: 20,
       suffix: "+",
       labelKey: "brief.years",
     },
     {
-      icon: <Building2 className="h-6 w-6" />,
-      value: 320,
-      suffix: "+",
-      labelKey: "brief.clients",
+      icon: <Shield className="h-6 w-6" />,
+      value: 2,
+      suffix: "",
+      labelKey: "brief.entities",
     },
     {
       icon: <Globe className="h-6 w-6" />,
-      value: 2,
+      value: 6,
       suffix: "",
-      labelKey: "brief.offices",
+      labelKey: "brief.countries",
     },
   ]
 
@@ -117,7 +122,7 @@ export default function InBriefSection() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-16">
           {stats.map((stat) => (
             <div
               key={stat.labelKey}

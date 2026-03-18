@@ -61,11 +61,12 @@ export const translations: Record<Locale, Record<string, string>> = {
     // ── In Brief ────────────────────────────────────────────
     "brief.title": "In Brief",
     "brief.employees": "Employees",
-    "brief.aum": "Assets Under Management",
-    "brief.performance": "Avg. Annual Performance",
+    "brief.hedge_fund": "Hedge Fund",
+    "brief.dedicated_fund": "Dedicated Fund",
+    "brief.certificates": "Managed Certificates",
     "brief.years": "Years of Experience",
-    "brief.clients": "Institutional Clients",
-    "brief.offices": "Offices in Europe",
+    "brief.entities": "Regulated Entities",
+    "brief.countries": "Countries of Distribution",
 
     // ── Offices Section ─────────────────────────────────────
     "offices.title": "Our European Presence",
@@ -402,12 +403,13 @@ export const translations: Record<Locale, Record<string, string>> = {
     "hero.cta": "D\u00E9couvrir notre approche",
 
     "brief.title": "En bref",
-    "brief.employees": "Collaborateurs",
-    "brief.aum": "Actifs sous gestion",
-    "brief.performance": "Perf. annuelle moyenne",
-    "brief.years": "Ann\u00E9es d\u2019exp\u00E9rience",
-    "brief.clients": "Clients institutionnels",
-    "brief.offices": "Bureaux en Europe",
+    "brief.employees": "Employés",
+    "brief.hedge_fund": "Hedge Fund",
+    "brief.dedicated_fund": "Fond dédié",
+    "brief.certificates": "Certificats gérés",
+    "brief.years": "Années d’expérience",
+    "brief.entities": "Entités régulées",
+    "brief.countries": "Pays de commercialisation",
 
     // ── Offices Section ─────────────────────────────────────
     "offices.title": "Notre pr\u00E9sence europ\u00E9enne",
@@ -731,11 +733,12 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     "brief.title": "En breve",
     "brief.employees": "Empleados",
-    "brief.aum": "Activos bajo gesti\u00F3n",
-    "brief.performance": "Rend. anual promedio",
-    "brief.years": "A\u00F1os de experiencia",
-    "brief.clients": "Clientes institucionales",
-    "brief.offices": "Oficinas en Europa",
+    "brief.hedge_fund": "Hedge Fund",
+    "brief.dedicated_fund": "Fondo dedicado",
+    "brief.certificates": "Certificados gestionados",
+    "brief.years": "Años de experiencia",
+    "brief.entities": "Entidades reguladas",
+    "brief.countries": "Países de comercialización",
 
     // ── Offices Section ─────────────────────────────────────
     "offices.title": "Nuestra presencia europea",
@@ -1050,11 +1053,12 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     "brief.title": "In breve",
     "brief.employees": "Collaboratori",
-    "brief.aum": "Patrimonio in gestione",
-    "brief.performance": "Rend. annuale medio",
+    "brief.hedge_fund": "Hedge Fund",
+    "brief.dedicated_fund": "Fondo dedicato",
+    "brief.certificates": "Certificati gestiti",
     "brief.years": "Anni di esperienza",
-    "brief.clients": "Clienti istituzionali",
-    "brief.offices": "Uffici in Europa",
+    "brief.entities": "Entità regolate",
+    "brief.countries": "Paesi di commercializzazione",
 
     // ── Offices Section ─────────────────────────────────────
     "offices.title": "La nostra presenza europea",
@@ -1335,11 +1339,12 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     "brief.title": "Em resumo",
     "brief.employees": "Colaboradores",
-    "brief.aum": "Ativos sob gest\u00E3o",
-    "brief.performance": "Rend. anual m\u00E9dio",
-    "brief.years": "Anos de experi\u00EAncia",
-    "brief.clients": "Clientes institucionais",
-    "brief.offices": "Escrit\u00F3rios na Europa",
+    "brief.hedge_fund": "Hedge Fund",
+    "brief.dedicated_fund": "Fundo dedicado",
+    "brief.certificates": "Certificados geridos",
+    "brief.years": "Anos de experiência",
+    "brief.entities": "Entidades reguladas",
+    "brief.countries": "Países de comercialização",
 
     // ── Offices Section ─────────────────────────────────────
     "offices.title": "A nossa presen\u00E7a europeia",
