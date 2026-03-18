@@ -63,6 +63,7 @@ const milestones = [
 
 export default function AboutPage() {
   const { t } = useLanguage()
+  const visionSection = useInView()
   const valuesSection = useInView()
   const skillsSection = useInView()
   const milestonesSection = useInView()
@@ -92,6 +93,21 @@ export default function AboutPage() {
               </h1>
               <p className="text-sm sm:text-base text-primary-foreground/60 max-w-xl mx-auto leading-relaxed text-pretty">
                 {t("about.page.subtitle")}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Heroics Vision */}
+        <section ref={visionSection.ref as React.RefObject<HTMLElement>} className="py-20 md:py-28 bg-muted/20 border-b border-border">
+          <div className="mx-auto max-w-4xl px-6">
+            <div className={`text-center transition-all duration-1000 ${visionSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+              <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6" />
+              <h2 className="text-3xl md:text-4xl font-serif font-semibold text-deepblue text-balance mb-8">
+                {t("about.heroics_vision.title")}
+              </h2>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-pretty">
+                {t("about.heroics_vision.desc")}
               </p>
             </div>
           </div>

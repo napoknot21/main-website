@@ -102,7 +102,12 @@ export const translations: Record<Locale, Record<string, string>> = {
 
     // ── About ───────────────────────────────────────────────
     "about.page.title": "About Us",
-    "about.page.subtitle": "Heroics Capital is focused on seeding innovative solutions to grow capital over the long term. Launched in Luxembourg (2024) and Monaco (2024), Heroics is built by market professionals blending financial precision with operational velocity. Our founding team brings 50+ years cumulative experience in financial markets, united by a shared mindset: entrepreneurial drive, performance culture, and product innovation. We partner with leading allocators, build in-house technology, and operate with a lean, data-driven structure to deliver tailored, high-efficiency investment stacks.",
+    "about.page.subtitle": "Founded in 2023, Heroics Capital is an agile asset management firm delivering performance independent of market fluctuations through innovative management methods.",
+    
+    // ── About: Heroics Vision ───────────────────────────────
+    "about.heroics_vision.title": "Heroics Vision",
+    "about.heroics_vision.desc": "Heroics Capital is focused on seeding innovative solutions to grow capital over the long term. Launched in Luxembourg (2024) and Monaco (2024), Heroics is built by market professionals blending financial precision with operational velocity. Our founding team brings 50+ years cumulative experience in financial markets, united by a shared mindset: entrepreneurial drive, performance culture, and product innovation. We partner with leading allocators, build in-house technology, and operate with a lean, data-driven structure to deliver tailored, high-efficiency investment stacks.",
+
     "about.values.title": "Our Values",
     "about.vision.title": "A Vision",
     "about.vision.desc":
