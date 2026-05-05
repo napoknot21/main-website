@@ -96,18 +96,17 @@ export default function Footer() {
             </h3>
             <ul className="flex flex-col gap-3">
               {[
-                "footer.legal.privacy",
-                "footer.legal.terms",
-                "footer.legal.cookies",
-                "footer.legal.disclaimer",
-                "footer.legal.regulatory",
-              ].map((key) => (
-                <li key={key}>
+                { key: "footer.legal.privacy", href: "/legal/privacy" },
+                { key: "footer.legal.notice", href: "/legal/notice" },
+                { key: "footer.legal.cookies", href: "/legal/cookies" },
+                { key: "footer.legal.disclosure", href: "/legal/disclosure" },
+              ].map((item) => (
+                <li key={item.key}>
                   <Link
-                    href="#"
+                    href={item.href}
                     className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors"
                   >
-                    {t(key)}
+                    {t(item.key)}
                   </Link>
                 </li>
               ))}
