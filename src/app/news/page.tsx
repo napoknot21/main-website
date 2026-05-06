@@ -76,6 +76,7 @@ export default function NewsPage() {
               src="/images/pawel.png"
               alt="News"
               fill
+              sizes="100vw"
               className="object-cover"
               priority
             />
@@ -111,6 +112,8 @@ export default function NewsPage() {
                         src={article.image || "/placeholder.svg"}
                         alt={t(article.titleKey)}
                         fill
+                        sizes="(max-width: 640px) 100vw, 50vw"
+                        loading="lazy"
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors" />

@@ -21,6 +21,7 @@ export default function ContactPage() {
               src="/images/paris.png"
               alt="Contact Heroics Capital Partners"
               fill
+              sizes="100vw"
               className="object-cover"
               priority
             />

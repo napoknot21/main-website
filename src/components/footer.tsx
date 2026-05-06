@@ -12,16 +12,16 @@ export default function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
       {/* Main Footer */}
-      <div className="mx-auto max-w-screen-2xl px-6 py-16 md:py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 justify-items-center sm:justify-items-start">
+      <div className="mx-auto max-w-screen-2xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-8 justify-items-center sm:justify-items-start">
           {/* Column 1 - Logo & Social */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-4 md:gap-6">
             <Image
               src="/images/heroics-logo-rgb blanc.png"
               alt="Heroics Capital Partners"
               width={160}
               height={64}
-              className="w-auto h-auto opacity-90"
+              className="w-auto h-[40px] md:h-auto opacity-90"
             />
             <div className="flex items-center gap-4">
               <a
@@ -119,7 +119,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-primary-foreground/8">
-        <div className="mx-auto max-w-7xl px-6 py-6 flex items-center justify-center">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 py-4 md:py-6 flex items-center justify-center">
           <p className="text-xs text-primary-foreground/35">
             &copy; {currentYear} {t("footer.copyright")}
           </p>

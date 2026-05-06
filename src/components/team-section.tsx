@@ -17,7 +17,7 @@ const teamMembers = [
     { id: "jonathan", image: "/images/team/jonathan.jpg", name: "Jonathan Niddam", office: "monaco" as OfficeType },
     { id: "julien", image: "/images/team/julien_baptiste.jpg", name: "Julien Baptiste", office: "luxembourg" as OfficeType },
     { id: "ilyasse", image: "/images/team/ilyasse.jpg", name: "Ilyasse Tariq", office: "luxembourg" as OfficeType },
-    { id: "filippo", image: "/images/team/filippo.jpg", name: "Filippo Perolo", office: "monaco" as OfficeType },
+    { id: "filippo", image: "/images/team/pippo.jpg", name: "Filippo Perolo", office: "monaco" as OfficeType },
     { id: "bak", image: "/images/team/bak.jpg", name: "Bak", office: "luxembourg" as OfficeType },
     { id: "jj", image: "/images/team/jean_jacques_martinenghi.jpg", name: "Jean-Jacques Martinenghi", office: "monaco" as OfficeType },
     { id: "tom", image: "/images/team/tom_chebeaux.jpeg", name: "Tom Chebeaux", office: "luxembourg" as OfficeType },
@@ -91,6 +91,8 @@ export default function TeamSection() {
                                             src={member.image}
                                             alt={member.name}
                                             fill
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                                            loading="lazy"
                                             className="object-cover group-hover:scale-105 transition-transform duration-700"
                                         />
                                     </div>
@@ -123,6 +125,8 @@ export default function TeamSection() {
                                                 src={member.image}
                                                 alt={member.name}
                                                 fill
+                                                sizes="(max-width: 768px) 100vw, 40vw"
+                                                loading="lazy"
                                                 className="object-cover"
                                             />
                                         </div>

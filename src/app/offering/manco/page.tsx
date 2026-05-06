@@ -62,6 +62,7 @@ export default function ManCoPage() {
               src="/images/hero.png"
               alt="Manco Services"
               fill
+              sizes="100vw"
               className="object-cover"
               priority
             />

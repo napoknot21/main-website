@@ -15,7 +15,9 @@ export default function VideoSection() {
           src="/videos/heroicspitch_HD.gif"
           alt="Heroics Capital presentation"
           fill
-          unoptimized
+          sizes="100vw"
+          loading="lazy"
+          quality={70}
           className="object-cover"
         />
       </div>

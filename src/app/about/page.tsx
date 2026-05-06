@@ -79,6 +79,7 @@ export default function AboutPage() {
               src="/images/Monaco.jpg"
               alt="About Heroics Capital Partners"
               fill
+              sizes="100vw"
               className="object-cover"
               priority
             />

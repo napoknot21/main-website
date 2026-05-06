@@ -51,6 +51,8 @@ export default function PartnersSection() {
                                         src={`/images/partners/${partner}`}
                                         alt="Partner Logo"
                                         fill
+                                        sizes="(max-width: 640px) 128px, 160px"
+                                        loading="lazy"
                                         className="object-contain"
                                     />
                                 </div>
@@ -65,6 +67,8 @@ export default function PartnersSection() {
                                         src={`/images/partners/${partner}`}
                                         alt="Partner Logo"
                                         fill
+                                        sizes="(max-width: 640px) 128px, 160px"
+                                        loading="lazy"
                                         className="object-contain"
                                     />
                                 </div>

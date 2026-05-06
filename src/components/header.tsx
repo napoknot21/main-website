@@ -163,7 +163,7 @@ export default function Header() {
           }`}
       >
         {/* Top bar — right-aligned utility links */}
-        <div className="relative mx-auto max-w-screen-2xl flex items-center justify-end px-8 py-1.5 gap-5">
+        <div className="hidden md:flex relative mx-auto max-w-screen-2xl items-center justify-end px-8 py-4 gap-5">
           <button
             onClick={openClientModal}
             className={`flex items-center gap-1.5 text-xs transition-colors ${textColorClass}`}
@@ -226,23 +226,23 @@ export default function Header() {
         </div>
 
         {/* Main nav — logo FAR LEFT, navigation FAR RIGHT */}
-        <div className="relative mx-auto max-w-screen-2xl flex items-center justify-between px-8 py-3.5">
+        <div className="relative mx-auto max-w-screen-2xl flex items-center justify-between px-8 py-3 md:py-1.5 md:-mt-3">
           {/* Logo pinned far-left, spans both rows via negative-top margin */}
           <Link href="/" className="relative flex items-center group z-10 shrink-0" aria-label="Heroics Capital home">
-            <div className="relative -mt-8">
+            <div className="relative md:-mt-8">
               <Image
                 src={scrolled ? "/images/heroics-logo-rgb.png" : "/images/heroics-logo-rgb blanc.png"}
                 alt="Heroics Capital Partners"
                 width={180}
                 height={72}
-                className="h-[72px] w-auto object-contain transition-opacity duration-500"
+                className="h-[36px] md:h-[72px] w-auto object-contain transition-opacity duration-500"
                 priority
               />
             </div>
           </Link>
 
           {/* Desktop nav pinned far-right */}
-          <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
+          <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
             {/* Offering dropdown */}
             <div className="relative" ref={offeringRef}>
               <button
@@ -353,6 +353,25 @@ export default function Header() {
                     </button>
                   ))}
                 </div>
+              </div>
+
+              <div className={`border-t pt-3 mt-2 ${scrolled ? "border-border" : "border-primary-foreground/10"}`}>
+                <a
+                  href="https://investors.heroics-capital.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center gap-2 text-xs py-2 transition-colors ${scrolled ? "text-foreground/60 hover:text-foreground" : "text-primary-foreground/60 hover:text-primary-foreground"}`}
+                >
+                  <Image
+                    src="/images/login-icon.jpg"
+                    alt="Login"
+                    width={18}
+                    height={18}
+                    className="rounded-full"
+                    loading="eager"
+                  />
+                  <span>Login</span>
+                </a>
               </div>
             </nav>
           </div>

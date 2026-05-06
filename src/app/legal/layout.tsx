@@ -1,3 +1,7 @@
+"use client"
+
+import { useEffect } from "react"
+import { usePathname } from "next/navigation"
 import type { ReactNode } from "react"
 import { Shield } from "lucide-react"
 import Header from "@/components/header"
@@ -7,6 +11,12 @@ import CookieBanner from "@/components/cookie-banner"
 import LegalHeader from "./legal-header"
 
 export default function LegalLayout({ children }: { children: ReactNode }) {
+  const pathname = usePathname()
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" })
+  }, [pathname])
+
   return (
     <>
       <Header />
