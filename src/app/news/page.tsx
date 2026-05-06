@@ -121,9 +121,9 @@ export default function NewsPage() {
                   )}
 
                   {/* Content */}
-                  <div className="p-6 flex flex-col gap-3">
+                  <div className="p-6 flex flex-col items-center text-center gap-3">
                     {/* Date */}
-                    <div className="flex items-center gap-2 text-muted-foreground text-xs">
+                    <div className="flex items-center justify-center gap-2 text-muted-foreground text-xs">
                       <Calendar className="h-3.5 w-3.5" />
                       <time dateTime={article.date}>
                         {formatDate(article.date, locale)}
@@ -131,12 +131,12 @@ export default function NewsPage() {
                     </div>
 
                     {/* Title */}
-                    <h2 className="text-lg font-semibold text-foreground leading-snug group-hover:text-accent transition-colors">
+                    <h2 className="text-lg font-semibold text-foreground leading-snug group-hover:text-accent transition-colors text-center">
                       {t(article.titleKey)}
                     </h2>
 
                     {/* Content summary */}
-                    <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3 text-center">
                       {t(article.contentKey)}
                     </p>
 

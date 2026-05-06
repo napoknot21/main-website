@@ -83,7 +83,7 @@ export default function ManCoPage() {
         {/* Intro */}
         <section className="py-16 bg-background border-b border-border">
           <div className="mx-auto max-w-6xl px-8">
-            <p className="text-muted-foreground text-base leading-relaxed max-w-3xl">
+            <p className="text-muted-foreground text-base leading-relaxed max-w-3xl mx-auto text-center">
               {t("offering.manco.intro")}
             </p>
           </div>
@@ -96,11 +96,11 @@ export default function ManCoPage() {
               {services.map(({ key, icon: Icon }, idx) => (
                 <div
                   key={key}
-                  className={`group flex flex-col p-7 rounded-xl border border-border bg-background hover:border-blue-hour/40 hover:shadow-md transition-all duration-700 ${servicesSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  className={`group flex flex-col items-center text-center p-7 rounded-xl border border-border bg-background hover:border-blue-hour/40 hover:shadow-md transition-all duration-700 ${servicesSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                     }`}
                   style={{ transitionDelay: `${idx * 120}ms` }}
                 >
-                  <div className="flex items-center gap-3 mb-4">
+                  <div className="flex flex-col items-center gap-3 mb-4">
                     <div className="flex items-center justify-center h-12 w-12 rounded-full bg-deepblue text-white shrink-0 group-hover:bg-blue-hour transition-colors duration-300">
                       <Icon className="h-5 w-5" />
                     </div>
@@ -108,12 +108,12 @@ export default function ManCoPage() {
                       <span className="text-[10px] font-bold tracking-widest uppercase text-blue-hour">
                         {t(`offering.manco.${key}.tag`)}
                       </span>
-                      <h3 className="text-base font-semibold text-foreground leading-snug">
+                      <h3 className="text-base font-semibold text-foreground leading-snug text-center">
                         {t(`offering.manco.${key}.title`)}
                       </h3>
                     </div>
                   </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed text-pretty">
+                  <p className="text-muted-foreground text-sm leading-relaxed text-pretty text-center">
                     {t(`offering.manco.${key}.desc`)}
                   </p>
                 </div>
@@ -128,20 +128,20 @@ export default function ManCoPage() {
             <div className="text-center mb-14">
               <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6" />
               <h2 className="text-3xl md:text-4xl font-serif font-semibold text-deepblue text-balance">
-                {"Proprietary Platforms"}
+                {t("offering.manco.platforms.title")}
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {platforms.map(({ key, icon: Icon }, idx) => (
                 <div
                   key={key}
-                  className={`relative flex flex-col p-8 rounded-xl border border-border bg-background overflow-hidden group transition-all duration-700 ${platformsSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  className={`relative flex flex-col items-center text-center p-8 rounded-xl border border-border bg-background overflow-hidden group transition-all duration-700 ${platformsSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                     }`}
                   style={{ transitionDelay: `${idx * 150}ms` }}
                 >
                   {/* Accent bar */}
                   <div className="absolute top-0 left-0 w-full h-1 bg-blue-hour opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_4px_10px_rgba(57,114,229,0.5)]" />
-                  <div className="flex items-center gap-3 mb-4">
+                  <div className="flex items-center justify-center gap-3 mb-4">
                     <span className="text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full bg-blue-hour/10 text-blue-hour">
                       {t(`offering.manco.${key}.tag`)}
                     </span>
@@ -154,7 +154,7 @@ export default function ManCoPage() {
                       {t(`offering.manco.${key}.title`)}
                     </h3>
                   </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed text-pretty">
+                  <p className="text-muted-foreground text-sm leading-relaxed text-pretty text-center">
                     {t(`offering.manco.${key}.desc`)}
                   </p>
                 </div>

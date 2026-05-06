@@ -1,16 +1,13 @@
 "use client"
 
 import { useRef, useEffect, useState } from "react"
-import Link from "next/link"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import CookieBanner from "@/components/cookie-banner"
 import ContactCtaSection from "@/components/contact-cta-section"
 import { useLanguage } from "@/lib/language-context"
 import {
-  ArrowRight,
   Settings,
-  BarChart2,
   FileText,
   MessageSquare,
   Layers,
@@ -35,11 +32,10 @@ function useInView(threshold = 0.1) {
 
 const solutions = [
   { key: "dpm", icon: Settings, tagKey: "offering.is.dpm.tag", titleKey: "offering.is.dpm.title", descKey: "offering.is.dpm.desc" },
-  { key: "amcdyn", icon: BarChart2, tagKey: "offering.is.amcdyn.tag", titleKey: "offering.is.amcdyn.title", descKey: "offering.is.amcdyn.desc" },
-  { key: "amcdedicated", icon: FileText, tagKey: "offering.is.amcdedicated.tag", titleKey: "offering.is.amcdedicated.title", descKey: "offering.is.amcdedicated.desc" },
   { key: "adv", icon: MessageSquare, tagKey: "offering.is.adv.tag", titleKey: "offering.is.adv.title", descKey: "offering.is.adv.desc" },
-  { key: "aggregation", icon: Layers, tagKey: "offering.is.aggregation.tag", titleKey: "offering.is.aggregation.title", descKey: "offering.is.aggregation.desc" },
+  { key: "certificates", icon: FileText, tagKey: "offering.is.certificates.tag", titleKey: "offering.is.certificates.title", descKey: "offering.is.certificates.desc" },
   { key: "cash", icon: Wallet, tagKey: "offering.is.cash.tag", titleKey: "offering.is.cash.title", descKey: "offering.is.cash.desc" },
+  { key: "aggregation", icon: Layers, tagKey: "offering.is.aggregation.tag", titleKey: "offering.is.aggregation.title", descKey: "offering.is.aggregation.desc" },
 ] as const
 
 export default function InvestmentSolutionsPage() {
@@ -80,7 +76,7 @@ export default function InvestmentSolutionsPage() {
         {/* Intro */}
         <section className="py-16 bg-background border-b border-border">
           <div className="mx-auto max-w-6xl px-8">
-            <p className="text-muted-foreground text-base leading-relaxed max-w-3xl">
+            <p className="text-muted-foreground text-base leading-relaxed max-w-3xl mx-auto text-center">
               {t("offering.is.intro")}
             </p>
           </div>
@@ -93,11 +89,11 @@ export default function InvestmentSolutionsPage() {
               {solutions.map(({ key, icon: Icon, tagKey, titleKey, descKey }, idx) => (
                 <div
                   key={key}
-                  className={`flex flex-col p-7 rounded-lg border border-border bg-background hover:border-blue-hour/40 hover:shadow-md transition-all duration-700 ${solutionsSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  className={`flex flex-col items-center text-center p-7 rounded-lg border border-border bg-background hover:border-blue-hour/40 hover:shadow-md transition-all duration-700 ${solutionsSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                     }`}
                   style={{ transitionDelay: `${idx * 100}ms` }}
                 >
-                  <div className="flex items-center gap-3 mb-4">
+                  <div className="flex flex-col items-center gap-3 mb-4">
                     <div className="flex items-center justify-center h-12 w-12 rounded-full bg-deepblue text-white shrink-0 group-hover:bg-blue-hour transition-colors duration-300">
                       <Icon className="h-5 w-5" />
                     </div>
@@ -105,12 +101,12 @@ export default function InvestmentSolutionsPage() {
                       <span className="text-[10px] font-bold tracking-widest uppercase text-blue-hour">
                         {t(tagKey)}
                       </span>
-                      <h3 className="text-base font-semibold text-foreground leading-snug">
+                      <h3 className="text-base font-semibold text-foreground leading-snug text-center">
                         {t(titleKey)}
                       </h3>
                     </div>
                   </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed text-pretty">
+                  <p className="text-muted-foreground text-sm leading-relaxed text-pretty text-center">
                     {t(descKey)}
                   </p>
                 </div>

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useCallback } from "react"
+import React, { useState, useCallback, useEffect } from "react"
 import { useLanguage } from "@/lib/language-context"
 import { Send, Check, AlertCircle, RefreshCw, Loader2 } from "lucide-react"
 
@@ -10,6 +10,8 @@ function generateCaptcha(): { question: string; answer: number } {
   return { question: `${a} + ${b} = ?`, answer: a + b }
 }
 
+const initialCaptcha = { question: "6 + 8 = ?", answer: 14 }
+
 interface FormData {
   context: string
   firstName: string
@@ -17,7 +19,6 @@ interface FormData {
   email: string
   phone: string
   country: string
-  profile: string
   message: string
 }
 
@@ -28,14 +29,13 @@ const initialFormData: FormData = {
   email: "",
   phone: "",
   country: "",
-  profile: "",
   message: "",
 }
 
 export default function ContactForm() {
   const { t } = useLanguage()
   const [formData, setFormData] = useState<FormData>(initialFormData)
-  const [captcha, setCaptcha] = useState(generateCaptcha)
+  const [captcha, setCaptcha] = useState(initialCaptcha)
   const [captchaInput, setCaptchaInput] = useState("")
   const [errors, setErrors] = useState<Partial<Record<keyof FormData | "captcha", string>>>({})
   const [submitted, setSubmitted] = useState(false)
@@ -46,6 +46,10 @@ export default function ContactForm() {
     setCaptcha(generateCaptcha())
     setCaptchaInput("")
   }, [])
+
+  useEffect(() => {
+    refreshCaptcha()
+  }, [refreshCaptcha])
 
   const contexts = [
     { value: "customer", labelKey: "contact.form.ctx.customer" },
@@ -181,28 +185,12 @@ export default function ContactForm() {
         />
       </div>
 
-      {/* Country + Profile */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <FormField
           label={t("contact.form.country")}
           value={formData.country} onChange={(v) => handleChange("country", v)}
           placeholder={t("contact.form.country.placeholder")}
         />
-        {/* Profile select */}
-        <div>
-          <label className="block text-sm font-medium text-foreground mb-2">
-            {t("contact.form.profile")}
-          </label>
-          <select
-            value={formData.profile}
-            onChange={(e) => handleChange("profile", e.target.value)}
-            className="w-full px-4 py-3 text-sm bg-background border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors"
-          >
-            <option value="">{t("contact.form.profile.placeholder")}</option>
-            <option value="professional">{t("client.professional")}</option>
-            <option value="non_professional">{t("client.non_professional")}</option>
-          </select>
-        </div>
       </div>
 
       {/* Message */}
@@ -237,7 +225,7 @@ export default function ContactForm() {
             type="button"
             onClick={refreshCaptcha}
             className="flex items-center justify-center h-10 w-10 rounded-md border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors"
-            aria-label="Refresh captcha"
+            aria-label={t("contact.form.captcha.refresh")}
           >
             <RefreshCw className="h-4 w-4" />
           </button>

@@ -89,10 +89,10 @@ export default function OfficesSection() {
                 <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-blue-hour/5 blur-3xl" />
             </div>
 
-            <div className="relative mx-auto max-w-screen-xl px-6">
+            <div className="relative mx-auto max-w-screen-xl px-4 md:px-6">
                 {/* Section Header */}
                 <AnimatedSection>
-                    <div className="mb-16 md:mb-20">
+                    <div className="mb-12 md:mb-16 lg:mb-20">
                         <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6" />
                         <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-deepblue text-balance mb-4">
                             {t("offices.title")}
@@ -103,17 +103,17 @@ export default function OfficesSection() {
                     </div>
                 </AnimatedSection>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-start">
                     {/* Left: Map */}
                     <AnimatedSection>
-                        <div className="flex flex-col gap-6">
+                        <div className="flex flex-col gap-4 md:gap-6">
                             {/* Location Tabs */}
-                            <div className="flex gap-3 overflow-x-auto pb-2 -mx-6 px-6 md:overflow-visible md:pb-0 md:mx-0 md:px-0">
+                            <div className="flex gap-2 md:gap-3 overflow-x-auto pb-2 -mx-4 md:-mx-6 px-4 md:px-6 lg:overflow-visible lg:pb-0 lg:mx-0 lg:px-0">
                                 {(Object.values(offices) as typeof offices[OfficeId][]).map((o) => (
                                     <button
                                         key={o.id}
                                         onClick={() => setActiveOffice(o.id)}
-                                        className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium border transition-all duration-300 whitespace-nowrap ${activeOffice === o.id
+                                        className={`flex items-center gap-2 px-4 md:px-5 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-medium border transition-all duration-300 whitespace-nowrap ${activeOffice === o.id
                                             ? "bg-blue-hour text-white border-blue-hour shadow-lg shadow-blue-hour/20"
                                             : "bg-transparent text-foreground/60 border-border hover:border-blue-hour/40 hover:text-foreground"
                                             }`}
@@ -125,7 +125,7 @@ export default function OfficesSection() {
                             </div>
 
                             {/* Real Map */}
-                            <div className="rounded-2xl overflow-hidden border border-border h-[360px] md:h-[420px] relative z-0 shadow-sm">
+                            <div className="rounded-2xl overflow-hidden border border-border h-[300px] md:h-[360px] lg:h-[420px] relative z-0 shadow-sm">
                                 <OfficeMap
                                     activeOffice={activeOffice}
                                     onSelect={setActiveOffice}
@@ -145,7 +145,7 @@ export default function OfficesSection() {
                     {/* Right: Services Panel */}
                     <AnimatedSection delay={0.15}>
                         <div key={activeOffice} className="animate-fade-in-up">
-                            <div className="mb-6">
+                            <div className="mb-4 md:mb-6">
                                 <span className="text-blue-hour text-xs font-bold tracking-widest uppercase">
                                     {t(office.nameKey)}
                                 </span>
@@ -154,7 +154,7 @@ export default function OfficesSection() {
                                 </h3>
                             </div>
 
-                            <div className="flex flex-col gap-3">
+                            <div className="flex flex-col gap-2 md:gap-3">
                                 {office.services.map((svc, i) => {
                                     const Icon = svc.icon
                                     return (

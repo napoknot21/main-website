@@ -1,27 +1,12 @@
 "use client"
 
 import { useRef, useEffect, useState } from "react"
-import Link from "next/link"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import CookieBanner from "@/components/cookie-banner"
 import ContactCtaSection from "@/components/contact-cta-section"
 import { useLanguage } from "@/lib/language-context"
-import {
-  ArrowRight,
-  Layers,
-  Droplets,
-  Settings2,
-  BarChart3,
-  Activity,
-  Zap,
-  Lightbulb,
-  Shield,
-  TrendingUp,
-  DollarSign,
-  Gem,
-  Percent,
-} from "lucide-react"
+import { Droplets, Activity, Zap, Lightbulb, Shield, Percent } from "lucide-react"
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLElement>(null)
@@ -40,17 +25,9 @@ function useInView(threshold = 0.15) {
 }
 
 const approachItems = [
-  { key: "multiasset", icon: Layers },
-  { key: "liquid", icon: Droplets },
-  { key: "systematic", icon: Settings2 },
-] as const
-
-const assetClasses = [
-  { key: "equities", icon: TrendingUp },
-  { key: "fx", icon: DollarSign },
-  { key: "commodities", icon: BarChart3 },
-  { key: "metals", icon: Gem },
-  { key: "rates", icon: Percent },
+  { key: "globalmacro", icon: Activity },
+  { key: "optionenhancement", icon: Percent },
+  { key: "liquidity", icon: Droplets },
 ] as const
 
 const benefits = [
@@ -59,11 +36,21 @@ const benefits = [
   { key: "innovation", icon: Lightbulb },
 ] as const
 
+function renderBoldText(text: string) {
+  return text.split(/(\*[^*]+\*)/g).map((segment, idx) =>
+    segment.startsWith("*") && segment.endsWith("*") ? (
+      <strong key={idx} className="font-semibold text-white">
+        {segment.slice(1, -1)}
+      </strong>
+    ) : (
+      <span key={idx}>{segment}</span>
+    )
+  )
+}
+
 export default function AifPage() {
   const { t } = useLanguage()
   const approach = useInView()
-  const assets = useInView()
-  const monitoring = useInView()
   const benefitsSection = useInView()
 
   return (
@@ -92,16 +79,7 @@ export default function AifPage() {
               {t("offering.aif.hero.title")}
             </h1>
             <p className="text-sm sm:text-base text-primary-foreground/60 max-w-xl mx-auto leading-relaxed text-pretty">
-              {t("offering.aif.hero.subtitle")}
-            </p>
-          </div>
-        </section>
-
-        {/* Intro */}
-        <section className="py-16 bg-background">
-          <div className="mx-auto max-w-6xl px-8">
-            <p className="text-muted-foreground text-base leading-relaxed max-w-3xl">
-              {t("offering.aif.intro")}
+              {renderBoldText(t("offering.aif.hero.subtitle"))}
             </p>
           </div>
         </section>
@@ -134,49 +112,6 @@ export default function AifPage() {
                   </p>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Asset Classes */}
-        <section ref={assets.ref as React.RefObject<HTMLElement>} className="py-20 bg-background">
-          <div className="mx-auto max-w-6xl px-8">
-            <div className="text-center mb-14">
-              <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6" />
-              <h2 className="text-3xl md:text-4xl font-serif font-semibold text-deepblue text-balance">
-                {t("offering.aif.assets.title")}
-              </h2>
-            </div>
-            <div className="flex flex-wrap justify-center gap-4">
-              {assetClasses.map(({ key, icon: Icon }, idx) => (
-                <div
-                  key={key}
-                  className={`flex items-center gap-3 px-6 py-4 rounded-lg border border-border bg-background transition-all duration-600 hover:border-blue-hour/40 hover:bg-blue-hour/5 hover:shadow-sm ${assets.inView ? "opacity-100 scale-100" : "opacity-0 scale-95"
-                    }`}
-                  style={{ transitionDelay: `${idx * 100}ms` }}
-                >
-                  <Icon className="h-5 w-5 text-blue-hour shrink-0" />
-                  <span className="text-sm font-medium text-foreground">{t(`offering.aif.assets.${key}`)}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Continuous Monitoring */}
-        <section ref={monitoring.ref as React.RefObject<HTMLElement>} className="py-20 bg-deepblue">
-          <div className={`mx-auto max-w-6xl px-8 flex flex-col md:flex-row items-center gap-10 transition-all duration-700 ${monitoring.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}>
-            <div className="flex items-center justify-center h-20 w-20 rounded-full bg-primary-foreground/10 shrink-0">
-              <Activity className="h-10 w-10 text-white" />
-            </div>
-            <div>
-              <h2 className="text-2xl md:text-3xl font-serif font-semibold text-white mb-3">
-                {t("offering.aif.monitoring.title")}
-              </h2>
-              <p className="text-white/60 leading-relaxed text-pretty font-light">
-                {t("offering.aif.monitoring.desc")}
-              </p>
             </div>
           </div>
         </section>

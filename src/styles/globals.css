@@ -3,7 +3,28 @@
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "PPMori", system-ui, sans-serif;
+}
+
+/* Leaflet Map Tooltip Styles */
+.office-map-tooltip {
+  font-family: "PPMori", system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: rgba(6, 18, 55, 0.95) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(57, 114, 229, 0.3) !important;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.office-map-tooltip::before {
+  border-top-color: rgba(6, 18, 55, 0.95) !important;
+}
+
+.leaflet-tooltip-top::before {
+  border-top-color: rgba(6, 18, 55, 0.95) !important;
 }
 
 @layer utilities {

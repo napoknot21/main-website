@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useLanguage } from "@/lib/language-context"
-import { Linkedin, ExternalLink } from "lucide-react"
+import { Linkedin } from "lucide-react"
 
 export default function Footer() {
   const { t } = useLanguage()
@@ -13,9 +13,9 @@ export default function Footer() {
     <footer className="bg-primary text-primary-foreground">
       {/* Main Footer */}
       <div className="mx-auto max-w-screen-2xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-8 justify-items-center sm:justify-items-start">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-8 justify-items-center sm:justify-items-start">
           {/* Column 1 - Logo & Social */}
-          <div className="flex flex-col gap-4 md:gap-6">
+          <div className="col-span-2 sm:col-span-1 flex flex-col gap-4 md:gap-6">
             <Image
               src="/images/heroics-logo-rgb blanc.png"
               alt="Heroics Capital Partners"
@@ -36,7 +36,31 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2 - Navigation */}
+          {/* Column 2 - Notre offre */}
+          <div className="col-span-2 sm:col-span-1">
+            <h3 className="text-base font-semibold mb-6 text-primary-foreground">
+              {t("nav.offering")}
+            </h3>
+            <ul className="flex flex-col gap-3">
+              <li>
+                <Link href="/offering/aif" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
+                  {t("nav.offering.aif")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/offering/investment-solutions" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
+                  {t("nav.offering.investment")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/offering/manco" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
+                  {t("nav.offering.manco")}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3 - Navigation */}
           <div>
             <h3 className="text-base font-semibold mb-6 text-primary-foreground">
               {t("footer.nav")}
@@ -60,30 +84,6 @@ export default function Footer() {
               <li>
                 <Link href="/contact" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
                   {t("nav.contact")}
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 3 - Notre offre */}
-          <div>
-            <h3 className="text-base font-semibold mb-6 text-primary-foreground">
-              {t("nav.offering")}
-            </h3>
-            <ul className="flex flex-col gap-3">
-              <li>
-                <Link href="/offering/aif" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
-                  {t("nav.offering.aif")}
-                </Link>
-              </li>
-              <li>
-                <Link href="/offering/investment-solutions" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
-                  {t("nav.offering.investment")}
-                </Link>
-              </li>
-              <li>
-                <Link href="/offering/manco" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
-                  {t("nav.offering.manco")}
                 </Link>
               </li>
             </ul>

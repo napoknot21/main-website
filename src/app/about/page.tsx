@@ -107,7 +107,7 @@ export default function AboutPage() {
               <h2 className="text-3xl md:text-4xl font-serif font-semibold text-deepblue text-balance mb-8">
                 {t("about.heroics_vision.title")}
               </h2>
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-pretty">
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-pretty text-center">
                 {t("about.heroics_vision.desc")}
               </p>
             </div>
@@ -163,7 +163,7 @@ export default function AboutPage() {
               {skills.map(({ key, icon: Icon }, idx) => (
                 <div
                   key={key}
-                  className={`flex items-start gap-4 p-6 rounded-xl border border-border bg-background hover:border-blue-hour/30 hover:shadow-sm transition-all duration-700 ${skillsSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  className={`flex flex-col items-center text-center gap-4 p-6 rounded-xl border border-border bg-background hover:border-blue-hour/30 hover:shadow-sm transition-all duration-700 ${skillsSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                     }`}
                   style={{ transitionDelay: `${idx * 100}ms` }}
                 >
@@ -174,7 +174,7 @@ export default function AboutPage() {
                     <h3 className="text-sm font-semibold text-foreground mb-1.5">
                       {t(`about.skills.${key}`)}
                     </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className="text-muted-foreground text-sm leading-relaxed text-center">
                       {t(`about.skills.${key}.desc`)}
                     </p>
                   </div>
@@ -216,7 +216,7 @@ export default function AboutPage() {
 
                       {/* Content card */}
                       <div
-                        className={`ml-16 md:ml-0 md:w-[calc(50%-2rem)] ${isLeft ? "md:pr-8 md:text-right" : "md:pl-8 md:ml-auto"
+                        className={`ml-16 md:ml-0 md:w-[calc(50%-2rem)] text-center ${isLeft ? "md:pr-8" : "md:pl-8 md:ml-auto"
                           }`}
                       >
                         <span className="text-[10px] font-bold tracking-widest uppercase text-accent">
@@ -225,7 +225,7 @@ export default function AboutPage() {
                         <h3 className="text-base font-semibold text-foreground mt-1 mb-2">
                           {t(`about.milestones.${key}.title`)}
                         </h3>
-                        <p className="text-muted-foreground text-sm leading-relaxed">
+                        <p className="text-muted-foreground text-sm leading-relaxed text-center">
                           {t(`about.milestones.${key}.desc`)}
                         </p>
                       </div>
