@@ -229,13 +229,13 @@ export default function Header() {
         <div className="relative mx-auto max-w-screen-2xl flex items-center justify-between px-8 py-3 md:py-1.5 md:-mt-3">
           {/* Logo pinned far-left, spans both rows via negative-top margin */}
           <Link href="/" className="relative flex items-center group z-10 shrink-0" aria-label="Heroics Capital home">
-            <div className="relative md:-mt-8">
+            <div className="relative md:-mt-8 py-1.5 md:py-2">
               <Image
                 src={scrolled ? "/images/heroics-logo-rgb.png" : "/images/heroics-logo-rgb blanc.png"}
                 alt="Heroics Capital Partners"
                 width={180}
                 height={72}
-                className="h-[36px] md:h-[72px] w-auto object-contain transition-opacity duration-500"
+                className="h-[32px] md:h-[60px] w-auto object-contain transition-opacity duration-500"
                 priority
               />
             </div>
