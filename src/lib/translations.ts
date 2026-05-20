@@ -180,6 +180,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "news.page.title": "News",
     "news.page.subtitle": "Stay informed with the latest news and insights from Heroics Capital.",
     "news.readMore": "Read more",
+    "news.watchVideo": "Watch video",
+    "news.viewOnLinkedIn": "View on LinkedIn",
     "news.article1.title": "Heroics Capital Expands Luxembourg Operations",
     "news.article1.content":
       "Heroics Capital announces a significant expansion of its Luxembourg office, strengthening its European presence with new hires across portfolio management and advisory services.",
@@ -192,6 +194,39 @@ export const translations: Record<Locale, Record<string, string>> = {
     "news.article4.title": "Heroics Capital Wins Industry Award",
     "news.article4.content":
       "We are proud to announce that Heroics Capital has been recognized with the European Asset Management Innovation Award for our groundbreaking approach to discretionary management.",
+    "news.article5.title": "Trajectoire: Heroics Capital, Investing for Success",
+    "news.article5.content":
+      "Cyrille Nahabedian, Managing Director of Heroics Capital, presents our agile and digital solutions, managing client investment portfolios through a double approach: our hedge fund and structured products.",
+    "news.article6.title": "Cyrille Nahabedian: Heroics Capital, Alternative Management and Advisory",
+    "news.article6.content":
+      "Cyrille Nahabedian, CEO of Heroics Capital, presents the company's business model, core activity, and ambitions on BFM Business in Paroles d'entreprises.",
+    "news.article7.title": "The Fundamentals of the Structured Products Industry",
+    "news.article7.content":
+      "Cyrille Nahabedian, CEO and Co-Founder of Heroics Capital Partners, joined an ESCP Business School seminar in Luxembourg for a rich exchange on structured products and wealth management.",
+    "news.article8.title": "Heroics Capital at the Monaco Grand Prix: Precision on and off the Track",
+    "news.article8.content":
+      "Heroics Capital welcomed select partners during the Monaco Grand Prix, reflecting the precision, performance, and pace that connect elite motorsport with institutional finance.",
+    "news.article9.title": "Release of Heroics Aegis",
+    "news.article9.content":
+      "Heroics released Heroics Aegis, a front-to-middle, compliance, and board management platform designed to centralize data and strengthen operational governance.",
+    "news.article10.title": "First European Hedge Fund to Trade a Bitcoin OTC Derivative with Goldman Sachs Europe",
+    "news.article10.content":
+      "Heroics Global Strategy SICAV-RAIF became the first European hedge fund to execute an OTC derivative product on Bitcoin with Goldman Sachs Europe, marking a milestone for institutional digital asset strategies.",
+    "news.article11.title": "Release of Heroics Sentinelle",
+    "news.article11.content":
+      "Heroics released Heroics Sentinelle, a risk analytics platform dedicated to daily monitoring of portfolio positions and risks.",
+    "news.article12.title": "Launch of a New Dedicated AMC",
+    "news.article12.content":
+      "Heroics introduced a new EUR 7 million Dedicated Actively Managed Certificate, expanding its range of tailored investment solutions.",
+    "news.article13.title": "Launch of a New Dedicated Fund",
+    "news.article13.content":
+      "Heroics launched a new Dedicated Fund, extending its investment offering for clients seeking bespoke fund solutions.",
+    "news.article14.title": "Opening of the H Dynamic AMC",
+    "news.article14.content":
+      "Heroics announced the opening of the H Dynamic Actively Managed Certificate, designed to adapt to changing market conditions and offer versatile investment opportunities.",
+    "news.article15.title": "Launch of the Heroics Volatility Hedge Fund",
+    "news.article15.content":
+      "Heroics launched its Volatility Hedge Fund, marking a significant milestone in the European financial sector and the firm's alternative investment journey.",
 
     // ── Contact CTA (banner) ─────────────────────────────────
     "contact.title": "Let\u2019s Build Your Future Together",
@@ -524,6 +559,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "news.page.title": "Actualit\u00E9s",
     "news.page.subtitle": "Restez inform\u00E9 des derni\u00E8res nouvelles et perspectives de Heroics Capital.",
     "news.readMore": "Lire la suite",
+    "news.watchVideo": "Voir la vid\u00E9o",
+    "news.viewOnLinkedIn": "Voir sur LinkedIn",
     "news.article1.title": "Heroics Capital \u00E9tend ses op\u00E9rations au Luxembourg",
     "news.article1.content":
       "Heroics Capital annonce une expansion significative de son bureau au Luxembourg, renfor\u00E7ant sa pr\u00E9sence europ\u00E9enne avec de nouveaux recrutements.",
@@ -536,6 +573,39 @@ export const translations: Record<Locale, Record<string, string>> = {
     "news.article4.title": "Heroics Capital r\u00E9compens\u00E9 par un prix du secteur",
     "news.article4.content":
       "Nous sommes fiers d\u2019annoncer que Heroics Capital a \u00E9t\u00E9 reconnu avec le Prix europ\u00E9en de l\u2019Innovation en Gestion d\u2019Actifs.",
+    "news.article5.title": "Trajectoire : Heroics Capital, investir pour la r\u00E9ussite",
+    "news.article5.content":
+      "Cyrille Nahabedian, directeur g\u00E9n\u00E9ral de Heroics Capital, met en avant notre soci\u00E9t\u00E9 agile et digitale qui g\u00E8re les portefeuilles d'investissements des clients \u00E0 travers une double solution : le hedge fund et les produits structur\u00E9s.",
+    "news.article6.title": "Cyrille Nahabedian : Heroics Capital, gestion alternative et conseil",
+    "news.article6.content":
+      "Cyrille Nahabedian, DG de Heroics Capital, pr\u00E9sente le business model de l'entreprise, son activit\u00E9 principale et ses ambitions sur BFM Business dans Paroles d'entreprises.",
+    "news.article7.title": "Les fondamentaux de l'industrie des produits structur\u00E9s",
+    "news.article7.content":
+      "Cyrille Nahabedian, CEO et cofondateur de Heroics Capital Partners, a particip\u00E9 \u00E0 un s\u00E9minaire ESCP Business School \u00E0 Luxembourg pour un \u00E9change riche sur les produits structur\u00E9s et la gestion de patrimoine.",
+    "news.article8.title": "Heroics Capital au Grand Prix de Monaco : la pr\u00E9cision sur piste et hors piste",
+    "news.article8.content":
+      "Heroics Capital a accueilli des partenaires s\u00E9lectionn\u00E9s pendant le Grand Prix de Monaco, un rendez-vous qui refl\u00E8te la pr\u00E9cision, la performance et le rythme reliant sport automobile d'\u00E9lite et finance institutionnelle.",
+    "news.article9.title": "Lancement de Heroics Aegis",
+    "news.article9.content":
+      "Heroics a lanc\u00E9 Heroics Aegis, une plateforme front-to-middle, conformit\u00E9 et gestion de conseil d'administration con\u00E7ue pour centraliser les donn\u00E9es et renforcer la gouvernance op\u00E9rationnelle.",
+    "news.article10.title": "Premier hedge fund europ\u00E9en \u00E0 traiter un d\u00E9riv\u00E9 OTC Bitcoin avec Goldman Sachs Europe",
+    "news.article10.content":
+      "Heroics Global Strategy SICAV-RAIF est devenu le premier hedge fund europ\u00E9en \u00E0 ex\u00E9cuter un produit d\u00E9riv\u00E9 OTC sur Bitcoin avec Goldman Sachs Europe, marquant une \u00E9tape pour les strat\u00E9gies institutionnelles li\u00E9es aux actifs num\u00E9riques.",
+    "news.article11.title": "Lancement de Heroics Sentinelle",
+    "news.article11.content":
+      "Heroics a lanc\u00E9 Heroics Sentinelle, une plateforme d'analyse des risques d\u00E9di\u00E9e au suivi quotidien des positions et des risques de portefeuille.",
+    "news.article12.title": "Lancement d'un nouvel AMC d\u00E9di\u00E9",
+    "news.article12.content":
+      "Heroics a introduit un nouveau certificat activement g\u00E9r\u00E9 d\u00E9di\u00E9 de 7 millions d'euros, \u00E9largissant sa gamme de solutions d'investissement sur mesure.",
+    "news.article13.title": "Lancement d'un nouveau fonds d\u00E9di\u00E9",
+    "news.article13.content":
+      "Heroics a lanc\u00E9 un nouveau fonds d\u00E9di\u00E9, renfor\u00E7ant son offre pour les clients recherchant des solutions de fonds sur mesure.",
+    "news.article14.title": "Ouverture du H Dynamic AMC",
+    "news.article14.content":
+      "Heroics a annonc\u00E9 l'ouverture du H Dynamic Actively Managed Certificate, con\u00E7u pour s'adapter aux \u00E9volutions de march\u00E9 et offrir des opportunit\u00E9s d'investissement flexibles.",
+    "news.article15.title": "Lancement du Heroics Volatility Hedge Fund",
+    "news.article15.content":
+      "Heroics a lanc\u00E9 son Volatility Hedge Fund, marquant une \u00E9tape importante dans le secteur financier europ\u00E9en et dans le d\u00E9veloppement de ses strat\u00E9gies alternatives.",
 
     "contact.title": "Construisons votre avenir ensemble",
     "contact.description":
@@ -860,6 +930,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "news.page.title": "Noticias",
     "news.page.subtitle": "Mant\u00E9ngase informado con las \u00FAltimas noticias y perspectivas de Heroics Capital.",
     "news.readMore": "Leer m\u00E1s",
+    "news.watchVideo": "Ver v\u00EDdeo",
+    "news.viewOnLinkedIn": "Ver en LinkedIn",
     "news.article1.title": "Heroics Capital ampl\u00EDa sus operaciones en Luxemburgo",
     "news.article1.content": "Heroics Capital anuncia una expansi\u00F3n significativa de su oficina en Luxemburgo, fortaleciendo su presencia europea.",
     "news.article2.title": "Informe de rendimiento anual 2025 publicado",
@@ -868,6 +940,28 @@ export const translations: Record<Locale, Record<string, string>> = {
     "news.article3.content": "Heroics Capital presenta su plataforma Advisory 3.0 de nueva generaci\u00F3n, combinando tecnolog\u00EDa de vanguardia con expertise financiero.",
     "news.article4.title": "Heroics Capital gana premio del sector",
     "news.article4.content": "Nos enorgullece anunciar que Heroics Capital ha sido reconocido con el Premio Europeo a la Innovaci\u00F3n en Gesti\u00F3n de Activos.",
+    "news.article5.title": "Trajectoire: Heroics Capital, invertir para el \u00E9xito",
+    "news.article5.content": "Cyrille Nahabedian, director general de Heroics Capital, presenta nuestras soluciones \u00E1giles y digitales para gestionar las carteras de inversi\u00F3n de los clientes mediante un doble enfoque: nuestro hedge fund y los productos estructurados.",
+    "news.article6.title": "Cyrille Nahabedian: Heroics Capital, gesti\u00F3n alternativa y asesoramiento",
+    "news.article6.content": "Cyrille Nahabedian, director general de Heroics Capital, presenta el modelo de negocio, la actividad principal y las ambiciones de la empresa en BFM Business, en Paroles d'entreprises.",
+    "news.article7.title": "Los fundamentos de la industria de productos estructurados",
+    "news.article7.content": "Cyrille Nahabedian, CEO y cofundador de Heroics Capital Partners, particip\u00F3 en un seminario de ESCP Business School en Luxemburgo para un intercambio enriquecedor sobre productos estructurados y gesti\u00F3n patrimonial.",
+    "news.article8.title": "Heroics Capital en el Gran Premio de M\u00F3naco: precisi\u00F3n dentro y fuera de la pista",
+    "news.article8.content": "Heroics Capital recibi\u00F3 a socios seleccionados durante el Gran Premio de M\u00F3naco, reflejando la precisi\u00F3n, el rendimiento y el ritmo que conectan el automovilismo de \u00E9lite con las finanzas institucionales.",
+    "news.article9.title": "Lanzamiento de Heroics Aegis",
+    "news.article9.content": "Heroics lanz\u00F3 Heroics Aegis, una plataforma front-to-middle, de cumplimiento y gesti\u00F3n de consejo dise\u00F1ada para centralizar datos y reforzar la gobernanza operativa.",
+    "news.article10.title": "Primer hedge fund europeo en negociar un derivado OTC de Bitcoin con Goldman Sachs Europe",
+    "news.article10.content": "Heroics Global Strategy SICAV-RAIF se convirti\u00F3 en el primer hedge fund europeo en ejecutar un producto derivado OTC sobre Bitcoin con Goldman Sachs Europe, marcando un hito para las estrategias institucionales de activos digitales.",
+    "news.article11.title": "Lanzamiento de Heroics Sentinelle",
+    "news.article11.content": "Heroics lanz\u00F3 Heroics Sentinelle, una plataforma de an\u00E1lisis de riesgos dedicada al seguimiento diario de posiciones y riesgos de cartera.",
+    "news.article12.title": "Lanzamiento de un nuevo AMC dedicado",
+    "news.article12.content": "Heroics introdujo un nuevo certificado gestionado activamente dedicado de 7 millones de euros, ampliando su gama de soluciones de inversi\u00F3n a medida.",
+    "news.article13.title": "Lanzamiento de un nuevo fondo dedicado",
+    "news.article13.content": "Heroics lanz\u00F3 un nuevo fondo dedicado, ampliando su oferta para clientes que buscan soluciones de fondos personalizadas.",
+    "news.article14.title": "Apertura del H Dynamic AMC",
+    "news.article14.content": "Heroics anunci\u00F3 la apertura del H Dynamic Actively Managed Certificate, dise\u00F1ado para adaptarse a las condiciones cambiantes del mercado y ofrecer oportunidades de inversi\u00F3n vers\u00E1tiles.",
+    "news.article15.title": "Lanzamiento del Heroics Volatility Hedge Fund",
+    "news.article15.content": "Heroics lanz\u00F3 su Volatility Hedge Fund, marcando un hito significativo en el sector financiero europeo y en el desarrollo de sus estrategias alternativas.",
 
     "contact.title": "Construyamos su futuro juntos",
     "contact.description": "Nuestro equipo de expertos est\u00E1 listo para discutir sus objetivos de inversi\u00F3n y elaborar estrategias personalizadas.",
@@ -1168,6 +1262,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "news.page.title": "Notizie",
     "news.page.subtitle": "Resta aggiornato con le ultime notizie e approfondimenti di Heroics Capital.",
     "news.readMore": "Leggi di pi\u00F9",
+    "news.watchVideo": "Guarda il video",
+    "news.viewOnLinkedIn": "Vedi su LinkedIn",
     "news.article1.title": "Heroics Capital espande le operazioni in Lussemburgo",
     "news.article1.content": "Heroics Capital annuncia un\u2019espansione significativa del suo ufficio in Lussemburgo, rafforzando la sua presenza europea.",
     "news.article2.title": "Rapporto annuale sulle performance 2025 pubblicato",
@@ -1176,6 +1272,28 @@ export const translations: Record<Locale, Record<string, string>> = {
     "news.article3.content": "Heroics Capital presenta la sua piattaforma Advisory 3.0 di nuova generazione, combinando tecnologia all\u2019avanguardia con competenza finanziaria.",
     "news.article4.title": "Heroics Capital vince un premio del settore",
     "news.article4.content": "Siamo orgogliosi di annunciare che Heroics Capital \u00E8 stato riconosciuto con il Premio Europeo per l\u2019Innovazione nella Gestione Patrimoniale.",
+    "news.article5.title": "Trajectoire: Heroics Capital, investire per il successo",
+    "news.article5.content": "Cyrille Nahabedian, direttore generale di Heroics Capital, presenta le nostre soluzioni agili e digitali per gestire i portafogli di investimento dei clienti attraverso un doppio approccio: il nostro hedge fund e i prodotti strutturati.",
+    "news.article6.title": "Cyrille Nahabedian: Heroics Capital, gestione alternativa e consulenza",
+    "news.article6.content": "Cyrille Nahabedian, direttore generale di Heroics Capital, presenta il modello di business, l'attivit\u00E0 principale e le ambizioni dell'azienda su BFM Business, in Paroles d'entreprises.",
+    "news.article7.title": "I fondamentali dell'industria dei prodotti strutturati",
+    "news.article7.content": "Cyrille Nahabedian, CEO e cofondatore di Heroics Capital Partners, ha partecipato a un seminario di ESCP Business School in Lussemburgo per uno scambio approfondito sui prodotti strutturati e sulla gestione patrimoniale.",
+    "news.article8.title": "Heroics Capital al Gran Premio di Monaco: precisione in pista e fuori pista",
+    "news.article8.content": "Heroics Capital ha accolto partner selezionati durante il Gran Premio di Monaco, riflettendo precisione, performance e ritmo che collegano il motorsport d'\u00E9lite alla finanza istituzionale.",
+    "news.article9.title": "Lancio di Heroics Aegis",
+    "news.article9.content": "Heroics ha lanciato Heroics Aegis, una piattaforma front-to-middle, compliance e gestione del consiglio progettata per centralizzare i dati e rafforzare la governance operativa.",
+    "news.article10.title": "Primo hedge fund europeo a negoziare un derivato OTC su Bitcoin con Goldman Sachs Europe",
+    "news.article10.content": "Heroics Global Strategy SICAV-RAIF \u00E8 diventato il primo hedge fund europeo a eseguire un prodotto derivato OTC su Bitcoin con Goldman Sachs Europe, segnando una tappa per le strategie istituzionali sugli asset digitali.",
+    "news.article11.title": "Lancio di Heroics Sentinelle",
+    "news.article11.content": "Heroics ha lanciato Heroics Sentinelle, una piattaforma di analisi dei rischi dedicata al monitoraggio quotidiano delle posizioni e dei rischi di portafoglio.",
+    "news.article12.title": "Lancio di un nuovo AMC dedicato",
+    "news.article12.content": "Heroics ha introdotto un nuovo certificato dedicato a gestione attiva da 7 milioni di euro, ampliando la gamma di soluzioni di investimento su misura.",
+    "news.article13.title": "Lancio di un nuovo fondo dedicato",
+    "news.article13.content": "Heroics ha lanciato un nuovo fondo dedicato, ampliando l'offerta per clienti alla ricerca di soluzioni di fondo personalizzate.",
+    "news.article14.title": "Apertura dell'H Dynamic AMC",
+    "news.article14.content": "Heroics ha annunciato l'apertura dell'H Dynamic Actively Managed Certificate, progettato per adattarsi alle condizioni di mercato e offrire opportunit\u00E0 di investimento versatili.",
+    "news.article15.title": "Lancio dell'Heroics Volatility Hedge Fund",
+    "news.article15.content": "Heroics ha lanciato il suo Volatility Hedge Fund, segnando una tappa significativa nel settore finanziario europeo e nello sviluppo delle sue strategie alternative.",
 
     "contact.title": "Costruiamo insieme il vostro futuro",
     "contact.description": "Il nostro team di esperti \u00E8 pronto a discutere i vostri obiettivi di investimento e a elaborare strategie su misura.",
@@ -1464,6 +1582,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "news.page.title": "Not\u00EDcias",
     "news.page.subtitle": "Mantenha-se informado com as \u00FAltimas not\u00EDcias e perspetivas da Heroics Capital.",
     "news.readMore": "Ler mais",
+    "news.watchVideo": "Ver v\u00EDdeo",
+    "news.viewOnLinkedIn": "Ver no LinkedIn",
     "news.article1.title": "Heroics Capital expande opera\u00E7\u00F5es no Luxemburgo",
     "news.article1.content": "A Heroics Capital anuncia uma expans\u00E3o significativa do seu escrit\u00F3rio no Luxemburgo, refor\u00E7ando a sua presen\u00E7a europeia.",
     "news.article2.title": "Relat\u00F3rio de desempenho anual 2025 publicado",
@@ -1472,6 +1592,28 @@ export const translations: Record<Locale, Record<string, string>> = {
     "news.article3.content": "A Heroics Capital apresenta a sua plataforma Advisory 3.0 de nova gera\u00E7\u00E3o, combinando tecnologia de ponta com compet\u00EAncia financeira.",
     "news.article4.title": "Heroics Capital ganha pr\u00E9mio do setor",
     "news.article4.content": "Temos orgulho em anunciar que a Heroics Capital foi reconhecida com o Pr\u00E9mio Europeu de Inova\u00E7\u00E3o em Gest\u00E3o de Ativos.",
+    "news.article5.title": "Trajectoire: Heroics Capital, investir para o sucesso",
+    "news.article5.content": "Cyrille Nahabedian, diretor-geral da Heroics Capital, apresenta as nossas solu\u00E7\u00F5es \u00E1geis e digitais para gerir as carteiras de investimento dos clientes atrav\u00E9s de uma dupla abordagem: o nosso hedge fund e os produtos estruturados.",
+    "news.article6.title": "Cyrille Nahabedian: Heroics Capital, gest\u00E3o alternativa e consultoria",
+    "news.article6.content": "Cyrille Nahabedian, diretor-geral da Heroics Capital, apresenta o modelo de neg\u00F3cio, a atividade principal e as ambi\u00E7\u00F5es da empresa na BFM Business, em Paroles d'entreprises.",
+    "news.article7.title": "Os fundamentos da ind\u00FAstria de produtos estruturados",
+    "news.article7.content": "Cyrille Nahabedian, CEO e cofundador da Heroics Capital Partners, participou num semin\u00E1rio da ESCP Business School no Luxemburgo para uma troca enriquecedora sobre produtos estruturados e gest\u00E3o patrimonial.",
+    "news.article8.title": "Heroics Capital no Grande Pr\u00E9mio do M\u00F3naco: precis\u00E3o dentro e fora da pista",
+    "news.article8.content": "A Heroics Capital recebeu parceiros selecionados durante o Grande Pr\u00E9mio do M\u00F3naco, refletindo a precis\u00E3o, o desempenho e o ritmo que ligam o desporto motorizado de elite \u00E0 finan\u00E7a institucional.",
+    "news.article9.title": "Lan\u00E7amento do Heroics Aegis",
+    "news.article9.content": "A Heroics lan\u00E7ou o Heroics Aegis, uma plataforma front-to-middle, compliance e gest\u00E3o de conselho concebida para centralizar dados e refor\u00E7ar a governan\u00E7a operacional.",
+    "news.article10.title": "Primeiro hedge fund europeu a negociar um derivado OTC de Bitcoin com a Goldman Sachs Europe",
+    "news.article10.content": "A Heroics Global Strategy SICAV-RAIF tornou-se o primeiro hedge fund europeu a executar um produto derivado OTC sobre Bitcoin com a Goldman Sachs Europe, marcando um marco para as estrat\u00E9gias institucionais de ativos digitais.",
+    "news.article11.title": "Lan\u00E7amento do Heroics Sentinelle",
+    "news.article11.content": "A Heroics lan\u00E7ou o Heroics Sentinelle, uma plataforma de an\u00E1lise de riscos dedicada ao acompanhamento di\u00E1rio das posi\u00E7\u00F5es e dos riscos de carteira.",
+    "news.article12.title": "Lan\u00E7amento de um novo AMC dedicado",
+    "news.article12.content": "A Heroics introduziu um novo certificado dedicado de gest\u00E3o ativa de 7 milh\u00F5es de euros, ampliando a sua gama de solu\u00E7\u00F5es de investimento personalizadas.",
+    "news.article13.title": "Lan\u00E7amento de um novo fundo dedicado",
+    "news.article13.content": "A Heroics lan\u00E7ou um novo fundo dedicado, ampliando a sua oferta para clientes que procuram solu\u00E7\u00F5es de fundos personalizadas.",
+    "news.article14.title": "Abertura do H Dynamic AMC",
+    "news.article14.content": "A Heroics anunciou a abertura do H Dynamic Actively Managed Certificate, concebido para se adaptar \u00E0s mudan\u00E7as de mercado e oferecer oportunidades de investimento vers\u00E1teis.",
+    "news.article15.title": "Lan\u00E7amento do Heroics Volatility Hedge Fund",
+    "news.article15.content": "A Heroics lan\u00E7ou o seu Volatility Hedge Fund, marcando um marco significativo no setor financeiro europeu e no desenvolvimento das suas estrat\u00E9gias alternativas.",
 
     "contact.title": "Vamos construir o seu futuro juntos",
     "contact.description": "A nossa equipa de especialistas est\u00E1 pronta para discutir os seus objetivos de investimento e elaborar estrat\u00E9gias personalizadas.",
