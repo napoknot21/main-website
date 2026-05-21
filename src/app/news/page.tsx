@@ -24,30 +24,14 @@ interface NewsArticle {
 
 const articles: NewsArticle[] = [
   {
-    id: "1",
-    date: "2025-12-15",
-    titleKey: "news.article1.title",
-    contentKey: "news.article1.content",
-    link: "#",
-  },
-  {
-    id: "2",
-    date: "2025-11-28",
-    titleKey: "news.article2.title",
-    contentKey: "news.article2.content",
-    link: "#",
-  },
-  {
-    id: "3",
-    date: "2025-10-10",
-    titleKey: "news.article3.title",
-    contentKey: "news.article3.content",
-  },
-  {
-    id: "4",
-    date: "2025-09-05",
-    titleKey: "news.article4.title",
-    contentKey: "news.article4.content",
+    id: "16",
+    date: "2026-01-07",
+    titleKey: "news.article16.title",
+    contentKey: "news.article16.content",
+    link: "https://www.linkedin.com/posts/heroics-capital_hedgefund-aifm-assetmanagement-activity-7414725308849008641-YBo2?utm_source=share&utm_medium=member_desktop&rcm=ACoAACMV9X0B0LJK2dnMH1-oLoPjTc9k7we1zd0",
+    source: "linkedin",
+    videoEmbedUrl:
+      "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7414725174731632640?compact=1",
   },
   {
     id: "5",
@@ -85,6 +69,10 @@ const articles: NewsArticle[] = [
     datePrecision: "month",
     titleKey: "news.article8.title",
     contentKey: "news.article8.content",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7335982467700457472",
+    source: "linkedin",
+    videoEmbedUrl:
+      "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7335982423987404801?compact=1",
   },
   {
     id: "9",
@@ -242,14 +230,20 @@ function NewsArticleCard({
 }) {
   const [isPlaying, setIsPlaying] = useState(false)
   const hasVideo = Boolean(article.videoEmbedUrl)
+  const shouldShowVideo = hasVideo && (isPlaying || !article.image)
+  const isLinkedInEmbed = article.source === "linkedin" && hasVideo
   const isLogoImage = article.imageVariant === "logo"
   const linkLabel = article.source === "linkedin" ? t("news.viewOnLinkedIn") : t("news.readMore")
 
   return (
     <article className="group border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 bg-background">
-      {article.image && (
-        <div className={`relative aspect-video overflow-hidden ${isLogoImage ? "bg-white" : "bg-muted"}`}>
-          {hasVideo && isPlaying ? (
+      {(article.image || hasVideo) && (
+        <div
+          className={`relative aspect-video overflow-hidden ${
+            isLogoImage ? "bg-white" : "bg-muted"
+          }`}
+        >
+          {shouldShowVideo ? (
             <iframe
               src={article.videoEmbedUrl}
               title={t(article.titleKey)}
@@ -315,7 +309,7 @@ function NewsArticleCard({
           </a>
         )}
 
-        {!article.image && (
+        {!article.image && !hasVideo && (
           <div className="flex items-center justify-center h-12 w-12 rounded-full bg-muted text-muted-foreground mt-2">
             {article.source === "linkedin" ? (
               <Linkedin className="h-5 w-5" />

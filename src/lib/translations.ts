@@ -228,6 +228,9 @@ export const translations: Record<Locale, Record<string, string>> = {
     "news.article15.title": "Launch of the Heroics Volatility Hedge Fund",
     "news.article15.content":
       "Heroics launched its Volatility Hedge Fund, marking a significant milestone in the European financial sector and the firm's alternative investment journey.",
+    "news.article16.title": "Heroics Capital: Hedge Fund, AIFM and Asset Management",
+    "news.article16.content":
+      "Heroics Capital shares a LinkedIn update highlighting its hedge fund, AIFM, and asset management expertise.",
 
     // ── Contact CTA (banner) ─────────────────────────────────
     "contact.title": "Let\u2019s Build Your Future Together",
@@ -608,6 +611,9 @@ export const translations: Record<Locale, Record<string, string>> = {
     "news.article15.title": "Lancement du Heroics Volatility Hedge Fund",
     "news.article15.content":
       "Heroics a lanc\u00E9 son Volatility Hedge Fund, marquant une \u00E9tape importante dans le secteur financier europ\u00E9en et dans le d\u00E9veloppement de ses strat\u00E9gies alternatives.",
+    "news.article16.title": "Heroics Capital : hedge fund, AIFM et asset management",
+    "news.article16.content":
+      "Heroics Capital partage une actualit\u00E9 LinkedIn mettant en avant son expertise en hedge fund, AIFM et gestion d'actifs.",
 
     "contact.title": "Construisons votre avenir ensemble",
     "contact.description":
@@ -965,6 +971,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "news.article14.content": "Heroics anunci\u00F3 la apertura del H Dynamic Actively Managed Certificate, dise\u00F1ado para adaptarse a las condiciones cambiantes del mercado y ofrecer oportunidades de inversi\u00F3n vers\u00E1tiles.",
     "news.article15.title": "Lanzamiento del Heroics Volatility Hedge Fund",
     "news.article15.content": "Heroics lanz\u00F3 su Volatility Hedge Fund, marcando un hito significativo en el sector financiero europeo y en el desarrollo de sus estrategias alternativas.",
+    "news.article16.title": "Heroics Capital: hedge fund, AIFM y gesti\u00F3n de activos",
+    "news.article16.content": "Heroics Capital comparte una actualizaci\u00F3n en LinkedIn que destaca su experiencia en hedge funds, AIFM y gesti\u00F3n de activos.",
 
     "contact.title": "Construyamos su futuro juntos",
     "contact.description": "Nuestro equipo de expertos est\u00E1 listo para discutir sus objetivos de inversi\u00F3n y elaborar estrategias personalizadas.",
@@ -1298,6 +1306,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "news.article14.content": "Heroics ha annunciato l'apertura dell'H Dynamic Actively Managed Certificate, progettato per adattarsi alle condizioni di mercato e offrire opportunit\u00E0 di investimento versatili.",
     "news.article15.title": "Lancio dell'Heroics Volatility Hedge Fund",
     "news.article15.content": "Heroics ha lanciato il suo Volatility Hedge Fund, segnando una tappa significativa nel settore finanziario europeo e nello sviluppo delle sue strategie alternative.",
+    "news.article16.title": "Heroics Capital: hedge fund, AIFM e asset management",
+    "news.article16.content": "Heroics Capital condivide un aggiornamento LinkedIn che evidenzia la sua esperienza in hedge fund, AIFM e gestione patrimoniale.",
 
     "contact.title": "Costruiamo insieme il vostro futuro",
     "contact.description": "Il nostro team di esperti \u00E8 pronto a discutere i vostri obiettivi di investimento e a elaborare strategie su misura.",
@@ -1619,6 +1629,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "news.article14.content": "A Heroics anunciou a abertura do H Dynamic Actively Managed Certificate, concebido para se adaptar \u00E0s mudan\u00E7as de mercado e oferecer oportunidades de investimento vers\u00E1teis.",
     "news.article15.title": "Lan\u00E7amento do Heroics Volatility Hedge Fund",
     "news.article15.content": "A Heroics lan\u00E7ou o seu Volatility Hedge Fund, marcando um marco significativo no setor financeiro europeu e no desenvolvimento das suas estrat\u00E9gias alternativas.",
+    "news.article16.title": "Heroics Capital: hedge fund, AIFM e gest\u00E3o de ativos",
+    "news.article16.content": "A Heroics Capital partilha uma atualiza\u00E7\u00E3o no LinkedIn que destaca a sua experi\u00EAncia em hedge funds, AIFM e gest\u00E3o de ativos.",
 
     "contact.title": "Vamos construir o seu futuro juntos",
     "contact.description": "A nossa equipa de especialistas est\u00E1 pronta para discutir os seus objetivos de investimento e elaborar estrat\u00E9gias personalizadas.",
