@@ -63,7 +63,7 @@ export async function POST(request: Request) {
 
     // For now, log the submission and simulate success
     console.log("=== CONTACT FORM SUBMISSION ===")
-    console.log(`To: kinbrian5@hotmail.com`)
+    console.log(`To: c.martin@heroics-capital.com`)
     console.log(`Subject: Heroics Capital - Contact Form [${context}]`)
     console.log(emailBody)
     console.log("=== END SUBMISSION ===")
@@ -78,8 +78,8 @@ export async function POST(request: Request) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: "Heroics Capital <noreply@heroicscapital.com>",
-          to: "kinbrian5@hotmail.com",
+          from: "Heroics Capital <onboarding@resend.dev>",
+          to: "c.martin@heroics-capital.com",
           subject: `Heroics Capital - Contact Form [${context}] from ${firstName} ${lastName}`,
           text: emailBody,
           reply_to: email,

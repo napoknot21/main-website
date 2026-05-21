@@ -5,7 +5,7 @@ import Footer from "@/components/footer"
 import CookieBanner from "@/components/cookie-banner"
 import ContactCtaSection from "@/components/contact-cta-section"
 import { useLanguage } from "@/lib/language-context"
-import { Lightbulb, Target, Rocket } from "lucide-react"
+import { Lightbulb, Target, Rocket, TrendingUp } from "lucide-react"
 
 export default function AdvisoryPage() {
   const { t } = useLanguage()
@@ -29,6 +29,31 @@ export default function AdvisoryPage() {
 
         <section className="py-20 md:py-28 bg-background">
           <div className="mx-auto max-w-6xl px-6">
+            <div className="mx-auto max-w-3xl text-center mb-14">
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
+                {t("offering.advisory.intro")}
+              </p>
+            </div>
+
+            <div className="mb-16 border border-border rounded-lg bg-muted/20 px-6 py-7 md:px-10 md:py-8">
+              <div className="flex flex-col md:flex-row items-center text-center md:text-left gap-6">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                  <TrendingUp className="h-6 w-6" />
+                </div>
+                <div className="flex-1">
+                  <h2 className="text-xl font-semibold text-foreground mb-2">
+                    {t("offering.advisory.alignment.title")}
+                  </h2>
+                  <p className="text-muted-foreground leading-relaxed text-pretty">
+                    {t("offering.advisory.alignment.desc")}
+                  </p>
+                </div>
+                <div className="md:w-56 text-sm font-medium text-accent leading-relaxed">
+                  {t("offering.advisory.alignment.note")}
+                </div>
+              </div>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
               {[
                 { icon: Lightbulb, title: t("offering.advisory.card1.title"), desc: t("offering.advisory.card1.desc") },

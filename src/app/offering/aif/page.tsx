@@ -6,7 +6,22 @@ import Footer from "@/components/footer"
 import CookieBanner from "@/components/cookie-banner"
 import ContactCtaSection from "@/components/contact-cta-section"
 import { useLanguage } from "@/lib/language-context"
-import { Droplets, Activity, Zap, Lightbulb, Shield, Percent } from "lucide-react"
+import {
+  Activity,
+  Brain,
+  Droplets,
+  Gauge,
+  Globe2,
+  Landmark,
+  Layers,
+  Lightbulb,
+  LineChart,
+  Percent,
+  Shield,
+  SlidersHorizontal,
+  Target,
+  Zap,
+} from "lucide-react"
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLElement>(null)
@@ -36,6 +51,19 @@ const benefits = [
   { key: "innovation", icon: Lightbulb },
 ] as const
 
+const dedicatedFundItems = [
+  { key: "customization", icon: Target },
+  { key: "expertManagement", icon: Brain },
+  { key: "luxembourgAdvantage", icon: Landmark },
+] as const
+
+const strategyItems = [
+  { key: "systematicOptions", icon: LineChart },
+  { key: "exoticOptions", icon: Layers },
+  { key: "markets", icon: Globe2 },
+  { key: "leverage", icon: SlidersHorizontal },
+] as const
+
 function renderBoldText(text: string) {
   return text.split(/(\*[^*]+\*)/g).map((segment, idx) =>
     segment.startsWith("*") && segment.endsWith("*") ? (
@@ -51,6 +79,8 @@ function renderBoldText(text: string) {
 export default function AifPage() {
   const { t } = useLanguage()
   const approach = useInView()
+  const dedicated = useInView()
+  const strategies = useInView()
   const benefitsSection = useInView()
 
   return (
@@ -84,6 +114,15 @@ export default function AifPage() {
           </div>
         </section>
 
+        {/* Intro */}
+        <section className="py-16 bg-background border-b border-border">
+          <div className="mx-auto max-w-6xl px-8">
+            <p className="text-muted-foreground text-base leading-relaxed max-w-3xl mx-auto text-center text-pretty">
+              {t("offering.aif.intro")}
+            </p>
+          </div>
+        </section>
+
         {/* Approach */}
         <section ref={approach.ref as React.RefObject<HTMLElement>} className="py-20 bg-muted/30 border-y border-border">
           <div className="mx-auto max-w-6xl px-8">
@@ -112,6 +151,87 @@ export default function AifPage() {
                   </p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Dedicated Funds */}
+        <section ref={dedicated.ref as React.RefObject<HTMLElement>} className="py-20 bg-background border-b border-border">
+          <div className="mx-auto max-w-6xl px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-14 items-start">
+              <div className={`transition-all duration-700 ${dedicated.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+                <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6" />
+                <h2 className="text-3xl md:text-4xl font-serif font-semibold text-deepblue text-balance mb-5">
+                  {t("offering.aif.dedicated.title")}
+                </h2>
+                <p className="text-muted-foreground leading-relaxed text-pretty">
+                  {t("offering.aif.dedicated.desc")}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                {dedicatedFundItems.map(({ key, icon: Icon }, idx) => (
+                  <div
+                    key={key}
+                    className={`rounded-lg border border-border bg-muted/20 p-6 text-center transition-all duration-700 ${dedicated.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+                    style={{ transitionDelay: `${idx * 120}ms` }}
+                  >
+                    <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-deepblue text-white">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-base font-semibold text-foreground mb-2">
+                      {t(`offering.aif.dedicated.${key}`)}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed text-pretty">
+                      {t(`offering.aif.dedicated.${key}.desc`)}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Strategies */}
+        <section ref={strategies.ref as React.RefObject<HTMLElement>} className="py-20 bg-muted/30 border-b border-border">
+          <div className="mx-auto max-w-6xl px-8">
+            <div className="text-center mb-14">
+              <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6" />
+              <h2 className="text-3xl md:text-4xl font-serif font-semibold text-deepblue text-balance">
+                {t("offering.aif.strategies.title")}
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {strategyItems.map(({ key, icon: Icon }, idx) => (
+                <div
+                  key={key}
+                  className={`rounded-lg border border-border bg-background p-6 text-center transition-all duration-700 ${strategies.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+                  style={{ transitionDelay: `${idx * 120}ms` }}
+                >
+                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-hour/10 text-blue-hour">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="text-base font-semibold text-foreground mb-2">
+                    {t(`offering.aif.strategies.${key}`)}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed text-pretty">
+                    {t(`offering.aif.strategies.${key}.desc`)}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 rounded-lg border border-border bg-background p-7 text-center">
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-deepblue text-white">
+                <Gauge className="h-5 w-5" />
+              </div>
+              <h3 className="text-lg font-semibold text-foreground mb-3">
+                {t("offering.aif.monitoring.title")}
+              </h3>
+              <p className="mx-auto max-w-3xl text-muted-foreground text-sm leading-relaxed text-pretty">
+                {t("offering.aif.monitoring.desc")}
+              </p>
             </div>
           </div>
         </section>
