@@ -20,7 +20,7 @@ export default function PrivacyContent() {
       </section>
 
       <p className="text-sm opacity-60 pt-8 border-t border-border">
-        Last updated: May 2026
+        {t("legal.lastUpdated")}
       </p>
     </div>
   )

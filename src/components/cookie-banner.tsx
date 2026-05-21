@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Link from "next/link"
 import { useLanguage } from "@/lib/language-context"
 import { X, Cookie } from "lucide-react"
 
@@ -44,12 +45,12 @@ export default function CookieBanner() {
             <div className="flex-1 min-w-0">
               <p className="text-sm text-foreground/80 leading-relaxed mb-4">
                 {t("cookie.message")}{" "}
-                <a
-                  href="#"
+                <Link
+                  href="/legal/cookies"
                   className="text-accent underline underline-offset-2 hover:text-accent/80 transition-colors"
                 >
                   {t("cookie.policy")}
-                </a>
+                </Link>
               </p>
               <div className="flex flex-wrap gap-3">
                 <button
@@ -64,12 +65,12 @@ export default function CookieBanner() {
                 >
                   {t("cookie.reject")}
                 </button>
-                <a
-                  href="#"
+                <Link
+                  href="/legal/cookies"
                   className="text-sm text-muted-foreground hover:text-foreground underline underline-offset-2 transition-colors flex items-center py-2"
                 >
                   {t("cookie.settings")}
-                </a>
+                </Link>
               </div>
             </div>
 

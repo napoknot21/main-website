@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
       {/* Main Footer */}
-      <div className="mx-auto max-w-screen-2xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
+      <div className="mx-auto max-w-screen-2xl px-4 md:px-6 pt-12 md:pt-16 lg:pt-20 pb-8 md:pb-10 lg:pb-12">
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-8 justify-items-center sm:justify-items-start">
           {/* Column 1 - Logo & Social */}
           <div className="col-span-2 sm:col-span-1 flex flex-col gap-4 md:gap-6">
@@ -118,8 +118,8 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-primary-foreground/8">
-        <div className="mx-auto max-w-7xl px-4 md:px-6 py-4 md:py-6 flex items-center justify-center">
+      <div>
+        <div className="mx-auto max-w-7xl px-4 md:px-6 pt-1 md:pt-2 pb-4 md:pb-6 flex items-center justify-center">
           <p className="text-xs text-primary-foreground/35">
             &copy; {currentYear} {t("footer.copyright")}
           </p>

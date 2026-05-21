@@ -1,4 +1,5 @@
 import { noticeEn, noticeFr, noticeEs, noticeIt, noticePt } from "./translations/legal-notice"
+import { cookiesEn, cookiesFr, cookiesEs, cookiesIt, cookiesPt } from "./translations/legal-cookies"
 
 export type Locale = "en" | "fr" | "es" | "it" | "pt"
 
@@ -391,6 +392,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "legal.privacy.title": "Data Privacy",
     "legal.privacy.p1": "Heroics Capital Luxembourg (HCL) & Heroics Capital Monaco (HCM) will only use personal information for the purpose for which it was collected. If any other use is contemplated other than that which is disclosed to the individual, Heroics Capital will first obtain the permission for the new use from that individual before Heroics Capital uses the information in such a manner.",
     "legal.privacy.p2": "You are entitled under the law on the Protection of Persons with regard to the processing of Personal Data of August 2, 2002 to access the personal information that Heroics Capital holds about you. If you believe any detail of your personal information to be incorrect, you may request that it be corrected.",
+    ...cookiesEn,
     ...noticeEn,
   },
 
@@ -762,6 +764,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "legal.privacy.title": "Confidentialité des données",
     "legal.privacy.p1": "Heroics Capital Luxembourg (HCL) & Heroics Capital Monaco (HCM) n'utiliseront les informations personnelles qu'aux fins pour lesquelles elles ont été collectées. Si une utilisation autre que celle divulguée à l'individu est envisagée, Heroics Capital obtiendra d'abord l'autorisation de cet individu avant d'utiliser les informations de cette manière.",
     "legal.privacy.p2": "Vous avez le droit, conformément à la loi sur la protection des personnes à l'égard du traitement des données à caractère personnel du 2 août 2002, d'accéder aux informations personnelles que Heroics Capital détient à votre sujet. Si vous pensez qu'un détail de vos informations personnelles est incorrect, vous pouvez demander à ce qu'il soit corrigé.",
+    ...cookiesFr,
     ...noticeFr,
   },
 
@@ -1113,6 +1116,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "legal.privacy.title": "Privacidad de datos",
     "legal.privacy.p1": "Heroics Capital Luxembourg (HCL) & Heroics Capital Monaco (HCM) solo utilizarán la información personal para el fin para el que fue recopilada. Si se contempla algún otro uso distinto al revelado a la persona, Heroics Capital obtendrá primero el permiso de esa persona para el nuevo uso antes de utilizar la información de esa manera.",
     "legal.privacy.p2": "Usted tiene derecho, según la ley de Protección de las Personas con respecto al tratamiento de Datos Personales del 2 de agosto de 2002, a acceder a la información personal que Heroics Capital tiene sobre usted. Si cree que algún detalle de su información personal es incorrecto, puede solicitar que se corrija.",
+    ...cookiesEs,
     ...noticeEs,
   },
 
@@ -1433,6 +1437,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "legal.privacy.title": "Riservatezza dei dati",
     "legal.privacy.p1": "Heroics Capital Luxembourg (HCL) & Heroics Capital Monaco (HCM) utilizzeranno le informazioni personali solo per lo scopo per cui sono state raccolte. Se è previsto un utilizzo diverso da quello divulgato all'individuo, Heroics Capital otterrà prima l'autorizzazione per il nuovo utilizzo da tale individuo prima di utilizzare le informazioni in tal modo.",
     "legal.privacy.p2": "Avete il diritto, ai sensi della legge sulla protezione delle persone in merito al trattamento dei dati personali del 2 agosto 2002, di accedere alle informazioni personali che Heroics Capital detiene su di voi. Se ritenete che qualche dettaglio delle vostre informazioni personali sia inesatto, potete richiederne la correzione.",
+    ...cookiesIt,
     ...noticeIt,
   },
 
@@ -1753,6 +1758,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "legal.privacy.title": "Privacidade de dados",
     "legal.privacy.p1": "Heroics Capital Luxembourg (HCL) & Heroics Capital Monaco (HCM) apenas utilizarão as informações pessoais para os fins para os quais foram recolhidas. Caso seja contemplada qualquer outra utilização para além da divulgada ao indivíduo, a Heroics Capital obterá primeiro a permissão para a nova utilização desse indivíduo antes de utilizar as informações dessa forma.",
     "legal.privacy.p2": "Tem o direito, ao abrigo da lei sobre a Proteção das Pessoas no que diz respeito ao tratamento de Dados Pessoais de 2 de agosto de 2002, de aceder às informações pessoais que a Heroics Capital detém sobre si. Se considerar que algum detalhe das suas informações pessoais está incorreto, pode solicitar que seja corrigido.",
+    ...cookiesPt,
     ...noticePt,
   },
 }
