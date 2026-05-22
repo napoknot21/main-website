@@ -4,22 +4,22 @@ import { useState } from "react"
 import Image from "next/image"
 import { useLanguage } from "@/lib/language-context"
 import { AnimatedSection } from "@/components/ui/animated-section"
-import { MapPin, X } from "lucide-react"
+import { MapPin } from "lucide-react"
 
-import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogClose } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog"
 import { ScrollArea } from "@/components/ui/scroll-area"
 
 type OfficeType = "luxembourg" | "monaco"
 
 const teamMembers = [
-    { id: "alexandre", image: "/images/team/alexandre.jpg", name: "Alexandre Tramini", office: "luxembourg" as OfficeType },
     { id: "cyrille", image: "/images/team/cyrille.jpg", name: "Cyrille Nahabedian", office: "luxembourg" as OfficeType },
+    { id: "alexandre", image: "/images/team/alexandre.jpg", name: "Alexandre Tramini", office: "luxembourg" as OfficeType },
     { id: "jonathan", image: "/images/team/jonathan.jpg", name: "Jonathan Niddam", office: "luxembourg" as OfficeType },
     { id: "julien", image: "/images/team/julien_baptiste.jpg", name: "Julien Baptiste", office: "monaco" as OfficeType },
-    { id: "ilyasse", image: "/images/team/ilyasse.jpg", name: "Ilyasse Tariq", office: "luxembourg" as OfficeType },
-    { id: "filippo", image: "/images/team/pippo.jpg", name: "Filippo Perolo", office: "luxembourg" as OfficeType },
     { id: "bak", image: "/images/team/bak.jpg", name: "Bak", office: "luxembourg" as OfficeType },
     { id: "jj", image: "/images/team/jean_jacques_martinenghi.jpg", name: "Jean-Jacques Martinenghi", office: "monaco" as OfficeType },
+    { id: "ilyasse", image: "/images/team/ilyasse.jpg", name: "Ilyasse Tariq", office: "luxembourg" as OfficeType },
+    { id: "filippo", image: "/images/team/pippo.jpg", name: "Filippo Perolo", office: "luxembourg" as OfficeType },
     { id: "tom", image: "/images/team/tom_chebeaux.jpeg", name: "Tom Chebeaux", office: "monaco" as OfficeType },
     { id: "pierre", image: "/images/team/pierre.jpg", name: "Pierre Leonard", office: "luxembourg" as OfficeType },
 ]
@@ -135,11 +135,6 @@ export default function TeamSection() {
                                         
                                         {/* Right Side: Content */}
                                         <div className="w-full md:w-3/5 p-8 relative flex flex-col bg-background h-full">
-                                            <DialogClose className="absolute top-4 right-4 h-8 w-8 inline-flex items-center justify-center rounded-full bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
-                                                <X className="h-4 w-4" />
-                                                <span className="sr-only">{t("common.close")}</span>
-                                            </DialogClose>
-                                            
                                             <div className="mb-6 pr-8">
                                                 <h3 className="text-2xl font-serif font-semibold text-deepblue mb-1">
                                                     {member.name}
