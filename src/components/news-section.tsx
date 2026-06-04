@@ -88,7 +88,7 @@ const articles: NewsArticle[] = [
     contentKey: "news.article9.content",
     image: "/images/news/heroics_aegis_logo.png",
     imageVariant: "logo",
-    localVideoSrc: "/videos/aegis.mp4",
+    localVideoSrc: "/videos/aegis_video.mp4",
   },
   {
     id: "10",
@@ -105,7 +105,7 @@ const articles: NewsArticle[] = [
     contentKey: "news.article11.content",
     image: "/images/news/heroics_sentinelle_logo.png",
     imageVariant: "logo",
-    localVideoSrc: "/videos/sentinelle.mp4",
+    localVideoSrc: "/videos/sentinelle_video.mp4",
   },
   {
     id: "12",

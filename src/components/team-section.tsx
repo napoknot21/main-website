@@ -12,20 +12,23 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 type OfficeType = "luxembourg" | "monaco"
 
 const teamMembers = [
-    { id: "cyrille", image: "/images/team/cyrille.jpg", name: "Cyrille NAHABEDIAN", office: "luxembourg" as OfficeType },
-    { id: "alexandre", image: "/images/team/alexandre.jpg", name: "Alexandre TRAMINI", office: "luxembourg" as OfficeType },
-    { id: "jonathan", image: "/images/team/jonathan.jpg", name: "Jonathan NIDDAM", office: "luxembourg" as OfficeType },
-    { id: "julien", image: "/images/team/julien_baptiste.jpg", name: "Julien BAPTISTE", office: "monaco" as OfficeType },
-    { id: "ilyasse", image: "/images/team/ilyasse.jpg", name: "Ilyasse TARIQ", office: "luxembourg" as OfficeType },
-    { id: "filippo", image: "/images/team/pippo.jpg", name: "Filippo PEROLO", office: "luxembourg" as OfficeType },
-    { id: "tom", image: "/images/team/tom_chebeaux.jpeg", name: "Tom CHEBEAUX", office: "monaco" as OfficeType },
-    { id: "max", image: "/images/team/max.jpg", name: "Maxime PERARD", office: "luxembourg" as OfficeType },
-    { id: "bak", image: "/images/team/bak.jpg", name: "Bak-Khieng UNG", office: "luxembourg" as OfficeType },
-    { id: "jj", image: "/images/team/jean_jacques_martinenghi.jpg", name: "Jean-Jacques MARTINENGHI", office: "monaco" as OfficeType },
-    { id: "pierre", image: "/images/team/pierre.jpg", name: "Pierre LEONARD", office: "luxembourg" as OfficeType },
+
+    { id: "cyrille",    image: "/images/team/cyrille.jpg",                  name: "Cyrille NAHABEDIAN",         office: "luxembourg" as OfficeType },
+    { id: "alexandre",  image: "/images/team/alexandre.jpg",                name: "Alexandre TRAMINI",          office: "luxembourg" as OfficeType },
+    { id: "jonathan",   image: "/images/team/jonathan.jpg",                 name: "Jonathan NIDDAM",            office: "luxembourg" as OfficeType },
+    { id: "julien",     image: "/images/team/julien_baptiste.jpg",          name: "Julien BAPTISTE",            office: "monaco" as OfficeType },
+    { id: "ilyasse",    image: "/images/team/ilyasse.jpg",                  name: "Ilyasse TARIQ",              office: "luxembourg" as OfficeType },
+    { id: "filippo",    image: "/images/team/pippo.jpg",                    name: "Filippo PEROLO",             office: "luxembourg" as OfficeType },
+    { id: "tom",        image: "/images/team/tom_chebeaux.jpeg",            name: "Tom CHEBEAUX",               office: "monaco" as OfficeType },
+    { id: "max",        image: "/images/team/max.jpg",                      name: "Maxime PERARD",              office: "luxembourg" as OfficeType },
+    { id: "bak",        image: "/images/team/bak.jpg",                      name: "Bak-Khieng UNG",             office: "luxembourg" as OfficeType },
+    { id: "jj",         image: "/images/team/jean_jacques_martinenghi.jpg", name: "Jean-Jacques MARTINENGHI",   office: "monaco" as OfficeType },
+    { id: "pierre",     image: "/images/team/pierre.jpg",                   name: "Pierre LEONARD",             office: "luxembourg" as OfficeType },
+
 ]
 
 export default function TeamSection() {
+
     const { t } = useLanguage()
     const [filter, setFilter] = useState<"all" | OfficeType>("all")
 
@@ -166,4 +169,5 @@ export default function TeamSection() {
             </div>
         </section>
     )
+
 }
