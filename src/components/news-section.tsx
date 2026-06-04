@@ -96,6 +96,7 @@ const articles: NewsArticle[] = [
     datePrecision: "month",
     titleKey: "news.article10.title",
     contentKey: "news.article10.content",
+    image: "/images/news/heroics_bitcoin.jpg",
   },
   {
     id: "11",
