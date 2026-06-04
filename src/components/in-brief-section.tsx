@@ -4,7 +4,7 @@ import React from "react"
 
 import { useLanguage } from "@/lib/language-context"
 import { useEffect, useRef, useState } from "react"
-import { Users, TrendingUp, Calendar, Building2, Briefcase, Globe, Award, Shield } from "lucide-react"
+import { Users, TrendingUp, Calendar, Banknote, Globe, Award, Shield, Briefcase, Activity } from "lucide-react"
 
 interface StatItem {
   icon: React.ReactNode
@@ -36,7 +36,7 @@ function AnimatedNumber({ value, prefix = "", suffix, inView }: { value: number;
   }, [inView, value])
 
   return (
-    <span className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-deepblue tabular-nums tracking-tight">
+    <span className="font-serif text-5xl md:text-6xl lg:text-7xl font-semibold text-deepblue tabular-nums tracking-tight">
       {prefix}{display.toLocaleString()}{suffix}
     </span>
   )
@@ -66,7 +66,7 @@ export default function InBriefSection() {
       icon: <Users className="h-6 w-6" />,
       value: 15,
       suffix: "",
-      labelKey: "brief.employees",
+      labelKey: "brief.staff",
     },
     {
       icon: <TrendingUp className="h-6 w-6" />,
@@ -79,6 +79,19 @@ export default function InBriefSection() {
       value: 1,
       suffix: "",
       labelKey: "brief.dedicated_fund",
+    },
+    {
+      icon: <Briefcase className="h-6 w-6" />,
+      value: 400,
+      suffix: "M+",
+      labelKey: "brief.aum",
+    },
+    {
+      icon: <Activity className="h-6 w-6" />,
+      value: 20,
+      prefix: "+",
+      suffix: "%",
+      labelKey: "brief.performance",
     },
     {
       icon: <Award className="h-6 w-6" />,
@@ -104,13 +117,19 @@ export default function InBriefSection() {
       suffix: "",
       labelKey: "brief.countries",
     },
+    {
+      icon: <Banknote className="h-6 w-6" />,
+      value: 16,
+      suffix: "",
+      labelKey: "brief.banks",
+    },
   ]
 
   return (
     <section
       ref={sectionRef}
       id="brief"
-      className="py-24 md:py-32 bg-background"
+      className="min-h-screen py-20 md:py-24 bg-background flex items-center"
     >
       <div className="mx-auto max-w-screen-2xl px-6">
         {/* Title */}
@@ -122,7 +141,7 @@ export default function InBriefSection() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 md:gap-12 lg:gap-10">
           {stats.map((stat) => (
             <div
               key={stat.labelKey}
@@ -138,7 +157,7 @@ export default function InBriefSection() {
                 suffix={stat.suffix}
                 inView={inView}
               />
-              <span className="text-sm text-muted-foreground tracking-wide uppercase">
+              <span className="max-w-[15rem] text-sm md:text-base text-muted-foreground tracking-wide uppercase leading-snug">
                 {t(stat.labelKey)}
               </span>
             </div>

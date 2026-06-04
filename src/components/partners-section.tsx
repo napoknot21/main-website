@@ -1,27 +1,7 @@
 "use client"
 
-import Image from "next/image"
 import { useLanguage } from "@/lib/language-context"
 import { AnimatedSection } from "@/components/ui/animated-section"
-
-const partners = [
-    "altarius.png",
-    "apex.png",
-    "bloomberg.png",
-    "bnp-paribas.png",
-    "credit-agricole-cib.png",
-    "dapm.png",
-    "deutsche-bank.png",
-    "goldman-sachs.png",
-    "ice.png",
-    "jp-morgan.png",
-    "kepler.svg",
-    "morgan-stanley.png",
-    "quintet-private-bank.png",
-    "saxo-bank.png",
-    "ubs.png",
-    "vcl.png",
-]
 
 export default function PartnersSection() {
     const { t } = useLanguage()
@@ -39,41 +19,13 @@ export default function PartnersSection() {
                 </div>
 
                 <AnimatedSection>
-                    <div className="relative flex overflow-hidden group">
-                        {/* 
-              Continuous Marquee animation. We duplicate the list to ensure 
-              seamless infinite scrolling. 
-            */}
-                        <div className="animate-marquee py-6 flex flex-nowrap shrink-0 gap-12 sm:gap-16 pr-12 sm:pr-16 items-center min-w-full">
-                            {partners.map((partner, idx) => (
-                                <div key={idx} className="relative h-12 w-32 sm:h-16 sm:w-40 opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 filter shrink-0">
-                                    <Image
-                                        src={`/images/partners/${partner}`}
-                                        alt="Partner Logo"
-                                        fill
-                                        sizes="(max-width: 640px) 128px, 160px"
-                                        loading="lazy"
-                                        className="object-contain"
-                                    />
-                                </div>
-                            ))}
+                    <div className="mx-auto flex max-w-3xl flex-col items-center text-center gap-4 rounded-lg border border-border bg-background px-8 py-10">
+                        <div className="font-serif text-6xl md:text-7xl font-semibold text-deepblue tabular-nums">
+                            16+
                         </div>
-
-                        {/* Duplicate for seamless loop */}
-                        <div className="animate-marquee py-6 flex flex-nowrap shrink-0 gap-12 sm:gap-16 pr-12 sm:pr-16 items-center min-w-full" aria-hidden="true">
-                            {partners.map((partner, idx) => (
-                                <div key={`dup-${idx}`} className="relative h-12 w-32 sm:h-16 sm:w-40 opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 filter shrink-0">
-                                    <Image
-                                        src={`/images/partners/${partner}`}
-                                        alt="Partner Logo"
-                                        fill
-                                        sizes="(max-width: 640px) 128px, 160px"
-                                        loading="lazy"
-                                        className="object-contain"
-                                    />
-                                </div>
-                            ))}
-                        </div>
+                        <p className="text-sm md:text-base uppercase tracking-wide text-muted-foreground">
+                            {t("about.partners.count")}
+                        </p>
                     </div>
                 </AnimatedSection>
             </div>

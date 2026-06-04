@@ -52,7 +52,7 @@ export default function HeroSection() {
             {t("hero.subtitle")}
           </p>
           <a
-            href="#about"
+            href="#brief"
             className="inline-flex items-center gap-2 bg-blue-hour text-white text-sm font-medium px-8 py-3.5 rounded-md hover:bg-turquoise hover:text-deepblue transition-all duration-500 shadow-xl group"
           >
             {t("hero.cta")}

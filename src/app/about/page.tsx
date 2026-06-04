@@ -57,8 +57,8 @@ const milestones = [
   { key: "2023", year: "2023" },
   { key: "2024a", year: "2024" },
   { key: "2024b", year: "2024" },
-  { key: "2024c", year: "2024" },
-  { key: "2024d", year: "2024" },
+  { key: "2025", year: "2025" },
+  { key: "2026", year: "2026" },
 ] as const
 
 export default function AboutPage() {
