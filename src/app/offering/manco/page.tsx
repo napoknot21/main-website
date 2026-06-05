@@ -2,14 +2,12 @@
 
 import { useRef, useEffect, useState } from "react"
 import Image from "next/image"
-import Link from "next/link"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import CookieBanner from "@/components/cookie-banner"
 import ContactCtaSection from "@/components/contact-cta-section"
 import { useLanguage } from "@/lib/language-context"
 import {
-  ArrowRight,
   Building2,
   Layers,
   Scale,
@@ -42,8 +40,18 @@ const services = [
 ] as const
 
 const platforms = [
-  { key: "aegis", icon: Monitor },
-  { key: "sentinelle", icon: Activity },
+  {
+    key: "aegis",
+    icon: Monitor,
+    videoSrc: "/videos/aegis_video.mp4",
+    poster: "/images/news/heroics_aegis_logo.png",
+  },
+  {
+    key: "sentinelle",
+    icon: Activity,
+    videoSrc: "/videos/sentinelle_video.mp4",
+    poster: "/images/news/heroics_sentinelle_logo.png",
+  },
 ] as const
 
 export default function ManCoPage() {
@@ -132,10 +140,10 @@ export default function ManCoPage() {
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {platforms.map(({ key, icon: Icon }, idx) => (
+              {platforms.map(({ key, icon: Icon, videoSrc, poster }, idx) => (
                 <div
                   key={key}
-                  className={`relative flex flex-col items-center text-center p-8 rounded-xl border border-border bg-background overflow-hidden group transition-all duration-700 ${platformsSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  className={`relative flex h-full flex-col items-center text-center p-8 rounded-xl border border-border bg-background overflow-hidden group transition-all duration-700 ${platformsSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                     }`}
                   style={{ transitionDelay: `${idx * 150}ms` }}
                 >
@@ -154,9 +162,20 @@ export default function ManCoPage() {
                       {t(`offering.manco.${key}.title`)}
                     </h3>
                   </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed text-pretty text-center">
+                  <p className="text-muted-foreground text-sm leading-relaxed text-pretty text-center flex-1">
                     {t(`offering.manco.${key}.desc`)}
                   </p>
+                  <div className="mt-6 w-full overflow-hidden rounded-lg border border-border bg-black shadow-sm">
+                    <video
+                      className="block aspect-video w-full object-contain"
+                      controls
+                      playsInline
+                      preload="metadata"
+                      poster={poster}
+                    >
+                      <source src={videoSrc} type="video/mp4" />
+                    </video>
+                  </div>
                 </div>
               ))}
             </div>

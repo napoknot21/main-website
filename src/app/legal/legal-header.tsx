@@ -9,6 +9,7 @@ export default function LegalHeader() {
   const { t } = useLanguage()
 
   let titleKey = "footer.legal" // default fallback to "Legal"
+  let subtitle = "Please review our legal documents and policies."
 
   if (pathname.includes("/legal/privacy")) {
     titleKey = "footer.legal.privacy"
@@ -16,6 +17,7 @@ export default function LegalHeader() {
     titleKey = "footer.legal.notice"
   } else if (pathname.includes("/legal/disclosure")) {
     titleKey = "footer.legal.disclosure"
+    subtitle = "A summary of our regulatory disclosures, policies and complaint handling procedure."
   } else if (pathname.includes("/legal/cookies")) {
     titleKey = "footer.legal.cookies"
   }
@@ -28,7 +30,7 @@ export default function LegalHeader() {
           {t(titleKey)}
         </h1>
         <p className="text-lg text-white/80 max-w-2xl font-sans">
-          Please review our legal documents and policies.
+          {subtitle}
         </p>
       </div>
     </div>

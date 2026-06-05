@@ -187,7 +187,7 @@ export default function OfficesSection() {
                                     href={
                                         activeOffice === "monaco" || activeOffice === "geneva"
                                             ? "/offering/investment-solutions"
-                                            : "/offering"
+                                            : "/offering/aif"
                                     }
                                     className="inline-flex items-center gap-2 text-sm font-medium text-blue-hour hover:text-blue-hour/80 transition-colors duration-200 group"
                                 >

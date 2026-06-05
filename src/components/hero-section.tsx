@@ -17,7 +17,7 @@ export default function HeroSection() {
           loop
           playsInline
           preload="metadata"
-          poster="/images/hero.jpg"
+          poster="/images/hero.png"
           aria-hidden="true"
         >
           {/* Primary source — replace src with actual video path when available */}

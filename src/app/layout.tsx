@@ -49,8 +49,8 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="/images/hero.jpg"
-          type="image/jpeg"
+          href="/images/hero.png"
+          type="image/png"
         />
       </head>
       <body className="font-sans antialiased">
