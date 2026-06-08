@@ -31,6 +31,15 @@ const articles: NewsArticle[] = [
       "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7414725174731632640?compact=1",
   },
   {
+    id: "18",
+    date: "2026-06-04",
+    titleKey: "news.article18.title",
+    contentKey: "news.article18.content",
+    link: "https://youtu.be/9yr29iTEtQc?si=IudWeOvCejGffvT5",
+    videoEmbedUrl:
+      "https://www.youtube.com/embed/9yr29iTEtQc?si=IudWeOvCejGffvT5",
+  },
+  {
     id: "17",
     date: "2026-06-04",
     titleKey: "news.article17.title",

@@ -98,7 +98,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "offices.monaco.desc": "Our Monaco office focuses on high-touch private client advisory and actively managed certificate strategies ─ providing bespoke non-discretionary recommendations and dynamic, multi-asset certificate exposure.",
     "offices.monaco.service.advisory": "Advisory Services",
     "offices.monaco.service.advisory.tag": "Advisory",
-    "offices.monaco.service.amc": "AMC Dynamique",
+    "offices.monaco.service.amc": "AMC Dedicated",
     "offices.monaco.service.amc.tag": "Certificate",
     "offices.geneva.name": "Geneva",
     "offices.geneva.tagline": "Private Clients & European Access",
@@ -252,6 +252,9 @@ export const translations: Record<Locale, Record<string, string>> = {
       "Heroics Capital shares a LinkedIn update highlighting its hedge fund, AIFM, and asset management expertise.",
     "news.article17.title": "LFMA Teaser",
     "news.article17.content": "Watch the latest LFMA teaser featuring Heroics Capital.",
+    "news.article18.title": "LFMA Chapter 1 with Cyrille Nahabedian",
+    "news.article18.content":
+      "Watch the first LFMA chapter featuring Cyrille Nahabedian speaking for Heroics Capital.",
 
     // ── Contact CTA (banner) ─────────────────────────────────
     "contact.title": "Let\u2019s Build Your Future Together",
@@ -541,7 +544,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "offices.monaco.desc": "Notre bureau mon\u00E9gasque est d\u00E9di\u00E9 au conseil priv\u00E9 haut de gamme et aux strat\u00E9gies de certificats \u00E0 gestion active \u2014 offrant des recommandations non discr\u00E9tionnaires sur mesure et une exposition multi-actifs dynamique.",
     "offices.monaco.service.advisory": "Services de conseil",
     "offices.monaco.service.advisory.tag": "Conseil",
-    "offices.monaco.service.amc": "AMC Dynamique",
+    "offices.monaco.service.amc": "AMC Dedicated",
     "offices.monaco.service.amc.tag": "Certificat",
     "offices.geneva.name": "Gen\u00E8ve",
     "offices.geneva.tagline": "Clients priv\u00E9s & acc\u00E8s europ\u00E9en",
@@ -686,6 +689,9 @@ export const translations: Record<Locale, Record<string, string>> = {
       "Heroics Capital partage une actualit\u00E9 LinkedIn mettant en avant son expertise en hedge fund, AIFM et gestion d'actifs.",
     "news.article17.title": "Teaser LFMA",
     "news.article17.content": "Découvrez le dernier teaser LFMA avec Heroics Capital.",
+    "news.article18.title": "LFMA - Chapitre 1 avec Cyrille Nahabedian",
+    "news.article18.content":
+      "Découvrez le premier chapitre LFMA avec l'intervention de Cyrille Nahabedian pour Heroics Capital.",
 
     "contact.title": "Construisons votre avenir ensemble",
     "contact.description":
@@ -966,7 +972,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "offices.monaco.desc": "Nuestra oficina de M\u00F3naco se enfoca en el asesoramiento privado de alto nivel y en estrategias de certificados de gesti\u00F3n activa.",
     "offices.monaco.service.advisory": "Servicios de asesoramiento",
     "offices.monaco.service.advisory.tag": "Asesoramiento",
-    "offices.monaco.service.amc": "AMC Dynamique",
+    "offices.monaco.service.amc": "AMC Dedicated",
     "offices.monaco.service.amc.tag": "Certificado",
     "offices.geneva.name": "Ginebra",
     "offices.geneva.tagline": "Clientes privados y acceso europeo",
@@ -1095,6 +1101,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "news.article16.content": "Heroics Capital comparte una actualizaci\u00F3n en LinkedIn que destaca su experiencia en hedge funds, AIFM y gesti\u00F3n de activos.",
     "news.article17.title": "Teaser LFMA",
     "news.article17.content": "Vea el último teaser LFMA con Heroics Capital.",
+    "news.article18.title": "LFMA - Capítulo 1 con Cyrille Nahabedian",
+    "news.article18.content": "Vea el primer capítulo LFMA con la intervención de Cyrille Nahabedian para Heroics Capital.",
 
     "contact.title": "Construyamos su futuro juntos",
     "contact.description": "Nuestro equipo de expertos est\u00E1 listo para discutir sus objetivos de inversi\u00F3n y elaborar estrategias personalizadas.",
@@ -1370,7 +1378,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "offices.monaco.desc": "Il nostro ufficio di Monaco si concentra sulla consulenza privata di alto livello e sulle strategie di certificati a gestione attiva.",
     "offices.monaco.service.advisory": "Servizi di consulenza",
     "offices.monaco.service.advisory.tag": "Consulenza",
-    "offices.monaco.service.amc": "AMC Dynamique",
+    "offices.monaco.service.amc": "AMC Dedicated",
     "offices.monaco.service.amc.tag": "Certificato",
     "offices.geneva.name": "Ginevra",
     "offices.geneva.tagline": "Clienti privati e accesso europeo",
@@ -1495,6 +1503,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "news.article16.content": "Heroics Capital condivide un aggiornamento LinkedIn che evidenzia la sua esperienza in hedge fund, AIFM e gestione patrimoniale.",
     "news.article17.title": "Teaser LFMA",
     "news.article17.content": "Guarda l'ultimo teaser LFMA con Heroics Capital.",
+    "news.article18.title": "LFMA - Capitolo 1 con Cyrille Nahabedian",
+    "news.article18.content": "Guarda il primo capitolo LFMA con l'intervento di Cyrille Nahabedian per Heroics Capital.",
 
     "contact.title": "Costruiamo insieme il vostro futuro",
     "contact.description": "Il nostro team di esperti \u00E8 pronto a discutere i vostri obiettivi di investimento e a elaborare strategie su misura.",
@@ -1770,7 +1780,7 @@ export const translations: Record<Locale, Record<string, string>> = {
     "offices.monaco.desc": "O nosso escrit\u00F3rio do M\u00F3naco foca-se no aconselhamento privado de alto n\u00EDvel e em estrat\u00E9gias de certificados de gest\u00E3o ativa.",
     "offices.monaco.service.advisory": "Servi\u00E7os de consultoria",
     "offices.monaco.service.advisory.tag": "Consultoria",
-    "offices.monaco.service.amc": "AMC Dynamique",
+    "offices.monaco.service.amc": "AMC Dedicated",
     "offices.monaco.service.amc.tag": "Certificado",
     "offices.geneva.name": "Genebra",
     "offices.geneva.tagline": "Clientes privados e acesso europeu",
@@ -1895,6 +1905,8 @@ export const translations: Record<Locale, Record<string, string>> = {
     "news.article16.content": "A Heroics Capital partilha uma atualiza\u00E7\u00E3o no LinkedIn que destaca a sua experi\u00EAncia em hedge funds, AIFM e gest\u00E3o de ativos.",
     "news.article17.title": "Teaser LFMA",
     "news.article17.content": "Veja o mais recente teaser LFMA com a Heroics Capital.",
+    "news.article18.title": "LFMA - Capítulo 1 com Cyrille Nahabedian",
+    "news.article18.content": "Veja o primeiro capítulo LFMA com a intervenção de Cyrille Nahabedian pela Heroics Capital.",
 
     "contact.title": "Vamos construir o seu futuro juntos",
     "contact.description": "A nossa equipa de especialistas est\u00E1 pronta para discutir os seus objetivos de investimento e elaborar estrat\u00E9gias personalizadas.",
