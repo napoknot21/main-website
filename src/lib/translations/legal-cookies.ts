@@ -15,8 +15,8 @@ export const cookiesEn = {
   "legal.cookies.3.p2": "You can also set or amend your web browser controls to accept or refuse cookies. As the means by which you can refuse cookies through your browser controls vary from browser to browser, you should visit your browser's help menu for more information.",
   "legal.cookies.4.title": "4. Changes to this Policy",
   "legal.cookies.4.p1": "We may update this Cookie Policy from time to time to reflect, for example, changes to the cookies we use or other operational, legal, or regulatory reasons. Please revisit this Cookie Policy regularly to stay informed about our use of cookies and related technologies.",
-  "legal.cookies.5.title": "5. Contact Us",
-  "legal.cookies.5.p1": "If you have any questions about our use of cookies or other technologies, please contact us at:",
+  "legal.cookies.contact.title": "Contact",
+  "legal.cookies.contact.p1": "If you have any questions about our use of cookies or other technologies, please use our contact page.",
   "legal.lastUpdated": "Last updated: May 2026",
 }
 
@@ -37,8 +37,8 @@ export const cookiesFr = {
   "legal.cookies.3.p2": "Vous pouvez \u00e9galement configurer votre navigateur pour accepter ou refuser les cookies. Les moyens de refus variant d'un navigateur \u00e0 l'autre, veuillez consulter le menu d'aide de votre navigateur pour plus d'informations.",
   "legal.cookies.4.title": "4. Modifications de cette politique",
   "legal.cookies.4.p1": "Nous pouvons mettre \u00e0 jour cette Politique de cookies afin de refl\u00e9ter, par exemple, des changements dans les cookies que nous utilisons ou pour d'autres raisons op\u00e9rationnelles, juridiques ou r\u00e9glementaires. Veuillez la consulter r\u00e9guli\u00e8rement pour rester inform\u00e9 de notre utilisation des cookies et technologies similaires.",
-  "legal.cookies.5.title": "5. Nous contacter",
-  "legal.cookies.5.p1": "Si vous avez des questions concernant notre utilisation des cookies ou d'autres technologies, veuillez nous contacter \u00e0 l'adresse suivante :",
+  "legal.cookies.contact.title": "Contact",
+  "legal.cookies.contact.p1": "Si vous avez des questions concernant notre utilisation des cookies ou d'autres technologies, veuillez utiliser notre page de contact.",
   "legal.lastUpdated": "Derni\u00e8re mise \u00e0 jour : mai 2026",
 }
 
@@ -59,8 +59,8 @@ export const cookiesEs = {
   "legal.cookies.3.p2": "Tambi\u00e9n puede configurar o modificar los controles de su navegador para aceptar o rechazar cookies. Dado que la forma de rechazar cookies mediante los controles del navegador var\u00eda de un navegador a otro, consulte el men\u00fa de ayuda de su navegador para obtener m\u00e1s informaci\u00f3n.",
   "legal.cookies.4.title": "4. Cambios en esta pol\u00edtica",
   "legal.cookies.4.p1": "Podemos actualizar esta Pol\u00edtica de Cookies peri\u00f3dicamente para reflejar, por ejemplo, cambios en las cookies que utilizamos u otros motivos operativos, legales o regulatorios. Le recomendamos volver a consultar esta Pol\u00edtica de Cookies con regularidad para mantenerse informado sobre nuestro uso de cookies y tecnolog\u00edas relacionadas.",
-  "legal.cookies.5.title": "5. Contacto",
-  "legal.cookies.5.p1": "Si tiene alguna pregunta sobre nuestro uso de cookies u otras tecnolog\u00edas, p\u00f3ngase en contacto con nosotros en:",
+  "legal.cookies.contact.title": "Contacto",
+  "legal.cookies.contact.p1": "Si tiene alguna pregunta sobre nuestro uso de cookies u otras tecnolog\u00edas, utilice nuestra p\u00e1gina de contacto.",
   "legal.lastUpdated": "\u00daltima actualizaci\u00f3n: mayo de 2026",
 }
 
@@ -81,8 +81,8 @@ export const cookiesIt = {
   "legal.cookies.3.p2": "Potete inoltre impostare o modificare i controlli del vostro browser per accettare o rifiutare i cookie. Poich\u00e9 le modalit\u00e0 di rifiuto tramite browser variano da un browser all'altro, vi invitiamo a consultare il menu di aiuto del vostro browser per maggiori informazioni.",
   "legal.cookies.4.title": "4. Modifiche a questa politica",
   "legal.cookies.4.p1": "Potremmo aggiornare periodicamente questa Politica sui Cookie per riflettere, ad esempio, cambiamenti nei cookie che utilizziamo o altri motivi operativi, legali o regolamentari. Vi invitiamo a consultarla regolarmente per rimanere informati sul nostro uso dei cookie e delle tecnologie correlate.",
-  "legal.cookies.5.title": "5. Contatti",
-  "legal.cookies.5.p1": "Per qualsiasi domanda sul nostro utilizzo dei cookie o di altre tecnologie, potete contattarci a:",
+  "legal.cookies.contact.title": "Contatti",
+  "legal.cookies.contact.p1": "Per qualsiasi domanda sul nostro utilizzo dei cookie o di altre tecnologie, utilizzate la nostra pagina di contatto.",
   "legal.lastUpdated": "Ultimo aggiornamento: maggio 2026",
 }
 
@@ -103,7 +103,7 @@ export const cookiesPt = {
   "legal.cookies.3.p2": "Tamb\u00e9m pode configurar ou alterar os controlos do seu navegador para aceitar ou recusar cookies. Como os meios para recusar cookies atrav\u00e9s do navegador variam de navegador para navegador, consulte o menu de ajuda do seu navegador para obter mais informa\u00e7\u00f5es.",
   "legal.cookies.4.title": "4. Altera\u00e7\u00f5es a esta pol\u00edtica",
   "legal.cookies.4.p1": "Podemos atualizar esta Pol\u00edtica de Cookies periodicamente para refletir, por exemplo, altera\u00e7\u00f5es nos cookies que utilizamos ou outros motivos operacionais, legais ou regulamentares. Recomendamos que consulte regularmente esta Pol\u00edtica de Cookies para se manter informado sobre a nossa utiliza\u00e7\u00e3o de cookies e tecnologias relacionadas.",
-  "legal.cookies.5.title": "5. Contacte-nos",
-  "legal.cookies.5.p1": "Se tiver alguma quest\u00e3o sobre a nossa utiliza\u00e7\u00e3o de cookies ou outras tecnologias, contacte-nos em:",
+  "legal.cookies.contact.title": "Contacto",
+  "legal.cookies.contact.p1": "Se tiver alguma quest\u00e3o sobre a nossa utiliza\u00e7\u00e3o de cookies ou outras tecnologias, utilize a nossa p\u00e1gina de contacto.",
   "legal.lastUpdated": "\u00daltima atualiza\u00e7\u00e3o: maio de 2026",
 }

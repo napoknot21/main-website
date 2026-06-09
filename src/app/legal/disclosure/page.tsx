@@ -7,6 +7,21 @@ export const metadata = {
   description: "Regulatory disclosures and complaint handling procedure for Heroics Capital.",
 }
 
+const disclosureDocuments = [
+  {
+    title: "Remuneration Policy",
+    description: "Available to professional investors and eligible counterparties upon request.",
+  },
+  {
+    title: "Conflicts of Interest Policy",
+    description: "Summary or full policy available upon request depending on the nature of the enquiry.",
+  },
+  {
+    title: "Complaints Handling Procedure",
+    description: "Detailed procedure available through our contact workflow.",
+  },
+]
+
 export default function DisclosurePage() {
   return (
     <div className="space-y-10 text-muted-foreground">
@@ -204,12 +219,41 @@ export default function DisclosurePage() {
 
       <section>
         <h2 className="text-2xl font-serif font-semibold text-deepblue mb-4">
-          5. Remuneration Policy
+          5. Documents Available on Request
         </h2>
         <p className="mb-4 leading-relaxed text-pretty">
-          [Placeholder: Provide a summary of your remuneration policy as required by applicable regulations
-          (e.g., AIFMD/UCITS).]
+          Certain regulatory documents are available upon request. To receive the appropriate document, please
+          use the contact page so our team can verify the request and provide the relevant version.
         </p>
+        <div className="grid gap-4 md:grid-cols-3">
+          {disclosureDocuments.map((document) => (
+            <article
+              key={document.title}
+              className="rounded-md border border-border p-5"
+            >
+              <h3 className="font-serif text-lg font-semibold text-deepblue mb-2">
+                {document.title}
+              </h3>
+              <p className="text-sm leading-relaxed text-pretty mb-5">
+                {document.description}
+              </p>
+              <Button asChild variant="outline" size="sm">
+                <Link
+                  href={{
+                    pathname: "/contact",
+                    query: {
+                      context: "document",
+                      document: document.title,
+                    },
+                  }}
+                >
+                  Request document
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="pt-8 border-t border-border">

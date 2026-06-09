@@ -1,6 +1,8 @@
 "use client"
 
+import Link from "next/link"
 import { useLanguage } from "@/lib/language-context"
+import { ArrowRight, SlidersHorizontal } from "lucide-react"
 
 const cookieItems = ["li1", "li2", "li3"] as const
 
@@ -59,20 +61,37 @@ export default function CookiesContent() {
         </p>
       </section>
 
-      <section>
-        <h2 className="text-2xl font-serif font-semibold text-deepblue mb-4">
-          {t("legal.cookies.5.title")}
+      <section className="pt-8 border-t border-border">
+        <h2 className="text-xl font-serif font-semibold text-deepblue mb-4">
+          {t("cookie.settings")}
         </h2>
         <p className="mb-4 leading-relaxed text-pretty">
-          {t("legal.cookies.5.p1")}{" "}
-          <a
-            href="mailto:info@heroics-capital.com"
-            className="text-blue-hour hover:underline"
-          >
-            info@heroics-capital.com
-          </a>
-          .
+          {t("cookie.settings.page.p1")}
         </p>
+        <button
+          type="button"
+          onClick={() => window.dispatchEvent(new Event("open-cookie-settings"))}
+          className="inline-flex items-center gap-2 rounded-md border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted hover:text-blue-hour"
+        >
+          <SlidersHorizontal className="h-4 w-4" />
+          {t("cookie.settings")}
+        </button>
+      </section>
+
+      <section className="pt-8 border-t border-border">
+        <h2 className="text-2xl font-serif font-semibold text-deepblue mb-4">
+          {t("legal.cookies.contact.title")}
+        </h2>
+        <p className="mb-4 leading-relaxed text-pretty">
+          {t("legal.cookies.contact.p1")}
+        </p>
+        <Link
+          href="/contact"
+          className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-blue-hour"
+        >
+          {t("contact.cta")}
+          <ArrowRight className="h-4 w-4" />
+        </Link>
       </section>
 
       <p className="text-sm opacity-60 pt-8 border-t border-border">

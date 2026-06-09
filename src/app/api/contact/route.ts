@@ -3,7 +3,7 @@ import { NextResponse } from "next/server"
 const MAX_BODY_BYTES = 20_000
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000
 const RATE_LIMIT_MAX_REQUESTS = 5
-const ALLOWED_CONTEXTS = new Set(["customer", "press", "candidacy", "other"])
+const ALLOWED_CONTEXTS = new Set(["customer", "document", "press", "candidacy", "other"])
 
 const submissionsByIp = new Map<string, { count: number; resetAt: number }>()
 

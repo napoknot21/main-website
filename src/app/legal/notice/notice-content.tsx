@@ -1,6 +1,8 @@
 "use client"
 
+import Link from "next/link"
 import { useLanguage } from "@/lib/language-context"
+import { ArrowRight } from "lucide-react"
 
 export default function NoticeContent() {
   const { t } = useLanguage()
@@ -25,7 +27,6 @@ export default function NoticeContent() {
               <li>{t("legal.notice.1.li4.b")}</li>
             </ul>
           </li>
-          <li>{t("legal.notice.1.li5")}</li>
         </ul>
         <p className="mb-4 leading-relaxed text-pretty">
           {t("legal.notice.1.p2")}
@@ -140,12 +141,13 @@ export default function NoticeContent() {
         <p className="mb-2 leading-relaxed text-pretty">
           {t("legal.notice.contact.p1")}
         </p>
-        <ul className="space-y-1 text-sm md:text-base">
-          <li>{t("legal.notice.contact.email")}</li>
-          <li>{t("legal.notice.contact.phone")}</li>
-          <li>{t("legal.notice.contact.lux")}</li>
-          <li>{t("legal.notice.contact.monaco")}</li>
-        </ul>
+        <Link
+          href="/contact"
+          className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-blue-hour"
+        >
+          {t("contact.cta")}
+          <ArrowRight className="h-4 w-4" />
+        </Link>
       </section>
 
     </div>

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useCallback, useEffect } from "react"
+import React, { useState, useCallback, useEffect, useRef } from "react"
 import { useLanguage } from "@/lib/language-context"
 import { Send, Check, AlertCircle, RefreshCw, Loader2 } from "lucide-react"
 
@@ -41,6 +41,7 @@ export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
   const [sending, setSending] = useState(false)
   const [sendError, setSendError] = useState("")
+  const hasAppliedUrlPrefill = useRef(false)
 
   const refreshCaptcha = useCallback(() => {
     setCaptcha(generateCaptcha())
@@ -51,8 +52,28 @@ export default function ContactForm() {
     refreshCaptcha()
   }, [refreshCaptcha])
 
+  useEffect(() => {
+    if (hasAppliedUrlPrefill.current) return
+    hasAppliedUrlPrefill.current = true
+
+    const params = new URLSearchParams(window.location.search)
+    const requestedDocument = params.get("document")?.trim()
+    const context = params.get("context")
+
+    if (context === "document" || requestedDocument) {
+      setFormData((prev) => ({
+        ...prev,
+        context: "document",
+        message: requestedDocument
+          ? `${t("contact.form.documentRequest.prefix")} ${requestedDocument}\n\n`
+          : prev.message,
+      }))
+    }
+  }, [t])
+
   const contexts = [
     { value: "customer", labelKey: "contact.form.ctx.customer" },
+    { value: "document", labelKey: "contact.form.ctx.document" },
     { value: "press", labelKey: "contact.form.ctx.press" },
     { value: "candidacy", labelKey: "contact.form.ctx.candidacy" },
     { value: "other", labelKey: "contact.form.ctx.other" },
@@ -132,7 +153,7 @@ export default function ContactForm() {
         <label className="block text-sm font-semibold text-foreground mb-3">
           {t("contact.form.context")} <span className="text-destructive">*</span>
         </label>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
           {contexts.map((ctx) => (
             <button
               key={ctx.value}
