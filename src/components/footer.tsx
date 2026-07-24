@@ -3,10 +3,12 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useLanguage } from "@/lib/language-context"
+import { structuredText } from "@/lib/structured-translations"
 import { Linkedin } from "lucide-react"
 
 export default function Footer() {
-  const { t } = useLanguage()
+  const { locale, t } = useLanguage()
+  const s = (source: string) => structuredText(locale, source)
   const currentYear = new Date().getFullYear()
 
   return (
@@ -39,22 +41,32 @@ export default function Footer() {
           {/* Column 2 - Notre offre */}
           <div className="col-span-2 sm:col-span-1">
             <h3 className="text-base font-semibold mb-6 text-primary-foreground">
-              {t("nav.offering")}
+              {s("Solutions")}
             </h3>
             <ul className="flex flex-col gap-3">
               <li>
-                <Link href="/offering/aif" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
-                  {t("nav.offering.aif")}
+                  <Link href="/solutions/alternative-strategies" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
+                  {s("Alternative strategies")}
                 </Link>
               </li>
               <li>
-                <Link href="/offering/investment-solutions" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
-                  {t("nav.offering.investment")}
+                  <Link href="/solutions/advisory" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
+                  {s("Advisory & DPM")}
                 </Link>
               </li>
               <li>
-                <Link href="/offering/manco" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
-                  {t("nav.offering.manco")}
+                  <Link href="/solutions/amc" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
+                  {s("AMC & structured solutions")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/solutions/aifm" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
+                  {s("AIFM services")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/solutions/brokerage" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
+                  {s("Structured products brokerage")}
                 </Link>
               </li>
             </ul>
@@ -84,6 +96,21 @@ export default function Footer() {
               <li>
                 <Link href="/contact" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
                   {t("nav.contact")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/entities/luxembourg" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
+                  {s("Luxembourg")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/entities/monaco" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
+                  {s("Monaco")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/technology" className="text-sm text-primary-foreground/60 hover:text-blue-hour transition-colors">
+                  {s("Technology")}
                 </Link>
               </li>
             </ul>

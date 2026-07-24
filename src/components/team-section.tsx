@@ -36,19 +36,19 @@ export default function TeamSection() {
 
     return (
         <section className="py-20 md:py-28 bg-background relative overflow-hidden">
-            <div className="mx-auto max-w-screen-2xl px-6 relative z-10">
-                <div className="text-center mb-12 md:mb-16">
-                    <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6" />
+            <div className="mx-auto max-w-6xl px-6 md:px-8 relative z-10">
+                <div className="max-w-3xl text-left mb-12 md:mb-16">
+                    <div className="h-1 w-12 bg-blue-hour rounded-full mb-6" />
                     <h2 className="font-serif text-3xl md:text-4xl font-semibold text-deepblue text-balance">
                         {t("about.team.title")}
                     </h2>
-                    <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+                    <p className="text-muted-foreground mt-4 max-w-2xl">
                         {t("about.team.subtitle")}
                     </p>
                 </div>
 
                 {/* Filter UI */}
-                <div className="flex justify-center mb-12">
+                <div className="flex justify-start mb-12">
                     <div className="inline-flex bg-muted/50 p-1.5 rounded-full border border-border/50 overflow-x-auto max-w-full">
                         <button
                             onClick={() => setFilter("all")}

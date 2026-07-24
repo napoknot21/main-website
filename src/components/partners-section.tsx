@@ -8,8 +8,8 @@ export default function PartnersSection() {
 
     return (
         <section className="py-20 bg-muted/30 border-t border-border overflow-hidden">
-            <div className="mx-auto max-w-screen-2xl px-6">
-                <div className="text-center mb-12">
+            <div className="mx-auto max-w-6xl px-6 md:px-8">
+                <div className="text-left mb-12">
                     <p className="text-sm font-medium tracking-widest uppercase text-blue-hour mb-2">
                         {t("about.partners.subtitle")}
                     </p>

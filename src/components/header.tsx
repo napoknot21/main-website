@@ -6,6 +6,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { useLanguage } from "@/lib/language-context"
 import type { Locale } from "@/lib/translations"
+import { structuredText } from "@/lib/structured-translations"
 import { ChevronDown, Globe, Menu, X, Users } from "lucide-react"
 
 const localeLabels: Record<Locale, string> = {
@@ -88,9 +89,11 @@ function useClickOutside(ref: React.RefObject<HTMLElement | null>, onClose: () =
 
 export default function Header() {
   const { locale, setLocale, t } = useLanguage()
+  const s = (source: string) => structuredText(locale, source)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
   const [offeringOpen, setOfferingOpen] = useState(false)
+  const [entitiesOpen, setEntitiesOpen] = useState(false)
   const [clientModalOpen, setClientModalOpen] = useState(false)
   const [selectedCountry, setSelectedCountry] = useState(allCountries[0])
   const [selectedProfile, setSelectedProfile] = useState(profiles[0])
@@ -100,9 +103,11 @@ export default function Header() {
 
   const langRef = useRef<HTMLDivElement>(null)
   const offeringRef = useRef<HTMLDivElement>(null)
+  const entitiesRef = useRef<HTMLDivElement>(null)
 
   useClickOutside(langRef, () => setLangOpen(false))
   useClickOutside(offeringRef, () => setOfferingOpen(false))
+  useClickOutside(entitiesRef, () => setEntitiesOpen(false))
 
   const handleScroll = useCallback(() => {
     setScrolled(window.scrollY > 50)
@@ -123,6 +128,19 @@ export default function Header() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [clientModalOpen])
 
+  useEffect(() => {
+    if (!offeringOpen && !entitiesOpen && !langOpen) return
+    function handleMenuKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setOfferingOpen(false)
+        setEntitiesOpen(false)
+        setLangOpen(false)
+      }
+    }
+    document.addEventListener("keydown", handleMenuKeyDown)
+    return () => document.removeEventListener("keydown", handleMenuKeyDown)
+  }, [entitiesOpen, langOpen, offeringOpen])
+
   function openClientModal() {
     setTempCountry(selectedCountry)
     setTempProfile(selectedProfile)
@@ -141,9 +159,17 @@ export default function Header() {
   }
 
   const offeringItems = [
-    { labelKey: "nav.offering.aif", href: "/offering/aif" },
-    { labelKey: "nav.offering.investment", href: "/offering/investment-solutions" },
-    { labelKey: "nav.offering.manco", href: "/offering/manco" },
+    { label: "Solutions overview", href: "/solutions" },
+    { label: "Alternative strategies", href: "/solutions/alternative-strategies" },
+    { label: "Advisory & DPM", href: "/solutions/advisory" },
+    { label: "AMC & structured solutions", href: "/solutions/amc" },
+    { label: "AIFM services", href: "/solutions/aifm" },
+    { label: "Structured products brokerage", href: "/solutions/brokerage" },
+  ]
+
+  const entityItems = [
+    { label: "Luxembourg", href: "/entities/luxembourg" },
+    { label: "Monaco", href: "/entities/monaco" },
   ]
 
   const navItems = [
@@ -243,35 +269,64 @@ export default function Header() {
 
           {/* Desktop nav pinned far-right */}
           <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
-            {/* Offering dropdown */}
+            {/* Solutions dropdown */}
             <div className="relative" ref={offeringRef}>
               <button
-                onClick={() => setOfferingOpen(!offeringOpen)}
+                type="button"
+                onClick={() => { setOfferingOpen(!offeringOpen); setEntitiesOpen(false) }}
                 className={`flex items-center gap-1 text-sm font-medium transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:transition-all duration-500 ${offeringOpen
                   ? scrolled ? "text-blue-hour after:w-full after:bg-blue-hour" : "text-blue-hour after:w-full after:bg-blue-hour"
                   : `${textColorClass} after:w-0 ${scrolled ? "hover:after:w-full after:bg-blue-hour" : "hover:after:w-full after:bg-blue-hour"}`
                   }`}
                 aria-expanded={offeringOpen}
+                aria-haspopup="menu"
               >
-                {t("nav.offering")}
+                {s("Solutions")}
                 <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${offeringOpen ? "rotate-180" : ""}`} />
               </button>
 
               {offeringOpen && (
-                <div className="absolute right-0 top-full mt-2 bg-background rounded-md shadow-xl border border-border py-1 min-w-[220px] z-50">
+                <div className="absolute right-0 top-full mt-2 bg-background rounded-md shadow-xl border border-border py-1 min-w-[220px] z-50" role="menu">
                   {offeringItems.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
                       onClick={() => setOfferingOpen(false)}
-                      className="block px-4 py-2.5 text-sm text-foreground hover:bg-muted hover:text-accent transition-colors"
+                      className="block px-4 py-2.5 text-sm text-foreground hover:bg-muted hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-inset"
+                      role="menuitem"
                     >
-                      {t(item.labelKey)}
+                      {s(item.label)}
                     </Link>
                   ))}
                 </div>
               )}
             </div>
+
+            <div className="relative" ref={entitiesRef}>
+              <button
+                type="button"
+                onClick={() => { setEntitiesOpen(!entitiesOpen); setOfferingOpen(false) }}
+                className={`flex items-center gap-1 text-sm font-medium transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:transition-all duration-500 ${entitiesOpen ? "text-blue-hour after:w-full after:bg-blue-hour" : `${textColorClass} after:w-0 hover:after:w-full after:bg-blue-hour`}`}
+                aria-expanded={entitiesOpen}
+                aria-haspopup="menu"
+              >
+                {s("Entities")}
+                <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${entitiesOpen ? "rotate-180" : ""}`} />
+              </button>
+              {entitiesOpen && (
+                <div className="absolute right-0 top-full z-50 mt-2 min-w-[160px] rounded-md border border-border bg-background py-1 shadow-xl" role="menu">
+                  {entityItems.map((item) => (
+                    <Link key={item.href} href={item.href} onClick={() => setEntitiesOpen(false)} className="block px-4 py-2.5 text-sm text-foreground transition-colors hover:bg-muted hover:text-accent" role="menuitem">
+                      {s(item.label)}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <Link href="/technology" className={`text-sm font-medium transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] hover:after:w-full after:transition-all duration-500 ${textColorClass} after:bg-blue-hour`}>
+              {s("Technology")}
+            </Link>
 
             {navItems.map((item) => (
               <Link
@@ -298,9 +353,7 @@ export default function Header() {
         {mobileMenuOpen && (
           <div className={`md:hidden transition-colors duration-500 ${scrolled ? "bg-background" : "bg-primary"}`}>
             <nav className="flex flex-col px-6 py-4 gap-1" aria-label="Mobile navigation">
-              <p className={`text-[10px] font-semibold tracking-widest uppercase px-2 pt-1 pb-0.5 ${scrolled ? "text-foreground/40" : "text-primary-foreground/40"}`}>
-                {t("nav.offering")}
-              </p>
+              <p className={`text-[10px] font-semibold tracking-widest uppercase px-2 pt-1 pb-0.5 ${scrolled ? "text-foreground/40" : "text-primary-foreground/40"}`}>{s("Solutions")}</p>
               {offeringItems.map((item) => (
                 <Link
                   key={item.href}
@@ -308,11 +361,21 @@ export default function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`text-sm transition-colors py-2 pl-4 ${textColorClass}`}
                 >
-                  {t(item.labelKey)}
+                  {s(item.label)}
                 </Link>
               ))}
 
               <div className={`h-px my-2 ${scrolled ? "bg-border" : "bg-primary-foreground/10"}`} />
+              <p className={`text-[10px] font-semibold tracking-widest uppercase px-2 pt-1 pb-0.5 ${scrolled ? "text-foreground/40" : "text-primary-foreground/40"}`}>{s("Entities")}</p>
+              {entityItems.map((item) => (
+                <Link key={item.href} href={item.href} onClick={() => setMobileMenuOpen(false)} className={`text-sm transition-colors py-2 pl-4 ${textColorClass}`}>
+                  {s(item.label)}
+                </Link>
+              ))}
+
+              <div className={`h-px my-2 ${scrolled ? "bg-border" : "bg-primary-foreground/10"}`} />
+
+              <Link href="/technology" onClick={() => setMobileMenuOpen(false)} className={`text-sm transition-colors py-2 ${textColorClass}`}>{s("Technology")}</Link>
 
               {navItems.map((item) => (
                 <Link

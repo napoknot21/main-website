@@ -27,13 +27,13 @@ export default function NewsPage() {
             />
             <div className="absolute inset-0 bg-deepblue/80" />
           </div>
-          <div className="relative z-10 mx-auto max-w-6xl px-8 text-center">
-            <div className="animate-fade-in-up">
-              <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6 shadow-[0_0_10px_rgba(57,114,229,0.5)]" />
+          <div className="relative z-10 mx-auto w-full max-w-6xl px-6 md:px-8">
+            <div className="max-w-4xl animate-fade-in-up text-left">
+              <div className="h-1 w-12 bg-blue-hour rounded-full mb-6 shadow-[0_0_10px_rgba(57,114,229,0.5)]" />
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-white tracking-tight text-balance mb-5">
                 {t("news.page.title")}
               </h1>
-              <p className="text-sm sm:text-base text-primary-foreground/60 max-w-xl mx-auto leading-relaxed text-pretty">
+              <p className="max-w-2xl text-sm leading-relaxed text-primary-foreground/70 text-pretty sm:text-base">
                 {t("news.page.subtitle")}
               </p>
             </div>

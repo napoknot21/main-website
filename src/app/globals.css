@@ -179,6 +179,16 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Keep keyboard focus visible across the shared navigation and form controls. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid hsl(var(--blue-hour));
+  outline-offset: 3px;
+}
+
 /* Counter animation */
 @keyframes countUp {
   from {

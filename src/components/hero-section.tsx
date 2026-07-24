@@ -52,7 +52,7 @@ export default function HeroSection() {
             {t("hero.subtitle")}
           </p>
           <a
-            href="#brief"
+            href="#choose-your-path"
             className="inline-flex items-center gap-2 bg-blue-hour text-white text-sm font-medium px-8 py-3.5 rounded-md hover:bg-turquoise hover:text-deepblue transition-all duration-500 shadow-xl group"
           >
             {t("hero.cta")}
@@ -64,7 +64,7 @@ export default function HeroSection() {
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
         <a
-          href="#brief"
+          href="#choose-your-path"
           className="flex flex-col items-center gap-2 text-white/50 hover:text-blue-hour transition-colors"
           aria-label="Scroll down"
         >

@@ -86,13 +86,13 @@ export default function AboutPage() {
             {/* Uniform dark overlay */}
             <div className="absolute inset-0 bg-deepblue/80" />
           </div>
-          <div className="relative z-10 mx-auto max-w-6xl px-8 text-center">
-            <div className="animate-fade-in-up">
-              <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6 shadow-[0_0_10px_rgba(57,114,229,0.5)]" />
+          <div className="relative z-10 mx-auto w-full max-w-6xl px-6 md:px-8">
+            <div className="max-w-4xl animate-fade-in-up text-left">
+              <div className="h-1 w-12 bg-blue-hour rounded-full mb-6 shadow-[0_0_10px_rgba(57,114,229,0.5)]" />
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold text-white tracking-tight text-balance mb-5">
                 {t("about.page.title")}
               </h1>
-              <p className="text-sm sm:text-base text-primary-foreground/60 max-w-xl mx-auto leading-relaxed text-pretty">
+              <p className="max-w-2xl text-sm leading-relaxed text-primary-foreground/70 text-pretty sm:text-base">
                 {t("about.page.subtitle")}
               </p>
             </div>
@@ -101,13 +101,13 @@ export default function AboutPage() {
 
         {/* Heroics Vision */}
         <section ref={visionSection.ref as React.RefObject<HTMLElement>} className="py-20 md:py-28 bg-muted/20 border-b border-border">
-          <div className="mx-auto max-w-4xl px-6">
-            <div className={`text-center transition-all duration-1000 ${visionSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-              <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6" />
+          <div className="mx-auto max-w-6xl px-6 md:px-8">
+            <div className={`max-w-4xl text-left transition-all duration-1000 ${visionSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+              <div className="h-1 w-12 bg-blue-hour rounded-full mb-6" />
               <h2 className="text-3xl md:text-4xl font-serif font-semibold text-deepblue text-balance mb-8">
                 {t("about.heroics_vision.title")}
               </h2>
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-pretty text-center">
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-pretty text-left">
                 {t("about.heroics_vision.desc")}
               </p>
             </div>
@@ -117,8 +117,8 @@ export default function AboutPage() {
         {/* Values */}
         <section ref={valuesSection.ref as React.RefObject<HTMLElement>} className="py-20 md:py-28 bg-background">
           <div className="mx-auto max-w-6xl px-6">
-            <div className="text-center mb-16 md:mb-20">
-              <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6" />
+            <div className="text-left mb-16 md:mb-20">
+              <div className="h-1 w-12 bg-blue-hour rounded-full mb-6" />
               <h2 className="text-3xl md:text-4xl font-serif font-semibold text-deepblue text-balance">
                 {t("about.values.title")}
               </h2>
@@ -129,7 +129,7 @@ export default function AboutPage() {
                 return (
                   <div
                     key={item.titleKey}
-                    className={`flex flex-col items-center text-center group transition-all duration-700 ${valuesSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                    className={`flex flex-col items-start text-left group transition-all duration-700 ${valuesSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                       }`}
                     style={{ transitionDelay: `${idx * 120}ms` }}
                   >
@@ -153,8 +153,8 @@ export default function AboutPage() {
         {/* Team Major Skills */}
         <section ref={skillsSection.ref as React.RefObject<HTMLElement>} className="py-20 md:py-28 bg-muted/30 border-y border-border">
           <div className="mx-auto max-w-6xl px-6">
-            <div className="text-center mb-16">
-              <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6" />
+            <div className="text-left mb-16">
+              <div className="h-1 w-12 bg-blue-hour rounded-full mb-6" />
               <h2 className="text-3xl md:text-4xl font-serif font-semibold text-deepblue text-balance">
                 {t("about.skills.title")}
               </h2>
@@ -163,7 +163,7 @@ export default function AboutPage() {
               {skills.map(({ key, icon: Icon }, idx) => (
                 <div
                   key={key}
-                  className={`flex flex-col items-center text-center gap-4 p-6 rounded-xl border border-border bg-background hover:border-blue-hour/30 hover:shadow-sm transition-all duration-700 ${skillsSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  className={`flex flex-col items-start text-left gap-4 p-6 rounded-xl border border-border bg-background hover:border-blue-hour/30 hover:shadow-sm transition-all duration-700 ${skillsSection.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                     }`}
                   style={{ transitionDelay: `${idx * 100}ms` }}
                 >
@@ -174,7 +174,7 @@ export default function AboutPage() {
                     <h3 className="text-sm font-semibold text-foreground mb-1.5">
                       {t(`about.skills.${key}`)}
                     </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed text-center">
+                    <p className="text-muted-foreground text-sm leading-relaxed text-left">
                       {t(`about.skills.${key}.desc`)}
                     </p>
                   </div>
@@ -187,8 +187,8 @@ export default function AboutPage() {
         {/* Milestones Timeline */}
         <section ref={milestonesSection.ref as React.RefObject<HTMLElement>} className="py-20 md:py-28 bg-background">
           <div className="mx-auto max-w-6xl px-6">
-            <div className="text-center mb-16">
-              <div className="inline-block h-1 w-12 bg-blue-hour rounded-full mb-6" />
+            <div className="text-left mb-16">
+              <div className="h-1 w-12 bg-blue-hour rounded-full mb-6" />
               <h2 className="text-3xl md:text-4xl font-serif font-semibold text-deepblue text-balance">
                 {t("about.milestones.title")}
               </h2>
@@ -216,7 +216,7 @@ export default function AboutPage() {
 
                       {/* Content card */}
                       <div
-                        className={`ml-16 md:ml-0 md:w-[calc(50%-2rem)] text-center ${isLeft ? "md:pr-8" : "md:pl-8 md:ml-auto"
+                        className={`ml-16 text-left md:ml-0 md:w-[calc(50%-2rem)] ${isLeft ? "md:pr-8" : "md:pl-8 md:ml-auto"
                           }`}
                       >
                         <span className="text-[10px] font-bold tracking-widest uppercase text-accent">
@@ -225,7 +225,7 @@ export default function AboutPage() {
                         <h3 className="text-base font-semibold text-foreground mt-1 mb-2">
                           {t(`about.milestones.${key}.title`)}
                         </h3>
-                        <p className="text-muted-foreground text-sm leading-relaxed text-center">
+                        <p className="text-muted-foreground text-sm leading-relaxed text-left">
                           {t(`about.milestones.${key}.desc`)}
                         </p>
                       </div>

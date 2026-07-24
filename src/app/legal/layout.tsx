@@ -3,7 +3,6 @@
 import { useEffect } from "react"
 import { usePathname } from "next/navigation"
 import type { ReactNode } from "react"
-import { Shield } from "lucide-react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import CookieBanner from "@/components/cookie-banner"
@@ -24,8 +23,8 @@ export default function LegalLayout({ children }: { children: ReactNode }) {
         <LegalHeader />
 
         {/* Content section */}
-        <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">
-          <div className="text-base md:text-lg font-sans">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:px-8 md:py-24">
+          <div className="max-w-4xl text-base font-sans leading-relaxed">
             {children}
           </div>
         </div>
